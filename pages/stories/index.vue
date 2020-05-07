@@ -4,7 +4,6 @@
 
 <script>
 import Header from '@/components/Header';
-
 export default {
   components: {
     'rak-header': Header,
@@ -12,4 +11,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

@@ -339,12 +339,12 @@ export default {
 }
 
 .banner__text {
+  max-width: 750px;
   font-size: 30px;
   line-height: 46px;
   font-weight: 300;
   color: #ffffff;
   text-transform: uppercase;
-  white-space: pre;
   text-align: center;
   margin: 20px 0;
 }
@@ -410,7 +410,7 @@ export default {
 
 .two-column-text__brief_light {
   color: #dedede;
-  white-space: pre;
+  max-width: 150px;
 }
 
 .two-column-text__main {

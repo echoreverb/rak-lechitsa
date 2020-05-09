@@ -1,0 +1,54 @@
+<template>
+  <div class="statistics-card">
+    <p class="statistics-card__text">{{ data.text }}</p>
+    <div class="statistics-card__bar"></div>
+    <p class="statistics-card__digits">{{ data.digits }}</p>
+    <p class="statistics-card__source">{{ data.source }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['data'],
+};
+</script>
+
+<style scoped>
+.statistics-card {
+  width: 100%;
+  min-height: 300px;
+  max-width: 300px;
+  border: 1px solid #efefef;
+  padding: 20px;
+  position: relative;
+}
+
+.statistics-card__text {
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+}
+
+.statistics-card__bar {
+  width: 100%;
+  height: 40px;
+  background: #f4f4f4;
+  margin-top: 144px;
+}
+
+.statistics-card__digits {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 40px;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.statistics-card__source {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: #666666;
+  margin-top: 20px;
+}
+</style>

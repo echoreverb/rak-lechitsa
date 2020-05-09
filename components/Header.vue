@@ -33,28 +33,25 @@ export default {};
 
 <style scoped>
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
+  max-width: 1440px;
   min-height: 76px;
+  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px;
+  margin: 0 auto;
+  background: white;
 }
 
 .header__project-name {
-  width: 340px;
+  max-width: 340px;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
 }
 
 .header__menu {
-  display: flex;
-  justify-content: space-between;
-  width: 410px;
   font-size: 18px;
   line-height: 24px;
 }
@@ -62,6 +59,11 @@ export default {};
 .header__link {
   text-decoration: none;
   color: black;
+  margin-right: 40px;
+}
+
+.header__link:last-of-type {
+  margin-right: 0;
 }
 
 .header__link_active {

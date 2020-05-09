@@ -1,8 +1,21 @@
 <template>
   <div>
+    <rak-header />
     <nuxt />
+    <rak-footer />
   </div>
 </template>
+
+<script>
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+export default {
+  components: {
+    'rak-header': Header,
+    'rak-footer': Footer,
+  },
+};
+</script>
 
 <style>
 html {

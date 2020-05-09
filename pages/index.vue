@@ -1,13 +1,20 @@
 <template>
-  <rak-header />
+  <div>
+    <main-header />
+    <section class="cover">
+      <width-adjust-container />
+    </section>
+  </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
+import WidthAdjustContainer from '@/components/WidthAdjustContainer';
 
 export default {
   components: {
-    'rak-header': Header,
+    'main-header': Header,
+    'width-adjust-container': WidthAdjustContainer,
   },
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
   <header class="header">
-    <p class="header__project-name">
+    <h5 class="header__project-name">
       Проект Благотворительного Фонда Константина Хабенского
-    </p>
+    </h5>
     <nav class="header__menu">
       <nuxt-link
         to="/"
@@ -33,9 +33,6 @@ export default {};
 
 <style scoped>
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   min-height: 76px;
   display: flex;
@@ -45,7 +42,7 @@ export default {};
 }
 
 .header__project-name {
-  width: 340px;
+  max-width: 340px;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;

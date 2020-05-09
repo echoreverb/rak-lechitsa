@@ -1,9 +1,18 @@
 <template>
   <div>
+    <rak-header />
     <nuxt />
   </div>
 </template>
+<script>
+import Header from '@/components/Header';
 
+export default {
+  components: {
+    'rak-header': Header,
+  },
+};
+</script>
 <style>
 html {
   font-family: 'Inter', Arial, sans-serif;

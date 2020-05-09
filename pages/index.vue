@@ -1,13 +1,13 @@
 <template>
-  <rak-header />
+  <nxt-cover />
 </template>
 
 <script>
-import Header from '@/components/Header';
+import Cover from '@/components/Cover';
 
 export default {
   components: {
-    'rak-header': Header,
+    'nxt-cover': Cover,
   },
 };
 </script>

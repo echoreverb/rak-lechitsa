@@ -42,6 +42,8 @@ export default {};
   justify-content: space-between;
   align-items: center;
   padding: 0 60px;
+  background-color: #fff;
+  z-index: 10;
 }
 
 .header__project-name {

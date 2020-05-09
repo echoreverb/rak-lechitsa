@@ -44,6 +44,7 @@ export default {};
   padding: 0 60px;
   background-color: #fff;
   z-index: 10;
+  box-shadow: 0 0 2px;
 }
 
 .header__project-name {

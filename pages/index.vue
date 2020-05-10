@@ -4,6 +4,7 @@
       <h1 class="cover__title">#раклечится</h1>
       <img class="cover__arrow" src="../static/images/arrow_down.svg" />
     </section>
+
     <div class="root">
       <section class="video">
         <div class="two-column-content">
@@ -35,6 +36,7 @@
           </h2>
         </banner>
       </section>
+
       <section class="stories">
         <h3 class="subtitle">Истории неизлечимых привычек</h3>
         <div class="stories__cards-container">
@@ -46,6 +48,7 @@
           >
         </nuxt-link>
       </section>
+
       <section class="instagram">
         <banner>
           <h2 class="banner__text">
@@ -74,6 +77,7 @@
           </div>
         </div>
       </section>
+
       <section class="your-story">
         <div class="two-column-content">
           <div class="your-story__text">
@@ -98,6 +102,7 @@
           </div>
         </div>
       </section>
+
       <section class="statistics">
         <h3 class="subtitle">Статистика по онкозаболеваниям</h3>
         <div class="statistics__grid">
@@ -105,6 +110,7 @@
           <!-- бары по-умному пока не сделала -->
         </div>
       </section>
+
       <section class="info">
         <h2 class="info__title">#раклечится</h2>
         <div class="two-column-content">

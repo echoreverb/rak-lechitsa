@@ -1,84 +1,94 @@
 <template>
   <div>
-    <section class="cover">
-      <h1 class="cover__title">#раклечится</h1>
-      <img class="cover__arrow" src="../static/images/arrow_down.svg" />
-    </section>
     <div class="root">
+      <section class="cover">
+        <h1 class="cover__title">#раклечится</h1>
+        <img class="cover__arrow" src="../static/images/arrow_down.svg" />
+      </section>
+
       <section class="video">
-        <div class="two-column-content">
-          <div class="video__text">
-            <h3 class="subtitle">
-              Истории людей, победивших рак, но не свои привычки
-            </h3>
-            <p class="motivation">
-              Есть вещи, которые не лечатся. Вещи ставшие частью нашего «я»,
-              фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
-              доказательство — люди с их историями.
-            </p>
+        <container>
+          <div class="two-column-content">
+            <div class="video__text">
+              <h3 class="section-title">
+                Истории людей, победивших рак, но не свои привычки
+              </h3>
+              <p class="section-subtitle">
+                Есть вещи, которые не лечатся. Вещи ставшие частью нашего «я»,
+                фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
+                доказательство — люди с их историями.
+              </p>
+            </div>
+            <div class="video__content">
+              <rak-video />
+              <p class="video__description">
+                Все видео вы можете найте на нашем
+                <a
+                  class="video__link"
+                  href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
+                  >YouTube канале</a
+                >.
+              </p>
+            </div>
           </div>
-          <div class="video__content">
-            <rak-video />
-            <p class="video__description">
-              Все видео вы можете найте на нашем
-              <a
-                class="video__link"
-                href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
-                >YouTube канале</a
-              >.
-            </p>
-          </div>
-        </div>
-        <banner>
-          <h2 class="banner__text">
-            и в отличие от рака, <span class="important">#этонелечится</span>
-          </h2>
-        </banner>
+          <banner>
+            <h2 class="banner__text">
+              и в отличие от рака, <span class="important">#этонелечится</span>
+            </h2>
+          </banner>
+        </container>
       </section>
+
       <section class="stories">
-        <h3 class="subtitle">Истории неизлечимых привычек</h3>
-        <div class="stories__cards-container">
-          <card v-for="obj in stories" :key="obj.id" :source="obj" />
-        </div>
-        <nuxt-link to="/stories">
-          <banner-grey
-            ><span class="banner-grey__text">Больше статей</span></banner-grey
-          >
-        </nuxt-link>
+        <container>
+          <h3 class="section-title">Истории неизлечимых привычек</h3>
+          <div class="stories__cards-container">
+            <card v-for="obj in stories" :key="obj.id" :source="obj" />
+          </div>
+          <nuxt-link to="/stories">
+            <banner-grey
+              ><span class="banner-grey__text">Больше статей</span></banner-grey
+            >
+          </nuxt-link>
+        </container>
       </section>
+
       <section class="instagram">
-        <banner>
-          <h2 class="banner__text">
-            рассказывайте ваши истории в инстаграм
-            <span class="important">#этонелечится</span>
-          </h2>
-        </banner>
-        <div class="two-column-content">
-          <div class="instagram__text">
-            <h3 class="subtitle">Инстаграм</h3>
-            <p class="motivation">
-              Два раза в неделю мы просматриваем все посты по хештегу
-              #этонелечится. Все истории, где нет нецензурных выражений и
-              запрещенного контента попадают сюда. Следите за правильным
-              написанием хештега, чтобы мы не пропустили вашу историю.
-            </p>
+        <container>
+          <banner>
+            <h2 class="banner__text">
+              рассказывайте ваши истории в инстаграм
+              <span class="important">#этонелечится</span>
+            </h2>
+          </banner>
+          <div class="two-column-content">
+            <div class="instagram__text">
+              <h3 class="section-title">Инстаграм</h3>
+              <p class="section-subtitle">
+                Два раза в неделю мы просматриваем все посты по хештегу
+                #этонелечится. Все истории, где нет нецензурных выражений и
+                запрещенного контента попадают сюда. Следите за правильным
+                написанием хештега, чтобы мы не пропустили вашу историю.
+              </p>
+            </div>
+            <div class="instagram__grid-container">
+              <img
+                v-for="obj in stories"
+                :key="obj.id"
+                :src="obj.img"
+                alt="картинка из инстаграма"
+                class="instagram__image"
+              />
+            </div>
           </div>
-          <div class="instagram__grid-container">
-            <img
-              v-for="obj in stories"
-              :key="obj.id"
-              :src="obj.img"
-              alt="картинка из инстаграма"
-              class="instagram__image"
-            />
-          </div>
-        </div>
+        </container>
       </section>
+
       <section class="your-story">
         <div class="two-column-content">
           <div class="your-story__text">
-            <h3 class="subtitle">Расскажите свою историю</h3>
-            <p class="motivation">
+            <h3 class="section-title">Расскажите свою историю</h3>
+            <p class="section-subtitle">
               Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
               поделиться своей историей неизлечимых привычек, навязчивых идей и
               болезненных привязанностей.
@@ -98,45 +108,55 @@
           </div>
         </div>
       </section>
+
       <section class="statistics">
-        <h3 class="subtitle">Статистика по онкозаболеваниям</h3>
-        <div class="statistics__grid">
-          <statisticsCard v-for="obj in statistics" :key="obj.id" :data="obj" />
-          <!-- бары по-умному пока не сделала -->
-        </div>
-      </section>
-      <section class="info">
-        <h2 class="info__title">#раклечится</h2>
-        <div class="two-column-content">
-          <div class="info__text">
-            <h3 class="subtitle subtitle_white">О проекте</h3>
-            <p class="motivation motivation_light">
-              Этот проект был создан благотворительным фондом Константина
-              Хабенского.
-            </p>
+        <container>
+          <h3 class="section-title">Статистика по онкозаболеваниям</h3>
+          <div class="statistics__grid">
+            <statisticsCard
+              v-for="obj in statistics"
+              :key="obj.id"
+              :data="obj"
+            />
+            <!-- бары по-умному пока не сделала -->
           </div>
-          <div class="two-column-text two-column-text_light">
-            <p class="two-column-text__brief two-column-text__brief_light">
-              Рак лечится Фонд Хабенского
-            </p>
-            <div class="two-column-text__content">
-              <p class="two-column-text__main two-column-text__main_light">
-                Есть вещи, которые не лечатся. Особенности характера, страстные
-                увлечения, привычки, ставшие частью нашего «я», фобии, которые
-                мы приобрели в детстве. Список можно продолжать до
-                бесконечности, но одна болезнь в него точно не войдет. Эта
-                болезнь — рак. Рак лечится, и лучшее доказательство — люди с их
-                неизлечимыми особенностями, которые сумели победить рак.
-              </p>
-              <p class="two-column-text__main two-column-text__main_light">
-                Рак лечится — проект Благотворительного Фонда Константина
-                Хабенского и Leo Burnett Moscow. С его помощью мы надеемся
-                изменить отношение людей к раку и заставить каждого поверить:
-                онкологическое заболевание — это не приговор.
+        </container>
+      </section>
+
+      <section class="info">
+        <container>
+          <h2 class="info__title">#раклечится</h2>
+          <div class="two-column-content">
+            <div class="info__text">
+              <h3 class="section-title section-title_white">О проекте</h3>
+              <p class="section-subtitle section-subtitle_light">
+                Этот проект был создан благотворительным фондом Константина
+                Хабенского.
               </p>
             </div>
+            <div class="two-column-text two-column-text_light">
+              <p class="two-column-text__brief two-column-text__brief_light">
+                Рак лечится Фонд Хабенского
+              </p>
+              <div class="two-column-text__content">
+                <p class="two-column-text__main two-column-text__main_light">
+                  Есть вещи, которые не лечатся. Особенности характера,
+                  страстные увлечения, привычки, ставшие частью нашего «я»,
+                  фобии, которые мы приобрели в детстве. Список можно продолжать
+                  до бесконечности, но одна болезнь в него точно не войдет. Эта
+                  болезнь — рак. Рак лечится, и лучшее доказательство — люди с
+                  их неизлечимыми особенностями, которые сумели победить рак.
+                </p>
+                <p class="two-column-text__main two-column-text__main_light">
+                  Рак лечится — проект Благотворительного Фонда Константина
+                  Хабенского и Leo Burnett Moscow. С его помощью мы надеемся
+                  изменить отношение людей к раку и заставить каждого поверить:
+                  онкологическое заболевание — это не приговор.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </container>
       </section>
     </div>
   </div>
@@ -149,8 +169,10 @@ import Card from '@/components/Card';
 import Banner_grey from '@/components/Banner_grey';
 import button from '@/components/ui/button';
 import StatisticsCard from '@/components/StatisticsCard';
+import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
 export default {
   components: {
+    container: WidthAdjustContainerVue,
     'rak-video': VideoIframe,
     banner: Banner,
     card: Card,
@@ -258,10 +280,7 @@ export default {
 
 <style scoped>
 .root {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 60px;
-  margin: 0 auto;
+  width: 100vw;
 }
 
 .cover {
@@ -302,7 +321,7 @@ export default {
   min-height: 420px;
 }
 
-.subtitle {
+.section-title {
   max-width: 413px;
   font-weight: 600;
   font-size: 32px;
@@ -310,11 +329,11 @@ export default {
   color: #000000;
 }
 
-.subtitle_white {
+.section-title_white {
   color: white;
 }
 
-.motivation {
+.section-subtitle {
   font-size: 18px;
   line-height: 22px;
   color: #666666;
@@ -322,7 +341,7 @@ export default {
   max-width: 340px;
 }
 
-.motivation_light {
+.section-subtitle_light {
   color: #dedede;
 }
 

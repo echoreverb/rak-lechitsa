@@ -1,38 +1,44 @@
 <template>
   <footer class="footer">
-    <div class="footer__content">
-      <p class="footer__thanks">
-        Спасибо всем, кто помог состояться этому проекту
-      </p>
-      <div class="footer__social">
-        <a href="#" class="footer__link">Мы в Инстаграме и Youtube</a>
-        <a href="#" class="footer__link">Поделитесь ↗</a>
+    <container>
+      <div class="footer__content">
+        <p class="footer__thanks">
+          Спасибо всем, кто помог состояться этому проекту
+        </p>
+        <div class="footer__social">
+          <a href="#" class="footer__link">Мы в Инстаграме и Youtube</a>
+          <a href="#" class="footer__link">Поделитесь ↗</a>
+        </div>
       </div>
-    </div>
-    <div class="footer__info">
-      <p class="footer__project">Рак Лечится 2020</p>
-      <p class="footer__author">Сделано студентами Яндекс Практикум</p>
-    </div>
-    <!-- навигация весьма сомнительно получилась( -->
-    <footer class="footer__nav">
-      <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
-      <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
-    </footer>
+      <div class="footer__info">
+        <p class="footer__project">Рак Лечится 2020</p>
+        <p class="footer__author">Сделано студентами Яндекс Практикум</p>
+      </div>
+      <!-- навигация весьма сомнительно получилась( -->
+      <footer class="footer__nav">
+        <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
+        <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
+      </footer>
+    </container>
   </footer>
 </template>
 
 <script>
-export default {};
+import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
+export default {
+  components: {
+    container: WidthAdjustContainerVue,
+  },
+};
 </script>
 
 <style scoped>
 .footer {
-  width: 100%;
-  max-width: 1440px;
+  width: 100vw;
   min-height: 356px;
   background-color: #fbfbfb;
   margin: 0 auto;
-  padding: 0 60px 60px;
+  /* padding: 0 60px 60px; */
   position: relative;
 }
 .footer__info {

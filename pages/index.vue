@@ -85,28 +85,30 @@
       </section>
 
       <section class="your-story">
-        <div class="two-column-content">
-          <div class="your-story__text">
-            <h3 class="section-title">Расскажите свою историю</h3>
-            <p class="section-subtitle">
-              Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
-              поделиться своей историей неизлечимых привычек, навязчивых идей и
-              болезненных привязанностей.
-            </p>
+        <container>
+          <div class="two-column-content">
+            <div class="your-story__text">
+              <h3 class="section-title">Расскажите свою историю</h3>
+              <p class="section-subtitle">
+                Мы публикуем новые истории на сайте раз в неделю. Есть 2
+                варианта поделиться своей историей неизлечимых привычек,
+                навязчивых идей и болезненных привязанностей.
+              </p>
+            </div>
+            <div class="two-column-text">
+              <p class="two-column-text__brief">1-й вариант</p>
+              <p class="two-column-text__main">
+                Заполнить подробную форму прямо на сайте и мы опубликуем вашу
+                историю после проверки. Пожалуйста, заполняйте все пункты
+                корректно, если вы испытаете какие-то сложности, воспользуйтесь
+                2-м вариантом.
+                <rak-button class="your-story__button"
+                  >Заполнить форму</rak-button
+                >
+              </p>
+            </div>
           </div>
-          <div class="two-column-text">
-            <p class="two-column-text__brief">1-й вариант</p>
-            <p class="two-column-text__main">
-              Заполнить подробную форму прямо на сайте и мы опубликуем вашу
-              историю после проверки. Пожалуйста, заполняйте все пункты
-              корректно, если вы испытаете какие-то сложности, воспользуйтесь
-              2-м вариантом.
-              <rak-button class="your-story__button"
-                >Заполнить форму</rak-button
-              >
-            </p>
-          </div>
-        </div>
+        </container>
       </section>
 
       <section class="statistics">

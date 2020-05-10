@@ -376,7 +376,8 @@ export default {
 }
 
 .important {
-  font-weight: 600;
+  font-weight: 800;
+  font-size: 38px;
 }
 
 .stories__cards-container {

@@ -39,6 +39,7 @@ export default {
   background-color: #fbfbfb;
   margin: 0 auto;
   /* padding: 0 60px 60px; */
+  padding-bottom: 60px;
   position: relative;
 }
 .footer__info {

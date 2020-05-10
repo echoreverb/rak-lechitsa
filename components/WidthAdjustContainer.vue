@@ -10,8 +10,9 @@ export default {};
 
 <style scoped>
 .width-adjust-container {
-  width: 1440px;
-  /* padding: 0 60px; */
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 60px;
   margin: 0 auto;
 }
 </style>

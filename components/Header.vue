@@ -43,7 +43,6 @@ export default {
   width: 100%;
   /* max-width: 1440px; */
   min-height: 76px;
-  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;

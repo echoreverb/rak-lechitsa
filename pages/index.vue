@@ -95,18 +95,12 @@
                 навязчивых идей и болезненных привязанностей.
               </p>
             </div>
-            <div class="two-column-text">
-              <p class="two-column-text__brief">1-й вариант</p>
-              <p class="two-column-text__main">
-                Заполнить подробную форму прямо на сайте и мы опубликуем вашу
-                историю после проверки. Пожалуйста, заполняйте все пункты
-                корректно, если вы испытаете какие-то сложности, воспользуйтесь
-                2-м вариантом.
-                <rak-button class="your-story__button"
-                  >Заполнить форму</rak-button
-                >
-              </p>
-            </div>
+            <nxt-options
+              class="your-story__options"
+              current="0"
+              theme="light"
+              :options="formOptions"
+            />
           </div>
         </container>
       </section>
@@ -136,27 +130,12 @@
                 Хабенского.
               </p>
             </div>
-            <div class="two-column-text two-column-text_light">
-              <p class="two-column-text__brief two-column-text__brief_light">
-                Рак лечится Фонд Хабенского
-              </p>
-              <div class="two-column-text__content">
-                <p class="two-column-text__main two-column-text__main_light">
-                  Есть вещи, которые не лечатся. Особенности характера,
-                  страстные увлечения, привычки, ставшие частью нашего «я»,
-                  фобии, которые мы приобрели в детстве. Список можно продолжать
-                  до бесконечности, но одна болезнь в него точно не войдет. Эта
-                  болезнь — рак. Рак лечится, и лучшее доказательство — люди с
-                  их неизлечимыми особенностями, которые сумели победить рак.
-                </p>
-                <p class="two-column-text__main two-column-text__main_light">
-                  Рак лечится — проект Благотворительного Фонда Константина
-                  Хабенского и Leo Burnett Moscow. С его помощью мы надеемся
-                  изменить отношение людей к раку и заставить каждого поверить:
-                  онкологическое заболевание — это не приговор.
-                </p>
-              </div>
-            </div>
+            <nxt-options
+              class="info__options"
+              current="0"
+              theme="dark"
+              :options="aboutOptions"
+            />
           </div>
         </container>
       </section>
@@ -172,6 +151,7 @@ import Banner_grey from '@/components/Banner_grey';
 import button from '@/components/ui/button';
 import StatisticsCard from '@/components/StatisticsCard';
 import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
+import Options from '@/components/Options';
 export default {
   components: {
     container: WidthAdjustContainerVue,
@@ -181,6 +161,7 @@ export default {
     'banner-grey': Banner_grey,
     'rak-button': button,
     statisticsCard: StatisticsCard,
+    'nxt-options': Options,
   },
   data() {
     return {
@@ -273,6 +254,36 @@ export default {
           bar: '',
           digits: '↓25%',
           source: 'МНИОИ Герцена 2018',
+        },
+      ],
+      formOptions: [
+        {
+          text:
+            'Заполнить подробную форму прямо на сайте и мы опубликуем вашу историю после проверки. Пожалуйста, заполняйте все пункты корректно, если вы испытаете какие-то сложности, воспользуйтесь 2-м вариантом.',
+          button: 'Заполнить форму',
+          link: '1-й вариант',
+          id: 0,
+        },
+        {
+          text:
+            'Оставить контакт (почту или номер телефона) и мы свяжемся с вами, зададим вопросы, уточним детали вашей истории.',
+          button: 'Оставить контакт',
+          link: '2-й вариант',
+          id: 1,
+        },
+      ],
+      aboutOptions: [
+        {
+          text:
+            'Есть вещи, которые не лечатся. Особенности характера, страстные увлечения, привычки, ставшие частью нашего «я», фобии, которые мы приобрели в детстве. Список можно продолжать до бесконечности, но одна болезнь в него точно не войдет. Эта болезнь — рак. Рак лечится, и лучшее доказательство — люди с их неизлечимыми особенностями, которые сумели победить рак.\nРак лечится — проект Благотворительного Фонда Константина Хабенского и Leo Burnett Moscow. С его помощью мы надеемся изменить отношение людей к раку и заставить каждого поверить: онкологическое заболевание — это не приговор.',
+          link: 'Рак Лечится',
+          id: 0,
+        },
+        {
+          text:
+            'Благотворительный Фонд Константина Хабенского с 2008 года помогает детям с онкологическими и другими тяжелыми заболеваниями головного мозга. Фонд не только поддерживает семью заболевшего ребенка в самый сложный момент, оплачивая обследования, лечение и медицинские препараты, но и в целом меняет систему оказания помощи детям с опухолями мозга в России.',
+          link: 'Фонд Хабенского',
+          id: 1,
         },
       ],
     };
@@ -453,7 +464,9 @@ export default {
 .your-story__button {
   margin-top: 80px;
 }
-
+.your-story__options {
+  margin-top: 100px;
+}
 .statistics {
   margin-top: 100px;
 }
@@ -483,5 +496,8 @@ export default {
   text-transform: uppercase;
   padding-top: 90px;
   margin-bottom: 70px;
+}
+.info__options {
+  margin-top: 68px;
 }
 </style>

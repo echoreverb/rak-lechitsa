@@ -1,5 +1,7 @@
 <template>
-  <div class="width-adjust-container"></div>
+  <div class="width-adjust-container">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -8,6 +10,8 @@ export default {};
 
 <style scoped>
 .width-adjust-container {
-  width: 100vw;
+  width: 1440px;
+  /* padding: 0 60px; */
+  margin: 0 auto;
 }
 </style>

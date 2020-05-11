@@ -268,7 +268,7 @@ export default {
           source: 'МНИОИ Герцена 2018',
           previousValue: 100,
           currentValue: 75,
-          maxValue: co100,
+          maxValue: 100,
         },
       ],
       formOptions: [

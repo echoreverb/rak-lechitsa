@@ -1,9 +1,9 @@
 <template>
-  <div>Story page</div>
+  <div></div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

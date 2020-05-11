@@ -45,7 +45,7 @@
           <div class="stories__cards-container">
             <card v-for="obj in stories" :key="obj.id" :source="obj" />
           </div>
-          <nuxt-link to="/stories">
+          <nuxt-link to="/stories" class="link_underline_false">
             <banner-grey
               ><span class="banner-grey__text">Больше статей</span></banner-grey
             >
@@ -63,7 +63,14 @@
           </banner>
           <div class="two-column-content">
             <div class="instagram__text">
-              <section-title>Инстаграм</section-title>
+              <section-title>
+                <a
+                  class="title-link"
+                  href="https://www.instagram.com/raklechitsa/"
+                  target="_blank"
+                  >Инстаграм
+                </a>
+              </section-title>
               <section-subtitle>
                 Два раза в неделю мы просматриваем все посты по хештегу
                 #этонелечится. Все истории, где нет нецензурных выражений и
@@ -380,6 +387,11 @@ export default {
   margin: 20px 0;
 }
 
+.link_underline_false {
+  text-decoration: none;
+  color: inherit;
+}
+
 .banner-grey__text {
   font-size: 16px;
   line-height: 20px;
@@ -398,6 +410,20 @@ export default {
   grid-column-gap: 40px;
   grid-row-gap: 70px;
   margin: 70px 0;
+}
+
+.title-link {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: solid black 2px;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.title-link:hover {
+  color: #121212;
+  opacity: 0.8;
+  border-bottom-color: rgba(18, 18, 18, 0.8);
 }
 
 .instagram__grid-container {

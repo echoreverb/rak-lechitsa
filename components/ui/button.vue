@@ -18,6 +18,7 @@ export default {
   text-align: center;
   cursor: pointer;
   border: none;
+  transition: 0.3s ease;
 }
 .button_size_sm {
   padding: 9px 20px;

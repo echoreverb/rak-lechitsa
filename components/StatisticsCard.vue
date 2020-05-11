@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style scoped>
-
 .statistics-card {
   display: flex;
   flex-direction: column;

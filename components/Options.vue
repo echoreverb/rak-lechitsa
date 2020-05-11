@@ -57,6 +57,14 @@ export default {
   grid-column-gap: 40px;
 }
 
+.options__column {
+  display: flex;
+  height: 100%;
+  padding-bottom: 80px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .options__links {
   text-align: right;
   font-weight: 500;
@@ -82,7 +90,6 @@ export default {
 .options__text {
   font-size: 18px;
   line-height: 22px;
-  margin-bottom: 78px;
 }
 .options_theme_light .options__link {
   color: #a2a2a2;

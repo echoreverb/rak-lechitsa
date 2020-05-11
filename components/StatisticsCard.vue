@@ -60,7 +60,7 @@ export default {
 .statistics-card__bar-container {
   width: 100%;
   height: 40px;
-  margin-top: 144px;
+  margin-top: auto;
 }
 
 .statistics-card__digits {

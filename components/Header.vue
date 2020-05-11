@@ -41,7 +41,6 @@ export default {
 <style scoped>
 .header {
   width: 100%;
-  /* max-width: 1440px; */
   min-height: 76px;
   display: flex;
   justify-content: space-between;
@@ -58,14 +57,23 @@ export default {
 }
 
 .header__menu {
+  display: flex;
+  min-width: 420px;
+  justify-content: space-between;
   font-size: 18px;
   line-height: 24px;
 }
 
 .header__link {
   text-decoration: none;
-  color: black;
+  color: #000000;
   margin-right: 40px;
+  transition: 0.3s ease;
+}
+
+.header__link:hover {
+  color: #121212;
+  opacity: 0.8;
 }
 
 .header__link:last-of-type {

@@ -10,14 +10,14 @@
         <container>
           <div class="two-column-content">
             <div class="video__text">
-              <h3 class="section-title">
+              <section-title>
                 Истории людей, победивших рак, но не свои привычки
-              </h3>
-              <p class="section-subtitle">
+              </section-title>
+              <section-subtitle>
                 Есть вещи, которые не лечатся. Вещи ставшие частью нашего «я»,
                 фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
                 доказательство — люди с их историями.
-              </p>
+              </section-subtitle>
             </div>
             <div class="video__content">
               <rak-video />
@@ -41,7 +41,7 @@
 
       <section class="stories">
         <container>
-          <h3 class="section-title">Истории неизлечимых привычек</h3>
+          <section-title>Истории неизлечимых привычек</section-title>
           <div class="stories__cards-container">
             <card v-for="obj in stories" :key="obj.id" :source="obj" />
           </div>
@@ -63,13 +63,13 @@
           </banner>
           <div class="two-column-content">
             <div class="instagram__text">
-              <h3 class="section-title">Инстаграм</h3>
-              <p class="section-subtitle">
+              <section-title>Инстаграм</section-title>
+              <section-subtitle>
                 Два раза в неделю мы просматриваем все посты по хештегу
                 #этонелечится. Все истории, где нет нецензурных выражений и
                 запрещенного контента попадают сюда. Следите за правильным
                 написанием хештега, чтобы мы не пропустили вашу историю.
-              </p>
+              </section-subtitle>
             </div>
             <div class="instagram__grid-container">
               <img
@@ -88,12 +88,12 @@
         <container>
           <div class="two-column-content">
             <div class="your-story__text">
-              <h3 class="section-title">Расскажите свою историю</h3>
-              <p class="section-subtitle">
+              <section-title>Расскажите свою историю</section-title>
+              <section-subtitle>
                 Мы публикуем новые истории на сайте раз в неделю. Есть 2
                 варианта поделиться своей историей неизлечимых привычек,
                 навязчивых идей и болезненных привязанностей.
-              </p>
+              </section-subtitle>
             </div>
             <nxt-options
               class="your-story__options"
@@ -107,14 +107,13 @@
 
       <section class="statistics">
         <container>
-          <h3 class="section-title">Статистика по онкозаболеваниям</h3>
+          <section-title>Статистика по онкозаболеваниям</section-title>
           <div class="statistics__grid">
-            <statisticsCard
+            <statistics-card
               v-for="obj in statistics"
               :key="obj.id"
               :data="obj"
             />
-            <!-- бары по-умному пока не сделала -->
           </div>
         </container>
       </section>
@@ -124,11 +123,13 @@
           <h2 class="info__title">#раклечится</h2>
           <div class="two-column-content">
             <div class="info__text">
-              <h3 class="section-title section-title_white">О проекте</h3>
-              <p class="section-subtitle section-subtitle_light">
+              <section-title class="section-title_white"
+                >О проекте</section-title
+              >
+              <section-subtitle class="section-subtitle_light">
                 Этот проект был создан благотворительным фондом Константина
                 Хабенского.
-              </p>
+              </section-subtitle>
             </div>
             <nxt-options
               class="info__options"
@@ -148,19 +149,23 @@ import VideoIframe from '@/components/VideoIframe';
 import Banner from '@/components/Banner';
 import Card from '@/components/Card';
 import Banner_grey from '@/components/Banner_grey';
-import button from '@/components/ui/button';
+import Button from '@/components/ui/Button';
 import StatisticsCard from '@/components/StatisticsCard';
-import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
+import WidthAdjustContainer from '@/components/WidthAdjustContainer';
 import Options from '@/components/Options';
+import SectionTitle from '@/components/ui/SectionTitle';
+import SectionSubtitle from '@/components/ui/SectionSubtitle';
 export default {
   components: {
-    container: WidthAdjustContainerVue,
+    container: WidthAdjustContainer,
+    'section-title': SectionTitle,
+    'section-subtitle': SectionSubtitle,
     'rak-video': VideoIframe,
     banner: Banner,
     card: Card,
     'banner-grey': Banner_grey,
-    'rak-button': button,
-    statisticsCard: StatisticsCard,
+    'rak-button': Button,
+    'statistics-card': StatisticsCard,
     'nxt-options': Options,
   },
   data() {
@@ -228,32 +233,42 @@ export default {
           id: '1',
           text:
             'Каждый 3-й в стране уверен, что рак неизлечим. А это примерно 48 918 000 человек.',
-          bar: '',
+          barType: '1',
           digits: '1 из 3',
           source: 'Левада-Центр 2018',
+          value: 1,
+          maxValue: 3,
         },
         {
           id: '2',
           text: '2,6% Россиян имеют онкозаболевания.',
-          bar: '',
+          barType: '1',
           digits: '3 700 000',
           source: 'Росстат 2018',
+          value: 2.6,
+          maxValue: 100,
         },
         {
           id: '3',
           text:
             'На 28% выросла доля выявления заболеваний на ранней стадии за 10 лет.',
-          bar: '',
+          barType: '2',
           digits: '↑28%',
           source: 'МНИОИ Герцена 2018',
+          previousValue: 78.1,
+          currentValue: 100,
+          maxValue: 100,
         },
         {
           id: '4',
           text:
             'На 25% снизилась смертность в течение первого года после постановки диагноза.',
-          bar: '',
+          barType: '2',
           digits: '↓25%',
           source: 'МНИОИ Герцена 2018',
+          previousValue: 100,
+          currentValue: 75,
+          maxValue: 100,
         },
       ],
       formOptions: [
@@ -334,24 +349,8 @@ export default {
   min-height: 420px;
 }
 
-.section-title {
-  max-width: 413px;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 36px;
-  color: #000000;
-}
-
 .section-title_white {
   color: white;
-}
-
-.section-subtitle {
-  font-size: 18px;
-  line-height: 22px;
-  color: #666666;
-  margin-top: 32px;
-  max-width: 340px;
 }
 
 .section-subtitle_light {

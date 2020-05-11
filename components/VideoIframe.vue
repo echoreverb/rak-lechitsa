@@ -15,9 +15,10 @@ export default {};
 
 <style scoped>
 .iframe {
-  max-width: 867px;
-  height: 450px;
-  /* исстрадалась с резиновой высотой, пока решила оставить так  */
+  width: 100%;
+  position: relative;
+  padding-bottom: calc(0.52 * 100%);
+  /* max-width: 867px; */
 }
 
 .iframe__video {
@@ -25,5 +26,6 @@ export default {};
   display: block;
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 </style>

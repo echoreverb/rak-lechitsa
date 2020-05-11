@@ -18,9 +18,15 @@
                 фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
                 доказательство — люди с их историями.
               </p>
+              <div class="video__button video__button_prev"></div>
+              <div class="video__button video__button_next"></div>
             </div>
             <div class="video__content">
-              <rak-video />
+              <nxt-slider
+                prev=".video__button_prev"
+                next=".video__button_next"
+                :videos="videos"
+              />
               <p class="video__description">
                 Все видео вы можете найте на нашем
                 <a
@@ -152,6 +158,7 @@ import button from '@/components/ui/button';
 import StatisticsCard from '@/components/StatisticsCard';
 import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
 import Options from '@/components/Options';
+import VideoSlider from '@/components/VideoSlider';
 export default {
   components: {
     container: WidthAdjustContainerVue,
@@ -162,6 +169,7 @@ export default {
     'rak-button': button,
     statisticsCard: StatisticsCard,
     'nxt-options': Options,
+    'nxt-slider': VideoSlider,
   },
   data() {
     return {
@@ -286,6 +294,20 @@ export default {
           id: 1,
         },
       ],
+      videos: [
+        {
+          id: 0,
+          src: 'https://www.youtube.com/embed/coOppM34GtI',
+        },
+        {
+          id: 1,
+          src: 'https://www.youtube.com/embed/FFrioIZ65q0',
+        },
+        {
+          id: 2,
+          src: 'https://www.youtube.com/embed/ZKWilQnPovg',
+        },
+      ],
     };
   },
 };
@@ -332,6 +354,7 @@ export default {
   grid-template-columns: 1fr 2.1fr;
   grid-column-gap: 40px;
   min-height: 420px;
+  overflow: hidden;
 }
 
 .section-title {
@@ -369,7 +392,23 @@ export default {
 .video__link {
   color: #666666;
 }
-
+.video__button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #fbfbfb;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  margin-top: 150px;
+}
+.video__button_next {
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 17L9 9L1 1' stroke='black'/%3E%3C/svg%3E");
+}
+.video__button_prev {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L1 9L9 17' stroke='black'/%3E%3C/svg%3E%0A");
+}
 .banner__text {
   max-width: 750px;
   font-size: 30px;

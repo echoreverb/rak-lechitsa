@@ -65,6 +65,10 @@ export default {
   line-height: 36px;
 }
 
+.footer__social {
+  margin-right: 40px;
+}
+
 .footer__link-description {
   display: block;
   font-size: 18px;

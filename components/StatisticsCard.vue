@@ -52,6 +52,7 @@ export default {
 }
 
 .statistics-card__text {
+  align-self: flex-start;
   font-size: 12px;
   line-height: 16px;
 }

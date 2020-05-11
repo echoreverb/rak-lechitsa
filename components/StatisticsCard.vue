@@ -54,8 +54,6 @@ export default {
 .statistics-card__text {
   font-size: 12px;
   line-height: 16px;
-  position: absolute;
-  width: calc(100% - 20px * 2);
 }
 
 .statistics-card__bar-container {

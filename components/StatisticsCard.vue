@@ -30,6 +30,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
 .statistics-card {
   display: flex;
   flex-direction: column;
@@ -40,15 +43,6 @@ export default {
   max-width: 300px;
   border: 1px solid #efefef;
   padding: 20px;
-}
-<style scoped>
-.statistics-card {
-  width: 100%;
-  min-height: 300px;
-  max-width: 300px;
-  border: 1px solid #efefef;
-  padding: 20px;
-  position: relative;
 }
 
 .statistics-card__text {

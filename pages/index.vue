@@ -16,8 +16,20 @@
               <section-subtitle>
                 Есть вещи, которые не лечатся. Вещи ставшие частью нашего «я»,
                 фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
-                доказательство — люди с их историями.
+                доказательство&nbsp;— люди с их историями.
               </section-subtitle>
+              <div class="slider-button-container">
+                <button
+                  aria-label="Previous video"
+                  type="button"
+                  class="slider-button slider-button_previous slider-button_disabled"
+                ></button>
+                <button
+                  aria-label="Next video"
+                  type="button"
+                  class="slider-button slider-button_next "
+                ></button>
+              </div>
             </div>
             <div class="video__content">
               <rak-video />
@@ -33,7 +45,8 @@
           </div>
           <banner>
             <h2 class="banner__text">
-              и в отличие от рака, <span class="important">#этонелечится</span>
+              и в отличие от рака,
+              <span class="important-text">#этонелечится</span>
             </h2>
           </banner>
         </container>
@@ -57,8 +70,8 @@
         <container>
           <banner>
             <h2 class="banner__text">
-              рассказывайте ваши истории в инстаграм
-              <span class="important">#этонелечится</span>
+              рассказывайте ваши истории в инстаграм <br />
+              <span class="important-text">#этонелечится</span>
             </h2>
           </banner>
           <div class="two-column-content">
@@ -356,6 +369,48 @@ export default {
   min-height: 420px;
 }
 
+.video__text {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  width: 80px;
+  height: 40px;
+  background: #fbfbfb;
+}
+
+.slider-button {
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-button_previous {
+  background-image: url('../static/images/arrow-enabled-right.svg');
+  transform: rotate(180deg);
+}
+
+.slider-button_next {
+  background-image: url('../static/images/arrow-enabled-right.svg');
+}
+
+.slider-button_disabled {
+  opacity: 0.3;
+}
+
 .section-title_white {
   color: white;
 }
@@ -377,14 +432,14 @@ export default {
 }
 
 .banner__text {
-  max-width: 750px;
+  max-width: 1000px;
   font-size: 30px;
   line-height: 46px;
-  font-weight: 300;
+  font-weight: 500;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 13px;
 }
 
 .link_underline_false {
@@ -399,9 +454,9 @@ export default {
   text-decoration: none;
 }
 
-.important {
+.important-text {
   font-weight: 800;
-  font-size: 38px;
+  font-size: 40px;
 }
 
 .stories__cards-container {

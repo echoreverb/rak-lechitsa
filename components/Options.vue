@@ -53,14 +53,14 @@ export default {
 <style scoped>
 .options {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1.18fr 4fr;
   grid-column-gap: 40px;
 }
 
 .options__column {
   display: flex;
   height: 100%;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   flex-direction: column;
   justify-content: space-between;
 }

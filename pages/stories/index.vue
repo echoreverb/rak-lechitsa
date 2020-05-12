@@ -1,5 +1,7 @@
 <template>
-  <div>Stories page</div>
+  <div>
+    Stories page
+  </div>
 </template>
 
 <script>

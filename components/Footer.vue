@@ -5,6 +5,10 @@
         <p class="footer__thanks">
           Спасибо всем, кто помог состояться этому проекту
         </p>
+        <nav-menu class="footer__menu">
+          <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
+          <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
+        </nav-menu>
         <div class="footer__social">
           <span class="footer__link-description"
             >Мы в
@@ -19,19 +23,17 @@
         <p class="footer__project">Рак Лечится 2020</p>
         <p class="footer__author">Сделано студентами Яндекс Практикум</p>
       </div>
-      <footer class="footer__nav">
-        <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
-        <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
-      </footer>
     </container>
   </footer>
 </template>
 
 <script>
 import WidthAdjustContainer from '@/components/WidthAdjustContainer';
+import Menu from '@/components/Menu';
 export default {
   components: {
     container: WidthAdjustContainer,
+    'nav-menu': Menu,
   },
 };
 </script>
@@ -91,12 +93,9 @@ export default {
   opacity: 0.8;
 }
 
-.footer__nav {
-  position: absolute;
-  top: 60px;
-  left: calc(50% - 190px / 2);
-  display: flex;
-  width: 190px;
-  justify-content: space-between;
+.footer__menu {
+  margin-left: 20px;
+  margin-right: calc(15% + 90px);
+  min-width: 190px;
 }
 </style>

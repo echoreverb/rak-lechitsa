@@ -1,32 +1,35 @@
 <template>
-  <container>
-    <header class="header">
-      <h5 class="header__project-name">
-        Проект Благотворительного Фонда Константина Хабенского
-      </h5>
-      <nav class="header__menu">
-        <nuxt-link
-          to="/"
-          v-bind:class="
-            $route.path === '/'
-              ? 'header__link header__link_active'
-              : 'header__link'
-          "
-          >Главная</nuxt-link
-        >
-        <nuxt-link
-          to="/stories"
-          v-bind:class="
-            $route.path === '/stories'
-              ? 'header__link header__link_active'
-              : 'header__link'
-          "
-          >Истории</nuxt-link
-        >
-        <nuxt-link to="" class="header__link">Рассказать историю</nuxt-link>
-      </nav>
-    </header>
-  </container>
+  <div class="container">
+    <span class="container__border" v-if="$route.path !== '/'"></span>
+    <container>
+      <header class="header">
+        <h5 class="header__project-name">
+          Проект Благотворительного Фонда Константина Хабенского
+        </h5>
+        <nav class="header__menu">
+          <nuxt-link
+            to="/"
+            v-bind:class="
+              $route.path === '/'
+                ? 'header__link header__link_active'
+                : 'header__link'
+            "
+            >Главная</nuxt-link
+          >
+          <nuxt-link
+            to="/stories"
+            v-bind:class="
+              $route.path === '/stories'
+                ? 'header__link header__link_active'
+                : 'header__link'
+            "
+            >Истории</nuxt-link
+          >
+          <nuxt-link to="" class="header__link">Рассказать историю</nuxt-link>
+        </nav>
+      </header>
+    </container>
+  </div>
 </template>
 
 <script>
@@ -39,6 +42,18 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  position: relative;
+}
+
+.container__border {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 0.5px solid #e8e8e8;
+  width: 100%;
+}
+
 .header {
   width: 100%;
   /* max-width: 1440px; */

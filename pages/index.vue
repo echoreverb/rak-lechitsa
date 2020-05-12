@@ -18,6 +18,18 @@
                 фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
                 доказательство — люди с их историями.
               </section-subtitle>
+              <div class="slider-button-container">
+                <button
+                  aria-label="Previous video"
+                  type="button"
+                  class="slider-button slider-button_previous slider-button_disabled"
+                ></button>
+                <button
+                  aria-label="Next video"
+                  type="button"
+                  class="slider-button slider-button_next "
+                ></button>
+              </div>
             </div>
             <div class="video__content">
               <rak-video />
@@ -359,6 +371,44 @@ export default {
 
 .video__text {
   margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  width: 80px;
+  height: 40px;
+  background: #fbfbfb;
+}
+
+.slider-button {
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-button_previous {
+  background-image: url('../static/images/arrow-enabled-right.svg');
+  transform: rotate(180deg);
+}
+
+.slider-button_next {
+  background-image: url('../static/images/arrow-enabled-right.svg');
+}
+
+.slider-button_disabled {
+  opacity: 0.3;
 }
 
 .section-title_white {

@@ -6,7 +6,12 @@
           Спасибо всем, кто помог состояться этому проекту
         </p>
         <div class="footer__social">
-          <a href="#" class="footer__link">Мы в Инстаграме и Youtube</a>
+          <span class="footer__link-description"
+            >Мы в
+            <a href="#" class="footer__link">Инстаграме</a>
+            и
+            <a href="#" class="footer__link">Youtube</a></span
+          >
           <a href="#" class="footer__link">Поделитесь ↗</a>
         </div>
       </div>
@@ -14,7 +19,6 @@
         <p class="footer__project">Рак Лечится 2020</p>
         <p class="footer__author">Сделано студентами Яндекс Практикум</p>
       </div>
-      <!-- навигация весьма сомнительно получилась( -->
       <footer class="footer__nav">
         <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
         <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
@@ -24,10 +28,10 @@
 </template>
 
 <script>
-import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
+import WidthAdjustContainer from '@/components/WidthAdjustContainer';
 export default {
   components: {
-    container: WidthAdjustContainerVue,
+    container: WidthAdjustContainer,
   },
 };
 </script>
@@ -38,7 +42,6 @@ export default {
   min-height: 356px;
   background-color: #fbfbfb;
   margin: 0 auto;
-  /* padding: 0 60px 60px; */
   padding-bottom: 60px;
   position: relative;
 }
@@ -61,13 +64,31 @@ export default {
   font-size: 32px;
   line-height: 36px;
 }
-.footer__link {
+
+.footer__social {
+  margin-right: 40px;
+}
+
+.footer__link-description {
   display: block;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  margin-bottom: 44px;
+}
+
+.footer__link {
   text-decoration: none;
   font-size: 18px;
   line-height: 24px;
   color: #000000;
   margin-bottom: 44px;
+  transition: 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #121212;
+  opacity: 0.8;
 }
 
 .footer__nav {

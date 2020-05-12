@@ -23,7 +23,9 @@
           "
           >Истории</nuxt-link
         >
-        <nuxt-link to="" class="header__link">Рассказать историю</nuxt-link>
+        <a to="" class="header__link" @click="$emit('click')"
+          >Рассказать историю</a
+        >
       </nav>
     </header>
   </container>
@@ -66,6 +68,7 @@ export default {
   text-decoration: none;
   color: black;
   margin-right: 40px;
+  cursor: pointer;
 }
 
 .header__link:last-of-type {

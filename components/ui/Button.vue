@@ -1,12 +1,16 @@
 <template>
-  <button :class="`button button_size_${size}`">
+  <button
+    :class="`button button_size_${size}`"
+    :type="type"
+    @click="$emit('click')"
+  >
     {{ text }}
   </button>
 </template>
 
 <script>
 export default {
-  props: ['text', 'size'],
+  props: ['text', 'size', 'type'],
 };
 </script>
 
@@ -18,6 +22,13 @@ export default {
   text-align: center;
   cursor: pointer;
   border: none;
+}
+.button_size_xs {
+  background-color: transparent;
+  color: #c0c0c0;
+}
+.button_size_sm:hover {
+  text-decoration: underline;
 }
 .button_size_sm {
   padding: 9px 20px;

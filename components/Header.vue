@@ -24,7 +24,9 @@
             "
             >Истории</nuxt-link
           >
-          <nuxt-link to="" class="header__link">Рассказать историю</nuxt-link>
+          <a to="" class="header__link" @click="$emit('click')"
+            >Рассказать историю</a
+          >
         </nav-menu>
       </header>
     </container>
@@ -80,6 +82,7 @@ export default {
 .header__link:hover {
   color: #121212;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .header__link:last-of-type {

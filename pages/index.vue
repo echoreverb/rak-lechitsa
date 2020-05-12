@@ -33,7 +33,8 @@
           </div>
           <banner>
             <h2 class="banner__text">
-              и в отличие от рака, <span class="important">#этонелечится</span>
+              и в отличие от рака,
+              <span class="important-text">#этонелечится</span>
             </h2>
           </banner>
         </container>
@@ -57,8 +58,8 @@
         <container>
           <banner>
             <h2 class="banner__text">
-              рассказывайте ваши истории в инстаграм
-              <span class="important">#этонелечится</span>
+              рассказывайте ваши истории в инстаграм <br />
+              <span class="important-text">#этонелечится</span>
             </h2>
           </banner>
           <div class="two-column-content">
@@ -356,6 +357,10 @@ export default {
   min-height: 420px;
 }
 
+.video__text {
+  margin-top: 14px;
+}
+
 .section-title_white {
   color: white;
 }
@@ -377,14 +382,14 @@ export default {
 }
 
 .banner__text {
-  max-width: 750px;
+  max-width: 1000px;
   font-size: 30px;
   line-height: 46px;
-  font-weight: 300;
+  font-weight: 500;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 13px;
 }
 
 .link_underline_false {
@@ -399,9 +404,9 @@ export default {
   text-decoration: none;
 }
 
-.important {
+.important-text {
   font-weight: 800;
-  font-size: 38px;
+  font-size: 40px;
 }
 
 .stories__cards-container {

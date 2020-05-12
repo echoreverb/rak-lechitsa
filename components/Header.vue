@@ -4,7 +4,7 @@
       <h5 class="header__project-name">
         Проект Благотворительного Фонда Константина Хабенского
       </h5>
-      <nav class="header__menu">
+      <nav-menu class="header__menu">
         <nuxt-link
           to="/"
           v-bind:class="
@@ -24,16 +24,18 @@
           >Истории</nuxt-link
         >
         <nuxt-link to="" class="header__link">Рассказать историю</nuxt-link>
-      </nav>
+      </nav-menu>
     </header>
   </container>
 </template>
 
 <script>
-import WidthAdjustContainerVue from '@/components/WidthAdjustContainer.vue';
+import WidthAdjustContainer from '@/components/WidthAdjustContainer';
+import Menu from '@/components/Menu';
 export default {
   components: {
-    container: WidthAdjustContainerVue,
+    container: WidthAdjustContainer,
+    'nav-menu': Menu,
   },
 };
 </script>
@@ -57,11 +59,9 @@ export default {
 }
 
 .header__menu {
-  display: flex;
-  min-width: 420px;
-  justify-content: space-between;
+  min-width: 410px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 22px;
 }
 
 .header__link {

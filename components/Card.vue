@@ -35,6 +35,7 @@ export default {
 }
 
 .card__name {
+  max-width: 90%;
   font-weight: 600;
   font-size: 22px;
   line-height: 22px;
@@ -42,6 +43,7 @@ export default {
 }
 
 .card__text {
+  max-width: 250px;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;

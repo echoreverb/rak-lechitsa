@@ -19,5 +19,6 @@ export default {};
   line-height: 22px;
   margin-top: 32px;
   max-width: 340px;
+  word-spacing: 0.5;
 }
 </style>

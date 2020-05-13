@@ -1,8 +1,42 @@
 <template>
   <div>
+    <rak-header @click="popupHandler" />
     <nuxt />
+    <rak-footer />
+    <overlay v-if="popupShown" @overlayClick="popupHandler" />
+    <pop-up v-if="popupShown" @closeClick="popupHandler" :theme="'dark'">
+      <quiz />
+    </pop-up>
   </div>
 </template>
+
+<script>
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Overlay from '@/components/ui/Overlay';
+import PopUp from '@/components/ui/PopUp';
+import Quiz from '@/components/Quiz';
+export default {
+  components: {
+    'rak-header': Header,
+    'rak-footer': Footer,
+    overlay: Overlay,
+    'pop-up': PopUp,
+    quiz: Quiz,
+  },
+  data() {
+    return {
+      popupShown: false,
+    };
+  },
+  methods: {
+    popupHandler() {
+      this.popupShown = !this.popupShown;
+      console.log(this.popupShown);
+    },
+  },
+};
+</script>
 
 <style>
 html {

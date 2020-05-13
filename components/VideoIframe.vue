@@ -17,10 +17,11 @@ export default {
 
 <style scoped>
 .iframe {
+  display: block;
   width: 100%;
   position: relative;
   padding-bottom: calc(0.52 * 100%);
-  /* max-width: 867px; */
+  max-width: 867px;
 }
 
 .iframe__video {

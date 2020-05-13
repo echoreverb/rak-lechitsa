@@ -6,7 +6,7 @@
           @click="changeOption(option.id, $event)"
           href="#"
           :class="
-            option.id == current
+            option.id == localCurrent
               ? 'options__link options__link_active'
               : 'options__link'
           "
@@ -19,13 +19,13 @@
         class="options__text"
         v-html="
           options
-            .find(opt => opt.id == current)
+            .find(opt => opt.id == localCurrent)
             .text.replace('\n', '<br /><br />')
         "
       ></p>
       <nxt-button
-        v-if="options.find(opt => opt.id == current).button"
-        :text="options.find(opt => opt.id == current).button"
+        v-if="options.find(opt => opt.id == localCurrent).button"
+        :text="options.find(opt => opt.id == localCurrent).button"
         size="md"
         class="options__button"
       />
@@ -37,6 +37,11 @@
 import Button from '@/components/ui/Button';
 export default {
   props: ['current', 'options', 'theme'],
+  data() {
+    return {
+      localCurrent: this.current,
+    };
+  },
   components: {
     'nxt-button': Button,
   },
@@ -44,7 +49,7 @@ export default {
     changeOption(id, event) {
       event.preventDefault();
       console.log(this);
-      this.current = id;
+      this.localCurrent = id;
     },
   },
 };

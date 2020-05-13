@@ -8,7 +8,7 @@
 
       <section class="video">
         <container>
-          <div class="two-column-content">
+          <div class="two-column-content video__container">
             <div class="video__text">
               <section-title>
                 Истории людей, победивших рак, но не свои привычки
@@ -33,15 +33,15 @@
             </div>
             <div class="video__content">
               <rak-video :src="videos[0].src" />
-              <p class="video__description">
-                Все видео вы можете найте на нашем
-                <a
-                  class="video__link"
-                  href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
-                  >YouTube канале</a
-                >.
-              </p>
             </div>
+            <p class="video__description">
+              Все видео вы можете найте на нашем
+              <a
+                class="video__link"
+                href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
+                >YouTube канале</a
+              >.
+            </p>
           </div>
           <banner>
             <h2 class="banner__text">
@@ -434,12 +434,16 @@ export default {
   color: #dedede;
 }
 
+.video__container {
+  grid-row-gap: 10px;
+}
+
 .video__description {
+  grid-row: 2;
+  grid-column: 2;
   font-size: 12px;
   line-height: 16px;
   color: #666666;
-  margin-top: 10px;
-  margin-bottom: -26px;
 }
 
 .video__link {

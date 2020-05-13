@@ -27,7 +27,7 @@ export default {
           nextEl: '.video__button_next',
           prevEl: '.video__button_prev',
         },
-        spaceBetween: 50,
+        spaceBetween: 10,
         loop: true,
       },
     };

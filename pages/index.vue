@@ -18,8 +18,10 @@
                 фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
                 доказательство — люди с их историями.
               </p>
-              <div class="video__button video__button_prev"></div>
-              <div class="video__button video__button_next"></div>
+              <div class="video__button-container">
+                <div class="video__button video__button_prev"></div>
+                <div class="video__button video__button_next"></div>
+              </div>
             </div>
             <div class="video__content">
               <nxt-slider
@@ -347,6 +349,25 @@ export default {
   margin-top: 100px;
 }
 
+.video__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.video__content {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.video__button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: 26px;
+
+}
+
 .two-column-content {
   max-width: 1320px;
   margin: 0 auto;
@@ -386,7 +407,6 @@ export default {
   line-height: 16px;
   color: #666666;
   margin-top: 10px;
-  margin-bottom: -26px;
 }
 
 .video__link {
@@ -397,11 +417,9 @@ export default {
   width: 40px;
   height: 40px;
   background-color: #fbfbfb;
-  display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;
-  margin-top: 150px;
 }
 .video__button_next {
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 17L9 9L1 1' stroke='black'/%3E%3C/svg%3E");

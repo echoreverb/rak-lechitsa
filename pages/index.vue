@@ -22,12 +22,12 @@
                 <button
                   aria-label="Previous video"
                   type="button"
-                  class="slider-button slider-button_previous slider-button_disabled"
+                  class="slider-button slider-button_previous"
                 ></button>
                 <button
                   aria-label="Next video"
                   type="button"
-                  class="slider-button slider-button_next "
+                  class="slider-button slider-button_next"
                 ></button>
               </div>
             </div>
@@ -374,6 +374,24 @@ export default {
   margin-top: 100px;
 }
 
+.video__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.video__content {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.video__button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: 26px;
+}
+
 .two-column-content {
   max-width: 1320px;
   margin: 0 auto;
@@ -444,6 +462,7 @@ export default {
   font-size: 12px;
   line-height: 16px;
   color: #666666;
+  margin-top: 10px;
 }
 
 .video__link {
@@ -454,11 +473,9 @@ export default {
   width: 40px;
   height: 40px;
   background-color: #fbfbfb;
-  display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;
-  margin-top: 150px;
 }
 .video__button_next {
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 17L9 9L1 1' stroke='black'/%3E%3C/svg%3E");

@@ -32,6 +32,7 @@ export default {
   width: 100%;
   max-width: 300px;
   max-height: 300px;
+  min-height: 300px;
 }
 
 .card__name {

@@ -32,7 +32,8 @@
               </div>
             </div>
             <div class="video__content">
-              <rak-video :src="videos[0].src" />
+              <!-- <rak-video :src="videos[0].src" /> -->
+              <rak-slider :videos="videos" />
             </div>
             <p class="video__description">
               Все видео вы можете найте на нашем
@@ -166,6 +167,7 @@
 
 <script>
 import VideoIframe from '@/components/VideoIframe';
+import VideoSlider from '@/components/VideoSlider';
 import Banner from '@/components/Banner';
 import Card from '@/components/Card';
 import Banner_grey from '@/components/Banner_grey';
@@ -181,6 +183,7 @@ export default {
     'section-title': SectionTitle,
     'section-subtitle': SectionSubtitle,
     'rak-video': VideoIframe,
+    'rak-slider': VideoSlider,
     banner: Banner,
     card: Card,
     'banner-grey': Banner_grey,

@@ -428,7 +428,7 @@ export default {
     margin: 20px 0 0;
   }
   .policy__sub-list {
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .policy__sub-column {
     margin-top: 20px;

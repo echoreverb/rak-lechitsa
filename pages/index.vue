@@ -44,7 +44,7 @@
               >.
             </p>
           </div>
-          <banner>
+          <banner theme="dark">
             <h2 class="banner__text">
               и в отличие от рака,
               <span class="important-text">#этонелечится</span>
@@ -60,16 +60,14 @@
             <card v-for="obj in stories" :key="obj.id" :source="obj" />
           </div>
           <nuxt-link to="/stories" class="link_underline_false">
-            <banner-grey
-              ><span class="banner-grey__text">Больше статей</span></banner-grey
-            >
+            <banner theme="light"><span>Больше статей</span></banner>
           </nuxt-link>
         </container>
       </section>
 
       <section class="instagram">
         <container>
-          <banner>
+          <banner theme="dark">
             <h2 class="banner__text">
               рассказывайте ваши истории в инстаграм <br />
               <span class="important-text">#этонелечится</span>
@@ -164,7 +162,6 @@ import VideoIframe from '@/components/VideoIframe';
 import VideoSlider from '@/components/VideoSlider';
 import Banner from '@/components/Banner';
 import Card from '@/components/Card';
-import Banner_grey from '@/components/Banner_grey';
 import Button from '@/components/ui/Button';
 import StatisticsCard from '@/components/StatisticsCard';
 import WidthAdjustContainer from '@/components/WidthAdjustContainer';
@@ -180,7 +177,6 @@ export default {
     'rak-slider': VideoSlider,
     banner: Banner,
     card: Card,
-    'banner-grey': Banner_grey,
     'rak-button': Button,
     'statistics-card': StatisticsCard,
     'nxt-options': Options,
@@ -356,13 +352,6 @@ export default {
 .link_underline_false {
   text-decoration: none;
   color: inherit;
-}
-
-.banner-grey__text {
-  font-size: 16px;
-  line-height: 20px;
-  color: #000;
-  text-decoration: none;
 }
 
 .important-text {

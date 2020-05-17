@@ -26,7 +26,7 @@
               >Youtube</a
             ></span
           >
-          <a href="#" class="footer__link">Поделитесь ↗</a>
+          <a href="#" class="footer__link">Поделитесь &#8599;</a>
         </div>
       </div>
       <div class="footer__info">
@@ -107,5 +107,42 @@ export default {
   margin-left: 20px;
   margin-right: calc(15% + 90px);
   min-width: 190px;
+}
+
+@media screen and (max-width: 1280px) {
+  .footer {
+    min-height: 316px;
+    padding-bottom: 50px;
+  }
+  .footer__info {
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 104px;
+  }
+  .footer__content {
+    padding-top: 50px;
+  }
+  .footer__thanks {
+    max-width: 305px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .footer__social {
+    margin-right: 40px;
+  }
+
+  .footer__link-description {
+    font-size: 16px;
+  }
+
+  .footer__link {
+    font-size: 16px;
+  }
+
+  .footer__menu {
+    margin-right: calc(15% + 80px);
+    min-width: 172px;
+  }
 }
 </style>

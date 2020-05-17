@@ -19,5 +19,15 @@ export default {};
   font-weight: 600;
   font-size: 32px;
   line-height: 36px;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+  .section-title__text {
+    max-width: 367px;
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 90px;
+  }
 }
 </style>

@@ -66,4 +66,11 @@ export default {
 .button_size_lg:hover {
   background-color: #f8f8f8;
 }
+
+@media screen and (max-width: 1280px) {
+  .button_size_md {
+    width: 230px;
+    padding: 15px 30px;
+  }
+}
 </style>

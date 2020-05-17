@@ -15,4 +15,11 @@ export default {};
   padding: 0 60px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 1280px) {
+  .width-adjust-container {
+    max-width: 1280px;
+    padding: 0 50px;
+  }
+}
 </style>

@@ -92,4 +92,19 @@ export default {
 .header__link_active {
   border-bottom: black 1px solid;
 }
+
+@media screen and (max-width: 1280px) {
+  .header {
+    min-height: 72px;
+  }
+
+  .header__project-name {
+    line-height: 18px;
+  }
+  .header__menu {
+    min-width: 374px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 </style>

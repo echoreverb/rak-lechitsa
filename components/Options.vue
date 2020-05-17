@@ -58,7 +58,7 @@ export default {
 <style scoped>
 .options {
   display: grid;
-  grid-template-columns: 1.18fr 4fr;
+  grid-template-columns: 1.16fr 4.1fr;
   grid-column-gap: 40px;
 }
 
@@ -95,6 +95,7 @@ export default {
 .options__text {
   font-size: 18px;
   line-height: 22px;
+  min-height: 88px;
 }
 .options_theme_light .options__link {
   color: #a2a2a2;
@@ -115,5 +116,18 @@ export default {
 }
 .options_theme_dark .options__text {
   color: #dedede;
+}
+
+.options__button {
+  margin-top: 78px;
+}
+
+@media screen and (max-width: 1280px) {
+  .options__column {
+    padding-bottom: 90px;
+  }
+  .options__text {
+    word-spacing: 0.01em;
+  }
 }
 </style>

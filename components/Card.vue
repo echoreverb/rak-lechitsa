@@ -43,11 +43,31 @@ export default {
 }
 
 .card__text {
-  max-width: 250px;
+  max-width: 85%;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   color: #666666;
   margin-top: 14px;
+}
+
+@media screen and (max-width: 1280px) {
+  .card__image {
+    max-width: 265px;
+    max-height: 265px;
+  }
+
+  .card__name {
+    margin-top: 16px;
+  }
+
+  .card__text {
+    max-width: 85%;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #666666;
+    margin-top: 14px;
+  }
 }
 </style>

@@ -71,4 +71,16 @@ export default {
   color: #666666;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 1280px) {
+  .statistics-card {
+    min-height: 265px;
+    max-width: 265px;
+    padding: 18px;
+  }
+
+  .statistics-card__bar-container {
+    height: 35px;
+  }
+}
 </style>

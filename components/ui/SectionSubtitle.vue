@@ -21,4 +21,13 @@ export default {};
   max-width: 340px;
   word-spacing: 0.5;
 }
+
+@media screen and (max-width: 1280px) {
+  .section-subtitle__text {
+    max-width: 305px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 30px;
+  }
+}
 </style>

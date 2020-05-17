@@ -16,8 +16,10 @@
             :key="discription.id"
             class="policy__sub-list"
           >
-            <p class="policy__number">{{ discription.id }}.</p>
-            {{ discription.name }}
+            <div class="policy__sub-list-container">
+              <p class="policy__number">{{ discription.id }}.</p>
+              {{ discription.name }}
+            </div>
           </li>
         </ol>
       </li>
@@ -286,6 +288,10 @@ export default {
   align-items: center;
 }
 
+.policy__sub-list-container {
+  display: flex;
+}
+
 .policy__column {
   margin: 0 auto 230px;
   font-size: 22px;
@@ -295,27 +301,29 @@ export default {
 }
 
 .policy__paragraph {
-  margin: 40px 0 20px;
+  margin: 40px 0 0;
   font-weight: normal;
+  overflow: auto;
 }
 
 .polcy__main-list {
   font-weight: 600;
-  margin-bottom: 90px;
+  margin-bottom: 82px;
   list-style-position: inside;
 }
 
 .policy__sub-column {
   font-weight: normal;
   padding: 0;
-  margin-top: 30px;
+  margin-top: 20px;
   overflow: auto;
 }
 
 .policy__number {
   display: inline-block;
   width: 30px;
-  margin-right: 10px;
+  height: 100%;
+  margin-right: 25px;
 }
 .policy__sub-list {
   max-width: 780px;
@@ -324,7 +332,7 @@ export default {
 }
 
 .policy__sub-list:first-of-type {
-  margin-top: 10px;
+  margin-top: 20px;
   overflow: auto;
 }
 

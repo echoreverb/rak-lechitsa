@@ -3,15 +3,11 @@
     <p class="statistics-card__text">{{ data.text }}</p>
     <div class="statistics-card__bar-container">
       <progress-bar
-        v-if="data.barType === '1'"
         :value="data.value"
         :max-value="data.maxValue"
-      />
-      <progress-bar-double
-        v-if="data.barType === '2'"
         :previous-value="data.previousValue"
         :current-value="data.currentValue"
-        :max-value="data.maxValue"
+        :bar-type="data.barType"
       />
     </div>
     <p class="statistics-card__digits">{{ data.digits }}</p>
@@ -21,12 +17,10 @@
 
 <script>
 import ProgressBar from '@/components/ui/ProgressBar';
-import ProgressBarDouble from '@/components/ui/ProgressBarDouble.vue';
 export default {
   props: ['data'],
   components: {
     'progress-bar': ProgressBar,
-    'progress-bar-double': ProgressBarDouble,
   },
 };
 </script>

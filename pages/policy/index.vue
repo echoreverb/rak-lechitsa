@@ -327,4 +327,111 @@ export default {
   margin-top: 10px;
   overflow: auto;
 }
+
+@media screen and (max-width: 1280px) {
+  .policy__title {
+    font-size: 34px;
+    line-height: 44px;
+    max-width: 700px;
+    min-height: 148px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  .policy__column {
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 700px;
+    margin-bottom: 220px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .policy__title {
+    font-size: 30px;
+    line-height: 38px;
+    max-width: 640px;
+    min-height: 136px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .policy__column {
+    font-size: 18px;
+    line-height: 27px;
+    max-width: 640px;
+    margin-bottom: 210px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .policy {
+    padding: 0 64px;
+  }
+  .policy__title {
+    font-size: 30px;
+    line-height: 38px;
+    max-width: 640px;
+    min-height: 136px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .policy__column {
+    font-size: 18px;
+    line-height: 27px;
+    max-width: 640px;
+    margin-bottom: 210px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .policy {
+    padding: 0 64px;
+  }
+  .policy__title {
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    min-height: 103px;
+  }
+  .policy__column {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 110px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .policy {
+    padding: 0 15px;
+  }
+  .policy__title {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .policy__column {
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 110px;
+  }
+  .policy__paragraph {
+    margin: 20px 0 0;
+  }
+  .policy__sub-list {
+    margin-top: 20px;
+  }
+  .policy__sub-column {
+    margin-top: 20px;
+    overflow: visible;
+  }
+  .policy__sub-list:first-of-type {
+    margin-top: 20px;
+    overflow: visible;
+  }
+  .polcy__main-list {
+    margin-bottom: 40px;
+  }
+}
 </style>

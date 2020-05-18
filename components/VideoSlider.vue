@@ -1,5 +1,5 @@
 <template>
-  <swiper ref="videoySwiper" class="swiper" :options="swiperOption">
+  <swiper ref="videoySwiper" class="swiper swiper-mix" :options="swiperOption">
     <swiper-slide v-for="video in videos" :key="video.id">
       <nxt-iframe :src="video.src" />
     </swiper-slide>
@@ -24,10 +24,10 @@ export default {
     return {
       swiperOption: {
         navigation: {
-          nextEl: '.video__button_next',
-          prevEl: '.video__button_prev',
+          nextEl: '.slider-button_next',
+          prevEl: '.slider-button_previous',
         },
-        spaceBetween: 50,
+        spaceBetween: 10,
         loop: true,
       },
     };
@@ -35,4 +35,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.swiper-mix {
+  /* slider fix */
+  width: 100%;
+  height: 100%;
+}
+</style>

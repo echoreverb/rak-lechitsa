@@ -10,7 +10,14 @@
 
 <script>
 export default {
-  props: ['text', 'size', 'type'],
+  props: {
+    text: String,
+    size: {
+      type: String,
+      default: 'md',
+    },
+    type: String,
+  },
 };
 </script>
 

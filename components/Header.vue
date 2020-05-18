@@ -107,4 +107,14 @@ export default {
     line-height: 24px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .header__link {
+    margin-right: 30px;
+  }
+
+  .header__menu {
+    min-width: 354px;
+  }
+}
 </style>

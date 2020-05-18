@@ -73,4 +73,10 @@ export default {
     padding: 15px 30px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .button_size_md {
+    padding: 14px 30px;
+  }
+}
 </style>

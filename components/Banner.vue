@@ -48,4 +48,21 @@ export default {
     margin-bottom: 90px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    margin-top: 54px;
+  }
+
+  .banner_theme_dark {
+    min-height: 80px;
+  }
+
+  .banner_theme_light {
+    margin-top: 46px;
+    min-height: 50px;
+    margin-bottom: 80px;
+    font-size: 13px;
+  }
+}
 </style>

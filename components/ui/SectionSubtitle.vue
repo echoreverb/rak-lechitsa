@@ -30,4 +30,13 @@ export default {};
     margin-top: 30px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .section-subtitle__text {
+    max-width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+}
 </style>

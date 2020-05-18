@@ -130,4 +130,29 @@ export default {
     word-spacing: 0.01em;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .options__column {
+    padding-bottom: 80px;
+  }
+
+  .options__text {
+    font-size: 15px;
+    line-height: 19px;
+    min-height: 76px;
+  }
+
+  .options__link {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .options {
+    grid-column-gap: 30px;
+  }
+
+  .options__item {
+    margin-bottom: 8px;
+  }
+}
 </style>

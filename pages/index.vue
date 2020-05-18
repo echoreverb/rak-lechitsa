@@ -237,7 +237,7 @@ export default {
           img:
             'https://lapki.pet/uploads/article/7/soderzhanie-velsh-korgi-pembroka.jpg',
           name: 'Корги',
-          story: 'Говорят Вам не переживать по пустякам!',
+          story: 'Говорят Вам не переживать по пустякам! Не надо!',
         },
         {
           id: '8',
@@ -367,10 +367,6 @@ export default {
   position: absolute;
   left: calc(50% - (36px / 2));
   bottom: 40px;
-}
-
-.video {
-  /* margin-top: 100px; */
 }
 
 .video__container {
@@ -614,9 +610,6 @@ export default {
     font-size: 78px;
     line-height: 94px;
   }
-  /* .video {
-  margin-top: 90px;
-} */
 
   .video__content {
     margin-top: 90px;
@@ -624,7 +617,6 @@ export default {
 
   .two-column-content {
     max-width: 1180px;
-    /* min-height: 396px; */
     grid-column-gap: 40px;
   }
 
@@ -661,7 +653,6 @@ export default {
   .your-story {
     min-height: 448px;
     width: 100vw;
-    /* padding-top: 90px; */
   }
 
   .your-story__options {
@@ -686,6 +677,82 @@ export default {
 
   .info__text {
     bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cover {
+    min-height: 540px;
+  }
+
+  .video__content {
+    margin-top: 80px;
+  }
+
+  .two-column-content {
+    max-width: 1180px;
+    grid-column-gap: 30px;
+  }
+
+  .video__text {
+    margin-top: 10px;
+  }
+
+  .banner__text {
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+
+  .important-text {
+    font-size: 36px;
+  }
+
+  .stories__cards-container {
+    grid-row-gap: 46px;
+    grid-column-gap: 30px;
+    margin: 46px 0;
+  }
+
+  .instagram__grid-container {
+    grid-gap: 20px;
+    margin: 79px 0;
+  }
+
+  .your-story {
+    min-height: 436px;
+  }
+
+  .your-story__options {
+    margin-top: 156px;
+  }
+
+  .statistics {
+    margin-top: 80px;
+  }
+
+  .statistics__grid {
+    margin: 46px 0 80px 0;
+    grid-column-gap: 30px;
+  }
+
+  .info {
+    min-height: 570px;
+  }
+
+  .info__title {
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 63px;
+    margin-bottom: 46px;
+  }
+
+  .info__text {
+    bottom: 80px;
+  }
+
+  .info__options {
+    margin-top: 46px;
   }
 }
 </style>

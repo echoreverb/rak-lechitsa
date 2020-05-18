@@ -63,11 +63,24 @@ export default {
 
   .card__text {
     max-width: 85%;
-    font-weight: normal;
     font-size: 14px;
     line-height: 18px;
-    color: #666666;
     margin-top: 14px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card__name {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 12px;
+  }
+
+  .card__text {
+    max-width: 85%;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 10px;
   }
 }
 </style>

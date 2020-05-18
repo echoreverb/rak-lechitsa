@@ -30,9 +30,9 @@ export default {
 
 .card__image {
   width: 100%;
+  height: 100%;
   max-width: 300px;
   max-height: 300px;
-  min-height: 300px;
 }
 
 .card__name {
@@ -50,5 +50,32 @@ export default {
   line-height: 18px;
   color: #666666;
   margin-top: 14px;
+}
+
+@media (max-width: 1024px) {
+  .card__name {
+    max-width: 90%;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .card__text {
+    max-width: 190px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card__image {
+    max-width: none;
+    max-height: none;
+  }
+  .card__text {
+    max-width: 290px;
+    /* margin-top: 10px; */
+  }
 }
 </style>

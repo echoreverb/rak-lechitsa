@@ -2,9 +2,9 @@
   <div class="header-container">
     <container>
       <header class="header">
-        <h5 class="header__project-name">
+        <h2 class="header__project-name">
           Проект Благотворительного Фонда Константина Хабенского
-        </h5>
+        </h2>
         <nav-menu class="header__menu">
           <nuxt-link
             to="/"

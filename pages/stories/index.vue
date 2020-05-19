@@ -29,7 +29,7 @@ import WidthAdjustContainer from '@/components/WidthAdjustContainer';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import Card from '@/components/Card';
-import pagination from '@/components/ui/pagination';
+import Pagination from '@/components/ui/Pagination';
 export default {
   components: {
     container: WidthAdjustContainer,

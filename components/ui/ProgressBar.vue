@@ -15,7 +15,7 @@
         <div class="progress-bar-previous__fill" :style="previousStyle"></div>
       </div>
       <div class="progress-bar-current">
-        <div class="progress-bar-current__fill" :style="currentStyle"></div>
+        <div class="progress-bar-current__fill" :style="style"></div>
       </div>
     </div>
   </div>
@@ -27,18 +27,19 @@ export default {
     barType: String,
     value: Number,
     previousValue: Number,
-    currentValue: Number,
     maxValue: Number,
   },
   computed: {
     style() {
-      return `width: ${(this.value / this.maxValue) * 100}%;`;
+      return `width: ${this.calcPercent(this.value, this.maxValue)}%;`;
     },
     previousStyle() {
-      return `width: ${(this.previousValue / this.maxValue) * 100}%;`;
+      return `width: ${this.calcPercent(this.previousValue, this.maxValue)}%;`;
     },
-    currentStyle() {
-      return `width: ${(this.currentValue / this.maxValue) * 100}%;`;
+  },
+  methods: {
+    calcPercent(value, maxValue) {
+      return (value / maxValue) * 100;
     },
   },
 };

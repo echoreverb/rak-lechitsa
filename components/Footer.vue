@@ -26,12 +26,20 @@
               >Youtube</a
             ></span
           >
-          <a href="#" class="footer__link">Поделитесь ↗</a>
+          <a href="#" class="footer__link">Поделитесь &#8599;</a>
         </div>
       </div>
       <div class="footer__info">
-        <p class="footer__project">Рак Лечится 2020</p>
-        <p class="footer__author">Сделано студентами Яндекс Практикум</p>
+        <p class="footer__project">Рак Лечится {{ year }}</p>
+        <p class="footer__author">
+          Сделано студентами
+          <a
+            class="footer__link footer__link_author"
+            target="_blank"
+            href="https://praktikum.yandex.ru/"
+            >Яндекс Практикум</a
+          >
+        </p>
       </div>
     </container>
   </footer>
@@ -44,6 +52,11 @@ export default {
   components: {
     container: WidthAdjustContainer,
     'nav-menu': Menu,
+  },
+  data() {
+    return {
+      year: new Date().getFullYear(),
+    };
   },
 };
 </script>
@@ -96,6 +109,10 @@ export default {
   color: #000000;
   margin-bottom: 44px;
   transition: 0.3s ease;
+}
+
+.footer__link.footer__link_author {
+  color: #898989;
 }
 
 .footer__link:hover {

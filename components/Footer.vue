@@ -15,23 +15,31 @@
             <a
               href="https://www.instagram.com/raklechitsa/"
               target="_blank"
-              class="footer__link"
+              class="footer__link footer__link_underlined"
               >Инстаграме</a
             >
             и
             <a
               href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
               target="_blank"
-              class="footer__link"
+              class="footer__link footer__link_underlined"
               >Youtube</a
             ></span
           >
-          <a href="#" class="footer__link">Поделитесь ↗</a>
+          <a href="#" class="footer__link">Поделитесь &#8599;</a>
         </div>
       </div>
       <div class="footer__info">
-        <p class="footer__project">Рак Лечится 2020</p>
-        <p class="footer__author">Сделано студентами Яндекс Практикум</p>
+        <p class="footer__project">Рак Лечится {{ year }}</p>
+        <p class="footer__author">
+          Сделано студентами
+          <a
+            class="footer__link footer__link_author"
+            target="_blank"
+            href="https://praktikum.yandex.ru/"
+            >Яндекс Практикум</a
+          >
+        </p>
       </div>
     </container>
   </footer>
@@ -44,6 +52,11 @@ export default {
   components: {
     container: WidthAdjustContainer,
     'nav-menu': Menu,
+  },
+  data() {
+    return {
+      year: new Date().getFullYear(),
+    };
   },
 };
 </script>
@@ -85,7 +98,7 @@ export default {
   display: block;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  color: #000;
   margin-bottom: 44px;
 }
 
@@ -93,9 +106,17 @@ export default {
   text-decoration: none;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  color: #000;
   margin-bottom: 44px;
   transition: 0.3s ease;
+}
+
+.footer__link_underlined {
+  border-bottom: 1px solid #000;
+}
+
+.footer__link.footer__link_author {
+  color: #898989;
 }
 
 .footer__link:hover {

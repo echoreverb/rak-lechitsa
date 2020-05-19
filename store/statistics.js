@@ -4,7 +4,7 @@ export const state = () => ({
       id: '1',
       text:
         'Каждый 3-й в стране уверен, что рак неизлечим. А это примерно 48 918 000 человек.',
-      barType: '1',
+      barType: 'single',
       digits: '1 из 3',
       source: 'Левада-Центр 2018',
       value: 1,
@@ -13,7 +13,7 @@ export const state = () => ({
     {
       id: '2',
       text: '2,6% Россиян имеют онкозаболевания.',
-      barType: '1',
+      barType: 'single',
       digits: '3 700 000',
       source: 'Росстат 2018',
       value: 2.6,
@@ -23,23 +23,23 @@ export const state = () => ({
       id: '3',
       text:
         'На 28% выросла доля выявления заболеваний на ранней стадии за 10 лет.',
-      barType: '2',
+      barType: 'double',
       digits: '↑28%',
       source: 'МНИОИ Герцена 2018',
-      previousValue: 78.1,
-      currentValue: 100,
-      maxValue: 100,
+      value: 126,
+      maxValue: 126,
+      previousValue: 100,
     },
     {
       id: '4',
       text:
         'На 25% снизилась смертность в течение первого года после постановки диагноза.',
-      barType: '2',
+      barType: 'double',
       digits: '↓25%',
       source: 'МНИОИ Герцена 2018',
-      previousValue: 100,
-      currentValue: 75,
+      value: 75,
       maxValue: 100,
+      previousValue: 100,
     },
   ],
 });

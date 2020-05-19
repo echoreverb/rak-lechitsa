@@ -1,8 +1,8 @@
 <template>
   <div class="section-subtitle">
-    <p class="section-subtitle__text">
+    <h4 class="section-subtitle__text">
       <slot></slot>
-    </p>
+    </h4>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {};
   color: #666666;
 }
 .section-subtitle__text {
+  font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   margin-top: 32px;

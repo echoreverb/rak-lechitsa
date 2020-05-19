@@ -6,7 +6,6 @@
         :value="data.value"
         :max-value="data.maxValue"
         :previous-value="data.previousValue"
-        :current-value="data.currentValue"
         :bar-type="data.barType"
       />
     </div>

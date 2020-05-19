@@ -5,6 +5,7 @@
     <rak-footer />
     <pop-up v-if="popupShown" :theme="'dark'">
       <quiz />
+      <!-- <contact-form/> -->
     </pop-up>
   </div>
 </template>
@@ -14,12 +15,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PopUp from '@/components/ui/PopUp';
 import Quiz from '@/components/Quiz';
+import ContactForm from '@/components/ContactForm';
 export default {
   components: {
     'rak-header': Header,
     'rak-footer': Footer,
     'pop-up': PopUp,
     quiz: Quiz,
+    'contact-form': ContactForm,
   },
   computed: {
     popupShown() {

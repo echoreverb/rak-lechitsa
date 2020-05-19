@@ -57,7 +57,11 @@
         <container>
           <section-title>Истории неизлечимых привычек</section-title>
           <div class="stories__cards-container">
-            <card v-for="obj in stories" :key="obj.id" :source="obj" />
+            <card
+              v-for="obj in getPieceOfStories"
+              :key="obj.id"
+              :source="obj"
+            />
           </div>
           <nuxt-link to="/stories" class="link_underline_false">
             <banner theme="light"><span>Больше статей</span></banner>
@@ -92,7 +96,7 @@
             </div>
             <div class="instagram__grid-container">
               <img
-                v-for="obj in stories"
+                v-for="obj in getPieceOfInstagram"
                 :key="obj.id"
                 :src="obj.img"
                 alt="картинка из инстаграма"
@@ -191,6 +195,36 @@ export default {
     stories() {
       return this.$store.getters['stories/getStories'];
     },
+    getPieceOfStories() {
+      if (process.browser) {
+        let copy = this.stories.slice(0);
+        // console.log(window.innerWidth)
+        let partOfStories = [];
+        if (window.innerWidth <= 768) {
+          this.storiesOnPage = 9;
+        }
+        if (window.innerWidth <= 425) {
+          this.storiesOnPage = 6;
+        }
+        partOfStories = copy.splice(0, this.storiesOnPage);
+        return partOfStories;
+      }
+    },
+    getPieceOfInstagram() {
+      if (process.browser) {
+        let copy = this.stories.slice(0);
+        // console.log(window.innerWidth)
+        let partOfInstagram = [];
+        partOfInstagram = copy.splice(0, this.instagramOnPage);
+        return partOfInstagram;
+      }
+    },
+  },
+  data() {
+    return {
+      storiesOnPage: 8,
+      instagramOnPage: 8,
+    };
   },
 };
 </script>

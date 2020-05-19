@@ -36,7 +36,7 @@ export default {
     'stories-input': Input,
     'nxt-button': Button,
     card: Card,
-    pagination: pagination,
+    pagination: Pagination,
   },
   methods: {
     changeStartCard(index) {

@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['button', `button_size_${size}`]"
+    :class="`button button_size_${size}`"
     :type="type"
     @click="$emit('click')"
   >

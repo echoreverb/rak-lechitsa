@@ -2,9 +2,9 @@
   <div class="header-container">
     <container>
       <header class="header">
-        <h5 class="header__project-name">
+        <h2 class="header__project-name">
           Проект Благотворительного Фонда Константина Хабенского
-        </h5>
+        </h2>
         <nav-menu class="header__menu">
           <nuxt-link
             to="/"
@@ -24,7 +24,7 @@
             "
             >Истории</nuxt-link
           >
-          <a to="" class="header__link" @click="$emit('click')"
+          <a to="" class="header__link" @click="togglePopUp"
             >Рассказать историю</a
           >
         </nav-menu>
@@ -40,6 +40,11 @@ export default {
   components: {
     container: WidthAdjustContainer,
     'nav-menu': Menu,
+  },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/togglePopUp');
+    },
   },
 };
 </script>

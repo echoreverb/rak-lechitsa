@@ -6,7 +6,7 @@
           @click="changeOption(option.id, $event)"
           href="#"
           :class="
-            option.id == current
+            option.id == localCurrent
               ? 'options__link options__link_active'
               : 'options__link'
           "
@@ -17,15 +17,12 @@
     <div class="options__column">
       <p
         class="options__text"
-        v-html="
-          options
-            .find(opt => opt.id == current)
-            .text.replace('\n', '<br /><br />')
-        "
+        v-html="currentOption.text.replace('\n', '<br /><br />')"
       ></p>
       <nxt-button
-        v-if="options.find(opt => opt.id == current).button"
-        :text="options.find(opt => opt.id == current).button"
+        v-if="currentOption.button"
+        :text="currentOption.button"
+        @click="clickHandler"
         size="md"
         class="options__button"
       />
@@ -36,15 +33,32 @@
 <script>
 import Button from '@/components/ui/Button';
 export default {
-  props: ['current', 'options', 'theme'],
+  props: ['type', 'theme'],
+  data() {
+    return {
+      localCurrent: 0,
+    };
+  },
+  computed: {
+    options() {
+      return this.$store.getters['options/getOptions'][this.type];
+    },
+    currentOption() {
+      return this.options.find(opt => opt.id === this.localCurrent);
+    },
+  },
   components: {
     'nxt-button': Button,
   },
   methods: {
     changeOption(id, event) {
       event.preventDefault();
-      console.log(this);
-      this.current = id;
+      this.localCurrent = id;
+    },
+    clickHandler() {
+      if (this.currentOption.clickParam) {
+        this.$store.commit(this.currentOption.clickParam);
+      }
     },
   },
 };

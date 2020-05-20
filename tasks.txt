@@ -1,6 +1,0 @@
-* - section-title, section-subtitle -> UI component;
-- class names -> more universal;
-- correct your story button position;
-
-
-* - done

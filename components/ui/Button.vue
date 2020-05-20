@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['button', `button_size_${size}`]"
+    :class="`button button_size_${size}`"
     :type="type"
     @click="$emit('click')"
   >
@@ -10,7 +10,14 @@
 
 <script>
 export default {
-  props: ['text', 'size', 'type'],
+  props: {
+    text: String,
+    size: {
+      type: String,
+      default: 'md',
+    },
+    type: String,
+  },
 };
 </script>
 

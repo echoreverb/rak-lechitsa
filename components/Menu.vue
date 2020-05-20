@@ -15,4 +15,10 @@ export default {};
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 768px) {
+  .menu {
+    justify-content: left;
+  }
+}
 </style>

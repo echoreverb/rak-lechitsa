@@ -176,4 +176,38 @@ export default {
     margin-right: 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .footer__info {
+    margin-top: 90px;
+  }
+
+  .footer__content {
+    padding: 50px 10px 0;
+    position: relative;
+  }
+
+  .footer__thanks {
+    max-width: 268px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .footer__link {
+    margin-bottom: 14px;
+  }
+
+  .footer__menu {
+    position: absolute;
+    left: 42%;
+  }
+
+  .footer__social {
+    margin-right: 0;
+  }
+
+  .footer__link-description {
+    margin-bottom: 14px;
+  }
+}
 </style>

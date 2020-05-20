@@ -39,4 +39,12 @@ export default {};
     margin-top: 20px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .section-subtitle__text {
+    max-width: 382px;
+    margin: 26px auto 0;
+    letter-spacing: 0em;
+  }
+}
 </style>

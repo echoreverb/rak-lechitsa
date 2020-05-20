@@ -30,4 +30,12 @@ export default {
   height: 100%;
   position: absolute;
 }
+
+@media screen and (max-width: 768px) {
+  .iframe {
+    max-width: 580px;
+    margin: 0 auto;
+    padding-bottom: calc(0.436 * 100%);
+  }
+}
 </style>

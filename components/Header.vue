@@ -117,4 +117,10 @@ export default {
     min-width: 354px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .header__menu {
+    display: none;
+  }
+}
 </style>

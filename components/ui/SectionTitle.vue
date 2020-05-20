@@ -39,4 +39,15 @@ export default {};
     margin-top: 80px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .section-title__text {
+    max-width: 380px;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
 </style>

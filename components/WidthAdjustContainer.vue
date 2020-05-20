@@ -28,4 +28,11 @@ export default {};
     max-width: 1024px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .width-adjust-container {
+    max-width: 768px;
+    padding: 0 40px;
+  }
+}
 </style>

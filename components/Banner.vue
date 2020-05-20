@@ -65,4 +65,18 @@ export default {
     font-size: 13px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    margin-top: 44px;
+  }
+
+  .banner_theme_dark {
+    min-height: 100px;
+  }
+
+  .banner_theme_light {
+    margin-top: 40px;
+  }
+}
 </style>

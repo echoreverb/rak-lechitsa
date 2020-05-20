@@ -83,4 +83,11 @@ export default {
     margin-top: 10px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .card__text {
+    min-height: 48px;
+    margin-top: 12px;
+  }
+}
 </style>

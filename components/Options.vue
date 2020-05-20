@@ -155,4 +155,37 @@ export default {
     margin-bottom: 8px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .options {
+    grid-template-columns: minmax(100px, 380px);
+    grid-row-gap: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .options__links {
+    display: flex;
+  }
+
+  .options__item {
+    margin-right: 30px;
+  }
+
+  .options__item:last-of-type {
+    margin-right: 0px;
+  }
+  .options_theme_light .options__link_active,
+  .options_theme_light .options__link:hover {
+    border-bottom: 2px solid #613a93;
+  }
+
+  .options_theme_dark .options__link_active,
+  .options_theme_dark .options__link:hover {
+    border-bottom: 2px solid #fff;
+  }
+
+  .options__button {
+    margin-top: 50px;
+  }
+}
 </style>

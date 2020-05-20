@@ -113,7 +113,7 @@ export default {
   color: #000;
 }
 .options_theme_light .options__text {
-  color: #666666;
+  color: #666;
 }
 .options_theme_dark .options__link {
   color: #c9c9c9;

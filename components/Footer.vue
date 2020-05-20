@@ -26,7 +26,9 @@
               >Youtube</a
             ></span
           >
-          <a href="#" class="footer__link">Поделитесь &#8599;</a>
+          <a href="#" class="footer__link" @click.prevent="togglePopUp"
+            >Поделитесь &#8599;</a
+          >
         </div>
       </div>
       <div class="footer__info">
@@ -52,6 +54,11 @@ export default {
   components: {
     container: WidthAdjustContainer,
     'nav-menu': Menu,
+  },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/toggleSocial');
+    },
   },
   data() {
     return {

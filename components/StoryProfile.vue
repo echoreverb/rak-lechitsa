@@ -14,7 +14,9 @@
         :src="source.img"
       />
       <div class="second-column_footer">
-        <a href="#" class="share-link">Поделитесь &#8599;</a>
+        <a href="#" class="share-link" @click.prevent="togglePopUp"
+          >Поделитесь &#8599;</a
+        >
         <p class="date">{{ source.date }}</p>
       </div>
     </div>
@@ -24,6 +26,11 @@
 <script>
 export default {
   props: ['source'],
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/toggleSocial');
+    },
+  },
 };
 </script>
 

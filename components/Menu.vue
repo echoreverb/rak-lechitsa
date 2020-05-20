@@ -18,7 +18,7 @@ export default {};
 
 @media screen and (max-width: 768px) {
   .menu {
-    justify-content: left;
+    flex-direction: column;
   }
 }
 </style>

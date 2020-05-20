@@ -64,11 +64,13 @@ export default {
   .card__name {
     margin-top: 16px;
     font-size: 18px;
+    margin-top: 10px;
   }
   .card__text {
     margin-top: 16px;
     font-size: 13px;
     line-height: 16px;
+    max-width: 190px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -77,10 +79,15 @@ export default {
     max-height: 216px;
   }
 }
-@media screen and (max-width: 320px) {
+
+@media (max-width: 425px) {
   .card__image {
+    max-width: none;
+    max-height: none;
+  }
+  .card__text {
     max-width: 290px;
-    max-height: 290px;
+    /* margin-top: 10px; */
   }
 }
 </style>

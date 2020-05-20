@@ -1,5 +1,6 @@
 <template>
   <div>
+    <mobile-menu v-if="isMobileMenuOpened" />
     <rak-header />
     <nuxt />
     <rak-footer />
@@ -14,16 +15,21 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PopUp from '@/components/ui/PopUp';
 import Quiz from '@/components/Quiz';
+import MobileMenu from '@/components/MobileMenu';
 export default {
   components: {
     'rak-header': Header,
     'rak-footer': Footer,
     'pop-up': PopUp,
     quiz: Quiz,
+    'mobile-menu': MobileMenu,
   },
   computed: {
     popupShown() {
       return this.$store.getters['popup/getPopupShown'];
+    },
+    isMobileMenuOpened() {
+      return this.$store.getters['mobile-menu/getMobileMenuState'];
     },
   },
 };

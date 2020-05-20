@@ -13,7 +13,7 @@ export default {
 <style scoped>
 .banner {
   width: 100%;
-  margin: 76px 0 100px;
+  margin: 70px 0 100px;
   display: flex;
   justify-content: center;
   align-items: center;

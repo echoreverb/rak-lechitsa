@@ -44,7 +44,7 @@ export default {
       return this.$store.getters['options/getOptions'][this.type];
     },
     currentOption() {
-      return this.options.find(opt => opt.id === this.localCurrent);
+      return this.options.find((opt) => opt.id === this.localCurrent);
     },
   },
   components: {

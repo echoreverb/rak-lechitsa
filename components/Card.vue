@@ -50,4 +50,37 @@ export default {
   color: #666666;
   margin-top: 14px;
 }
+@media screen and (max-width: 1280px) {
+  .card__image {
+    max-width: 265px;
+    max-height: 265px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .card__image {
+    max-width: 208px;
+    max-height: 208px;
+  }
+  .card__name {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+  .card__text {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__image {
+    max-width: 216px;
+    max-height: 216px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .card__image {
+    max-width: 290px;
+    max-height: 290px;
+  }
+}
 </style>

@@ -6,6 +6,8 @@
     <rak-footer />
     <pop-up v-if="popupShown" :theme="'dark'">
       <quiz />
+      <!-- <contact-form/> -->
+      <!-- <social-buttons /> -->
     </pop-up>
   </div>
 </template>
@@ -16,6 +18,8 @@ import Footer from '@/components/Footer';
 import PopUp from '@/components/ui/PopUp';
 import Quiz from '@/components/Quiz';
 import MobileMenu from '@/components/MobileMenu';
+import ContactForm from '@/components/ContactForm';
+import SocialButtons from '@/components/SocialButtons';
 export default {
   components: {
     'rak-header': Header,
@@ -23,6 +27,8 @@ export default {
     'pop-up': PopUp,
     quiz: Quiz,
     'mobile-menu': MobileMenu,
+    'contact-form': ContactForm,
+    'social-buttons': SocialButtons,
   },
   computed: {
     popupShown() {

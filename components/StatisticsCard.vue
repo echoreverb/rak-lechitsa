@@ -64,4 +64,51 @@ export default {
   color: #666666;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 1280px) {
+  .statistics-card {
+    min-height: 265px;
+    max-width: 265px;
+    padding: 18px;
+  }
+
+  .statistics-card__bar-container {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .statistics-card {
+    min-height: 208px;
+    max-width: 208px;
+    padding: 10px;
+  }
+
+  .statistics-card__bar-container {
+    height: 28px;
+  }
+
+  .statistics-card__text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .statistics-card__digits {
+    font-size: 26px;
+    line-height: 30px;
+    margin-top: 10px;
+  }
+  .statistics-card__source {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .statistics-card {
+    min-height: 216px;
+    min-width: 216px;
+  }
+}
 </style>

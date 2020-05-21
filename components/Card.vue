@@ -43,7 +43,7 @@ export default {
 }
 
 .card__text {
-  max-width: 250px;
+  max-width: 85%;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
@@ -55,25 +55,40 @@ export default {
     max-width: 265px;
     max-height: 265px;
   }
-}
-@media screen and (max-width: 1024px) {
-  .card__image {
-    max-width: 208px;
-    max-height: 208px;
-  }
+
   .card__name {
     margin-top: 16px;
-    font-size: 18px;
-    margin-top: 10px;
   }
+
   .card__text {
-    margin-top: 16px;
-    font-size: 13px;
-    line-height: 16px;
-    max-width: 190px;
+    max-width: 85%;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 14px;
   }
 }
+
+@media screen and (max-width: 1280px) {
+  .card__name {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 12px;
+  }
+
+  .card__text {
+    max-width: 85%;
+    font-size: 13px;
+    line-height: 16px;
+    /*max-width: 190px;*/
+    margin-top: 10px;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .card__text {
+    min-height: 48px;
+    margin-top: 12px;
+
   .card__image {
     max-width: 216px;
     max-height: 216px;

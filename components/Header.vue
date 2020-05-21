@@ -114,4 +114,28 @@ export default {
     display: flex;
   }
 }
+@media screen and (max-width: 1280px) {
+  .header {
+    min-height: 72px;
+  }
+
+  .header__project-name {
+    line-height: 18px;
+  }
+  .header__menu {
+    min-width: 374px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header__link {
+    margin-right: 30px;
+  }
+
+  .header__menu {
+    min-width: 354px;
+  }
+}
 </style>

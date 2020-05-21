@@ -22,4 +22,30 @@ export default {};
   max-width: 340px;
   word-spacing: 0.5;
 }
+
+@media screen and (max-width: 1280px) {
+  .section-subtitle__text {
+    max-width: 305px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section-subtitle__text {
+    max-width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section-subtitle__text {
+    max-width: 382px;
+    margin: 26px auto 0;
+    letter-spacing: 0em;
+  }
+}
 </style>

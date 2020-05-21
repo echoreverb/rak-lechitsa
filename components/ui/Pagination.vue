@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  props: ['allItems', 'itemsOnPage', 'paginationClick'],
+  props: {
+    allItems: Number,
+    itemsOnPage: Number,
+  },
   computed: {
     pagesCount() {
       return Math.ceil(this.allItems / this.itemsOnPage);

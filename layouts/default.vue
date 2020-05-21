@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ 'error-page': $route.path === '/error' }">
     <mobile-menu v-if="isMobileMenuOpened" />
     <rak-header />
     <nuxt />
@@ -96,5 +96,12 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>

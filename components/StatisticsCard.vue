@@ -17,7 +17,9 @@
 <script>
 import ProgressBar from '@/components/ui/ProgressBar';
 export default {
-  props: ['data'],
+  props: {
+    data: Object,
+  },
   components: {
     'progress-bar': ProgressBar,
   },

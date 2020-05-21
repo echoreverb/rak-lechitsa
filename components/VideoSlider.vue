@@ -19,7 +19,10 @@ export default {
     SwiperSlide,
     'nxt-iframe': VideoIframe,
   },
-  props: ['videos', 'prev', 'next'],
+  props: {
+    videos: Array,
+  },
+  // props: ['videos', 'prev', 'next'],
   data() {
     return {
       swiperOption: {

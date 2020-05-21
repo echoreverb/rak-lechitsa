@@ -6,7 +6,9 @@
 
 <script>
 export default {
-  props: ['theme'],
+  props: {
+    theme: String,
+  },
 };
 </script>
 

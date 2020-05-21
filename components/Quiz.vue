@@ -89,9 +89,11 @@ export default {
           this.currentQuestion += 1;
         }
       } else {
-        this.answers[this.currentQuestion] = this.inputValue;
-        console.log(this.answers); //отправка данных на сервер
-        this.togglePopUp();
+        if (this.inputValue) {
+          this.answers[this.currentQuestion] = this.inputValue;
+          console.log(this.answers); //отправка данных на сервер
+          this.togglePopUp();
+        }
       }
     },
     togglePopUp() {

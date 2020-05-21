@@ -79,6 +79,7 @@ export default {
     max-width: 85%;
     font-size: 13px;
     line-height: 16px;
+    /*max-width: 190px;*/
     margin-top: 10px;
   }
 }
@@ -87,6 +88,21 @@ export default {
   .card__text {
     min-height: 48px;
     margin-top: 12px;
+
+  .card__image {
+    max-width: 216px;
+    max-height: 216px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card__image {
+    max-width: none;
+    max-height: none;
+  }
+  .card__text {
+    max-width: 290px;
+    /* margin-top: 10px; */
   }
 }
 </style>

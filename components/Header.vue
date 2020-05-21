@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     togglePopUp() {
-      this.$store.commit('popup/togglePopUp');
+      this.$store.commit('popup/toggleQuiz');
     },
   },
 };

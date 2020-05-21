@@ -5,9 +5,9 @@
     <nuxt />
     <rak-footer />
     <pop-up v-if="popupShown" :theme="'dark'">
-      <quiz />
-      <!-- <contact-form/> -->
-      <!-- <social-buttons /> -->
+      <quiz v-if="quizShown" />
+      <contact-form v-if="contactShown" />
+      <social-buttons v-if="socialShown" />
     </pop-up>
   </div>
 </template>
@@ -33,6 +33,15 @@ export default {
   computed: {
     popupShown() {
       return this.$store.getters['popup/getPopupShown'];
+    },
+    quizShown() {
+      return this.$store.getters['popup/getQuizShown'];
+    },
+    contactShown() {
+      return this.$store.getters['popup/getContactShown'];
+    },
+    socialShown() {
+      return this.$store.getters['popup/getSocialShown'];
     },
     isMobileMenuOpened() {
       return this.$store.getters['mobile-menu/getMobileMenuState'];

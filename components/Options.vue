@@ -200,4 +200,37 @@ export default {
     margin-top: 50px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .options__item {
+    margin-right: 20px;
+  }
+
+  .options__link {
+    font-size: 13px;
+  }
+
+  .options__item {
+    margin-bottom: 0;
+  }
+
+  .options__text {
+    font-size: 13px;
+    line-height: 16px;
+    min-height: 96px;
+  }
+
+  .options__button {
+    margin-top: 30px;
+  }
+
+  .options__column {
+    padding-bottom: 50px;
+  }
+
+  .options_theme_dark .options__text {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
 </style>

@@ -4,8 +4,8 @@
   font-weight: 400;
   font-display: swap;
   src: local('Inter-Regular'),
-    url('../fonts/Inter/Inter-Regular.woff2') format('woff2'),
-    url('../fonts/Inter/Inter-Regular.woff') format('woff');
+    url('../fonts/inter/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/inter/Inter-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -14,8 +14,8 @@
   font-weight: 300;
   font-display: swap;
   src: local('Inter-Light'),
-    url('../fonts/Inter/Inter-Light.woff2') format('woff2'),
-    url('../fonts/Inter/Inter-Light.woff') format('woff');
+    url('../fonts/inter/Inter-Light.woff2') format('woff2'),
+    url('../fonts/inter/Inter-Light.woff') format('woff');
 }
 
 @font-face {
@@ -24,8 +24,8 @@
   font-weight: 500;
   font-display: swap;
   src: local('Inter-Medium'),
-    url('../fonts/Inter/Inter-Medium.woff2') format('woff2'),
-    url('../fonts/Inter/Inter-Medium.woff') format('woff');
+    url('../fonts/inter/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/inter/Inter-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -34,8 +34,8 @@
   font-weight: 600;
   font-display: swap;
   src: local('Inter-SemiBold'),
-    url('../fonts/Inter/Inter-SemiBold.woff2') format('woff2'),
-    url('../fonts/Inter/Inter-SemiBold.woff') format('woff');
+    url('../fonts/inter/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/inter/Inter-SemiBold.woff') format('woff');
 }
 
 @font-face {
@@ -44,6 +44,6 @@
   font-weight: 800;
   font-display: swap;
   src: local('Inter-ExtraBold'),
-    url('../fonts/Inter/Inter-ExtraBold.woff2') format('woff2'),
-    url('../fonts/Inter/Inter-ExtraBold.woff') format('woff');
+    url('../fonts/inter/Inter-ExtraBold.woff2') format('woff2'),
+    url('../fonts/inter/Inter-ExtraBold.woff') format('woff');
 }

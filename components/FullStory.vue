@@ -9,7 +9,9 @@
 
 <script>
 export default {
-  props: ['source'],
+  props: {
+    source: Object,
+  },
 };
 </script>
 

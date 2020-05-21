@@ -64,7 +64,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  background: white;
+  /* background: white; */
 }
 
 .header__project-name {

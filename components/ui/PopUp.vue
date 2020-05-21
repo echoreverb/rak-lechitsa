@@ -11,7 +11,9 @@
 <script>
 import Overlay from '@/components/ui/Overlay';
 export default {
-  props: ['theme'],
+  props: {
+    theme: String,
+  },
   components: {
     overlay: Overlay,
   },
@@ -46,7 +48,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 300px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   box-sizing: border-box;
   padding: 40px;
   background-color: #fff;

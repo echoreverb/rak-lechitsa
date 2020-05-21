@@ -10,7 +10,9 @@
 
 <script>
 export default {
-  props: ['source'],
+  props: {
+    source: Object,
+  },
 };
 </script>
 
@@ -88,6 +90,7 @@ export default {
   .card__text {
     min-height: 48px;
     margin-top: 12px;
+  }
 
   .card__image {
     max-width: 216px;

@@ -12,7 +12,15 @@
 
 <script>
 export default {
-  props: ['type', 'placeholder', 'name', 'required', 'value'],
+  props: {
+    type: String,
+    placeholder: String,
+    name: String,
+    required: String,
+    value: String,
+  },
+
+  // ['type', 'placeholder', 'name', 'required', 'value'],
 };
 </script>
 <style scoped>

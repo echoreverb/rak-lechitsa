@@ -10,7 +10,14 @@
 
 <script>
 export default {
-  props: ['text', 'size', 'type'],
+  props: {
+    text: String,
+    size: {
+      type: String,
+      default: 'md',
+    },
+    type: String,
+  },
 };
 </script>
 
@@ -58,5 +65,25 @@ export default {
 }
 .button_size_lg:hover {
   background-color: #f8f8f8;
+}
+
+@media screen and (max-width: 1280px) {
+  .button_size_md {
+    width: 230px;
+    padding: 15px 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .button_size_md {
+    padding: 14px 30px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .button_size_md {
+    width: 100%;
+    padding: 11px 60px;
+  }
 }
 </style>

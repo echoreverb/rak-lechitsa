@@ -3,15 +3,10 @@
     <p class="statistics-card__text">{{ data.text }}</p>
     <div class="statistics-card__bar-container">
       <progress-bar
-        v-if="data.barType === '1'"
         :value="data.value"
         :max-value="data.maxValue"
-      />
-      <progress-bar-double
-        v-if="data.barType === '2'"
         :previous-value="data.previousValue"
-        :current-value="data.currentValue"
-        :max-value="data.maxValue"
+        :bar-type="data.barType"
       />
     </div>
     <p class="statistics-card__digits">{{ data.digits }}</p>
@@ -21,12 +16,12 @@
 
 <script>
 import ProgressBar from '@/components/ui/ProgressBar';
-import ProgressBarDouble from '@/components/ui/ProgressBarDouble.vue';
 export default {
-  props: ['data'],
+  props: {
+    data: Object,
+  },
   components: {
     'progress-bar': ProgressBar,
-    'progress-bar-double': ProgressBarDouble,
   },
 };
 </script>
@@ -70,5 +65,52 @@ export default {
   text-align: right;
   color: #666666;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+  .statistics-card {
+    min-height: 265px;
+    max-width: 265px;
+    padding: 18px;
+  }
+
+  .statistics-card__bar-container {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .statistics-card {
+    min-height: 208px;
+    max-width: 208px;
+    padding: 10px;
+  }
+
+  .statistics-card__bar-container {
+    height: 28px;
+  }
+
+  .statistics-card__text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .statistics-card__digits {
+    font-size: 26px;
+    line-height: 30px;
+    margin-top: 10px;
+  }
+  .statistics-card__source {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .statistics-card {
+    min-height: 216px;
+    min-width: 216px;
+  }
 }
 </style>

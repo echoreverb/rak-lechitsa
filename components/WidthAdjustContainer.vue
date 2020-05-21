@@ -15,4 +15,19 @@ export default {};
   padding: 0 60px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1280px) {
+  .width-adjust-container {
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .width-adjust-container {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .width-adjust-container {
+    padding: 0 15px;
+  }
+}
 </style>

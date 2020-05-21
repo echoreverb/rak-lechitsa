@@ -10,7 +10,9 @@
 
 <script>
 export default {
-  props: ['source'],
+  props: {
+    source: Object,
+  },
 };
 </script>
 
@@ -43,11 +45,73 @@ export default {
 }
 
 .card__text {
-  max-width: 250px;
+  max-width: 85%;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   color: #666666;
   margin-top: 14px;
+}
+@media screen and (max-width: 1280px) {
+  .card__image {
+    max-width: 265px;
+    max-height: 265px;
+  }
+
+  .card__name {
+    margin-top: 16px;
+  }
+
+  .card__text {
+    max-width: 85%;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 14px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card__name {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 12px;
+  }
+
+  .card__text {
+    max-width: 85%;
+    font-size: 13px;
+    line-height: 16px;
+    /*max-width: 190px;*/
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__text {
+    min-height: 48px;
+    margin-top: 12px;
+  }
+
+  .card__image {
+    max-width: 216px;
+    max-height: 216px;
+  }
+}
+
+@media (max-width: 425px) {
+  .card__image {
+    max-width: none;
+    max-height: none;
+  }
+  .card__text {
+    max-width: 290px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card__text {
+    min-height: 32px;
+    margin-top: 14px;
+  }
 }
 </style>

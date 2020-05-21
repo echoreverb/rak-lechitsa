@@ -1,13 +1,43 @@
 <template>
-  <div class="popup">
-    <div class="popup__close" @click="$emit('closeClick')"></div>
-    <slot>Содержимое окна</slot>
+  <div>
+    <overlay @overlayClick="togglePopUp" />
+    <div class="popup">
+      <div class="popup__close" @click="togglePopUp"></div>
+      <slot>Содержимое окна</slot>
+    </div>
   </div>
 </template>
 
 <script>
+import Overlay from '@/components/ui/Overlay';
 export default {
-  props: ['theme'],
+  props: {
+    theme: String,
+  },
+  components: {
+    overlay: Overlay,
+  },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/togglePopUp');
+    },
+    onEscapeKeyUp(event) {
+      if (event.which === 27) {
+        this.togglePopUp();
+      }
+    },
+  },
+  created() {
+    document.onkeydown = evt => {
+      evt = evt || window.event;
+      if (evt.keyCode == 27) {
+        this.togglePopUp();
+      }
+    };
+  },
+  destroyed() {
+    document.onkeydown = null;
+  },
 };
 </script>
 
@@ -18,7 +48,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 300px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   box-sizing: border-box;
   padding: 40px;
   background-color: #fff;

@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <rak-header @click="popupHandler" />
+  <div :class="{ 'error-page': $route.path === '/error' }">
+    <mobile-menu v-if="isMobileMenuOpened" />
+    <rak-header />
     <nuxt />
     <rak-footer />
-    <overlay v-if="popupShown" @overlayClick="popupHandler" />
-    <pop-up v-if="popupShown" @closeClick="popupHandler" :theme="'dark'">
-      <quiz />
+    <pop-up v-if="popupShown" :theme="'dark'">
+      <quiz v-if="quizShown" />
+      <contact-form v-if="contactShown" />
+      <social-buttons v-if="socialShown" />
     </pop-up>
   </div>
 </template>
@@ -13,26 +15,36 @@
 <script>
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Overlay from '@/components/ui/Overlay';
 import PopUp from '@/components/ui/PopUp';
 import Quiz from '@/components/Quiz';
+import MobileMenu from '@/components/MobileMenu';
+import ContactForm from '@/components/ContactForm';
+import SocialButtons from '@/components/SocialButtons';
 export default {
   components: {
     'rak-header': Header,
     'rak-footer': Footer,
-    overlay: Overlay,
     'pop-up': PopUp,
     quiz: Quiz,
+    'mobile-menu': MobileMenu,
+    'contact-form': ContactForm,
+    'social-buttons': SocialButtons,
   },
-  data() {
-    return {
-      popupShown: false,
-    };
-  },
-  methods: {
-    popupHandler() {
-      this.popupShown = !this.popupShown;
-      console.log(this.popupShown);
+  computed: {
+    popupShown() {
+      return this.$store.getters['popup/getPopupShown'];
+    },
+    quizShown() {
+      return this.$store.getters['popup/getQuizShown'];
+    },
+    contactShown() {
+      return this.$store.getters['popup/getContactShown'];
+    },
+    socialShown() {
+      return this.$store.getters['popup/getSocialShown'];
+    },
+    isMobileMenuOpened() {
+      return this.$store.getters['mobile-menu/getMobileMenuState'];
     },
   },
 };
@@ -84,5 +96,12 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>

@@ -88,7 +88,7 @@ export default {
   .card__text {
     min-height: 48px;
     margin-top: 12px;
-
+  }
   .card__image {
     max-width: 216px;
     max-height: 216px;
@@ -102,7 +102,13 @@ export default {
   }
   .card__text {
     max-width: 290px;
-    /* margin-top: 10px; */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card__text {
+    min-height: 32px;
+    margin-top: 14px;
   }
 }
 </style>

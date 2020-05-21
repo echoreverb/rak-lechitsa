@@ -41,11 +41,17 @@ export default {};
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .section-subtitle__text {
     max-width: 382px;
     margin: 26px auto 0;
-    letter-spacing: 0em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .section-subtitle__text {
+    max-width: 290px;
+    margin: 16px 0 0;
   }
 }
 </style>

@@ -79,4 +79,19 @@ export default {
     margin-top: 40px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    margin-top: 50px;
+  }
+
+  .banner_theme_dark {
+    min-height: 80px;
+  }
+
+  .banner_theme_light {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+}
 </style>

@@ -38,4 +38,12 @@ export default {
     padding-bottom: calc(0.436 * 100%);
   }
 }
+
+@media screen and (max-width: 320px) {
+  .iframe {
+    max-width: 290px;
+    margin: 0;
+    padding-bottom: calc(0.52 * 100%);
+  }
+}
 </style>

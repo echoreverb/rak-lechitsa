@@ -50,4 +50,14 @@ export default {};
     text-align: center;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .section-title__text {
+    max-width: 290px;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 50px 0 0;
+    text-align: left;
+  }
+}
 </style>

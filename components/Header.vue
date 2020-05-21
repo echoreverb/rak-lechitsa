@@ -138,4 +138,15 @@ export default {
     min-width: 354px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .header {
+    min-height: 64px;
+  }
+
+  .header__project-name {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
 </style>

@@ -105,7 +105,8 @@ export default {
 
 <style scoped>
 .quiz {
-  min-width: 920px;
+  width: 840px;
+  min-height: 520px;
 }
 .quiz__heading {
   font-weight: 600;
@@ -117,7 +118,9 @@ export default {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  margin-bottom: 110px;
+  min-height: 72px;
+  max-width: 840px;
+  margin-bottom: 86px;
 }
 .quiz__question_bold {
   font-weight: 500;
@@ -142,11 +145,88 @@ export default {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #666666;
+  color: #666;
   align-self: center;
   margin-left: 30px;
 }
 .quiz__link a {
-  color: #666666;
+  color: #666;
+}
+
+@media screen and (max-width: 1280px) {
+  .quiz {
+    width: 720px;
+    min-height: 440px;
+  }
+  .quiz__heading {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .quiz__text {
+    font-size: 16px;
+    line-height: 22px;
+    min-height: 60px;
+    max-width: 720px;
+    margin-bottom: 60px;
+  }
+
+  .quiz__input {
+    margin-bottom: 170px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .quiz {
+    width: 650px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .quiz {
+    width: 500px;
+  }
+  .quiz__heading {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .quiz__text {
+    font-size: 15px;
+    line-height: 19px;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quiz {
+    width: 370px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .quiz {
+    width: 260px;
+    min-height: 490px;
+  }
+  .quiz__heading {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .quiz__text {
+    font-size: 13px;
+    line-height: 16px;
+    max-width: 260px;
+  }
+
+  .quiz__input {
+    margin-bottom: 257px;
+  }
+
+  .quiz__button_prev {
+    margin-right: 15px;
+  }
+
+  .quiz__button_next {
+    padding: 12px 70px;
+  }
 }
 </style>

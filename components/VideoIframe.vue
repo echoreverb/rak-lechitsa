@@ -11,7 +11,9 @@
 
 <script>
 export default {
-  props: ['src'],
+  props: {
+    src: String,
+  },
 };
 </script>
 

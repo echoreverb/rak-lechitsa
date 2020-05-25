@@ -33,7 +33,10 @@
 <script>
 import Button from '@/components/ui/Button';
 export default {
-  props: ['type', 'theme'],
+  props: {
+    type: String,
+    theme: String,
+  },
   data() {
     return {
       localCurrent: 0,
@@ -74,7 +77,7 @@ export default {
 .options__column {
   display: flex;
   height: 100%;
-  padding-bottom: 100px;
+  padding-bottom: 88px;
   flex-direction: column;
   justify-content: space-between;
 }

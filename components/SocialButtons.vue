@@ -48,7 +48,7 @@ export default {};
 
 <style scoped>
 .social-buttons {
-  width: 920px;
+  width: 840px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,5 +94,50 @@ export default {};
 
 .social-buttons__link_youtube {
   background-image: url("data:image/svg+xml,%0A%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M35.7379 14.1401C37.0229 14.486 38.0361 15.4992 38.3821 16.7842C39.0246 19.1318 38.9999 24.0247 38.9999 24.0247C38.9999 24.0247 38.9999 28.8929 38.3821 31.2405C38.0361 32.5255 37.0229 33.5387 35.7379 33.8846C33.3903 34.5024 23.9999 34.5024 23.9999 34.5024C23.9999 34.5024 14.6342 34.5024 12.2619 33.8599C10.9769 33.5139 9.96375 32.5008 9.61779 31.2158C9 28.8929 9 24 9 24C9 24 9 19.1318 9.61779 16.7842C9.96375 15.4992 11.0016 14.4613 12.2619 14.1153C14.6095 13.4976 23.9999 13.4976 23.9999 13.4976C23.9999 13.4976 33.3903 13.4976 35.7379 14.1401ZM28.8187 24L21.0098 28.4975V19.5025L28.8187 24Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width: 1280px) {
+  .social-buttons {
+    width: 720px;
+  }
+
+  .social-buttons__links {
+    width: 388px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .social-buttons {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .social-buttons {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .social-buttons {
+    width: 260px;
+  }
+
+  .social-buttons__links {
+    width: 282px;
+    margin-bottom: 45px;
+  }
+
+  .social-buttons__heading {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 60px;
+  }
+
+  .social-buttons__link {
+    width: 35px;
+    height: 35px;
+  }
 }
 </style>

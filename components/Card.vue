@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <nuxt-link :to="`/stories/${source.id}`" class="card">
-      <img class="card__image" :src="source.img" />
-      <h4 class="card__name">{{ source.name }}</h4>
-      <p class="card__text">{{ source.story }}</p>
-    </nuxt-link>
-  </div>
+  <nuxt-link :to="`/stories/${source.id}`" class="card">
+    <img class="card__image" :src="source.img" />
+    <h4 class="card__name">{{ source.name }}</h4>
+    <p class="card__text">{{ source.story }}</p>
+  </nuxt-link>
 </template>
 
 <script>
@@ -49,7 +47,7 @@ export default {
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
-  color: #666666;
+  color: #666;
   margin-top: 14px;
 }
 @media screen and (max-width: 1280px) {

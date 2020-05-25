@@ -76,8 +76,6 @@ export default {
 .footer {
   width: 100vw;
   background-color: #fbfbfb;
-  margin: 0 auto;
-  position: relative;
 }
 
 .footer__main {

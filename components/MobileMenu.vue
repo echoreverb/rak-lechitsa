@@ -2,28 +2,36 @@
   <div class="header-container">
     <container>
       <header class="header">
-        <nav-menu class="header__menu">
-          <nuxt-link
-            to="/"
-            v-bind:class="
-              $route.path === '/'
-                ? 'header__link header__link_active'
-                : 'header__link'
-            "
-            >Главная</nuxt-link
-          >
-          <nuxt-link
-            to="/stories"
-            v-bind:class="
-              $route.path === '/stories'
-                ? 'header__link header__link_active'
-                : 'header__link'
-            "
-            >Истории</nuxt-link
-          >
-          <a to="" class="header__link" @click="togglePopUp"
-            >Рассказать историю</a
-          >
+        <nav-menu>
+          <ul class="header__menu">
+            <li class="item">
+              <nuxt-link
+                to="/"
+                v-bind:class="
+                  $route.path === '/'
+                    ? 'header__link header__link_active'
+                    : 'header__link'
+                "
+                >Главная</nuxt-link
+              >
+            </li>
+            <li class="item">
+              <nuxt-link
+                to="/stories"
+                v-bind:class="
+                  $route.path === '/stories'
+                    ? 'header__link header__link_active'
+                    : 'header__link'
+                "
+                >Истории</nuxt-link
+              >
+            </li>
+            <li class="item">
+              <a to="" class="header__link" @click="togglePopUp"
+                >Рассказать историю</a
+              >
+            </li>
+          </ul>
         </nav-menu>
       </header>
     </container>
@@ -60,17 +68,27 @@ export default {
   background: white;
 }
 
+.item {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.item:last-of-type {
+  margin-right: 0px;
+}
+
 .header__menu {
-  min-width: 410px;
   font-size: 18px;
   line-height: 22px;
-  justify-content: flex-start;
+  list-style: none;
+  display: flex;
+  min-width: 410px;
+  padding-left: 0;
 }
 
 .header__link {
   text-decoration: none;
-  color: #000000;
-  margin-right: 30px;
+  color: #000;
   transition: 0.3s ease;
 }
 
@@ -86,5 +104,28 @@ export default {
 
 .header__link_active {
   border-bottom: black 1px solid;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    min-height: 120px;
+  }
+
+  .header__menu {
+    flex-direction: column;
+  }
+  .header__link {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .item {
+    margin-top: 18px;
+    max-height: 16px;
+  }
+
+  .item:last-of-type {
+    margin-bottom: 18px;
+  }
 }
 </style>

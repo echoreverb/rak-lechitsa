@@ -1,7 +1,7 @@
 <template>
   <swiper ref="videoySwiper" class="swiper swiper-mix" :options="swiperOption">
     <swiper-slide v-for="video in videos" :key="video.id">
-      <nxt-iframe :src="video.src" />
+      <nxt-iframe :src="video.url" />
     </swiper-slide>
   </swiper>
 </template>

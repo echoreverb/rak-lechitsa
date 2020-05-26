@@ -3,7 +3,11 @@
     <div class="root">
       <section class="cover">
         <h1 class="cover__title">#раклечится</h1>
-        <img class="cover__arrow" src="../static/images/arrow_down.svg" />
+        <img
+          class="cover__arrow"
+          src="../static/images/arrow_down.svg"
+          @click="niceScroll"
+        />
       </section>
 
       <section class="video">
@@ -219,6 +223,13 @@ export default {
       }
     },
   },
+  methods: {
+    niceScroll() {
+      document.querySelector('.video').scrollIntoView({
+        behavior: 'smooth',
+      });
+    },
+  },
   data() {
     return {
       storiesOnPage: 8,
@@ -256,6 +267,7 @@ export default {
   position: absolute;
   left: calc(50% - (36px / 2));
   bottom: 40px;
+  cursor: pointer;
 }
 
 .video__container {

@@ -225,6 +225,11 @@ export default {
     width: 55%;
   }
 
+  .footer__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
   .footer__link {
     margin-bottom: 14px;
   }
@@ -239,7 +244,19 @@ export default {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 740px) {
+  .footer__info {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .footer__links {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
   .footer__main {
     min-height: 402px;
     padding-bottom: 50px;

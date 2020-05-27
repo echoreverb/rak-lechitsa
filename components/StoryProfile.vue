@@ -84,7 +84,7 @@ export default {
   font-size: 38px;
   line-height: 48px;
   margin-bottom: auto;
-  color: #000000;
+  color: #000;
 }
 
 .storyProfile__text {
@@ -93,7 +93,7 @@ export default {
   font-weight: normal;
   font-size: 38px;
   line-height: 48px;
-  color: #000000;
+  color: #000;
 }
 
 .share-link {

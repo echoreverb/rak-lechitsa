@@ -37,7 +37,7 @@ export default {
   line-height: 30px;
   margin-bottom: 70px;
 
-  color: #000000;
+  color: #000;
 }
 
 .fullStory_link {

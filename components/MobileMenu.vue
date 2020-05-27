@@ -87,4 +87,14 @@ export default {
 .header__link_active {
   border-bottom: black 1px solid;
 }
+
+@media screen and (max-width: 425px) {
+  .header__link {
+    margin-bottom: 18px;
+    max-width: max-content;
+  }
+  .header__link:first-of-type {
+    margin-top: 18px;
+  }
+}
 </style>

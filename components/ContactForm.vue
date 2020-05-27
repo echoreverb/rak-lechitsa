@@ -94,13 +94,17 @@ export default {
     };
   },
   methods: {
+    togglePopUp() {
+      this.$store.commit('popup/togglePopUp');
+    },
     sendData() {
       console.log({
-        name: this.name,
+        fullName: this.name,
         email: this.email,
         phone: this.phone,
-        contactWay: this.contactWay,
+        preferred: this.contactWay,
       });
+      this.togglePopUp();
     },
   },
 };

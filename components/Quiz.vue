@@ -78,7 +78,7 @@ export default {
     return {
       inputValue: '',
       currentQuestion: 0,
-      answers: [],
+      answers: {},
       isSended: false,
     };
   },
@@ -98,15 +98,19 @@ export default {
       }
     },
     nextQuestion() {
-      if (this.currentQuestion < 11) {
+      if (this.currentQuestion < this.questions.length - 1) {
         if (this.inputValue) {
-          this.answers[this.currentQuestion] = this.inputValue;
+          this.answers[
+            this.questions[this.currentQuestion].key
+          ] = this.inputValue;
           this.inputValue = '';
           this.currentQuestion += 1;
         }
       } else {
         if (this.inputValue) {
-          this.answers[this.currentQuestion] = this.inputValue;
+          this.answers[
+            this.questions[this.currentQuestion].key
+          ] = this.inputValue;
           console.log(this.answers); //отправка данных на сервер
           this.isSended = true;
         }

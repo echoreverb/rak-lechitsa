@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <section class="error">
-      <h2 class="error-number">404 {{ errorStatus }}</h2>
-      <p class="error-description">Страница не найдена {{ errorText }}</p>
-      <nuxt-link to="/" class="error-description error-link"
+      <h2 class="error__number">404 {{ errorStatus }}</h2>
+      <p class="error__description">Страница не найдена {{ errorText }}</p>
+      <nuxt-link to="/" class="error__description error__link"
         >Перейти на главную</nuxt-link
       >
     </section>
@@ -28,7 +28,7 @@ export default {
   align-items: center;
 }
 
-.error-number {
+.error__number {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -39,7 +39,7 @@ export default {
   padding-bottom: 10px;
 }
 
-.error-description {
+.error__description {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -49,7 +49,7 @@ export default {
   color: #000;
 }
 
-.error-link {
+.error__link {
   text-decoration: none;
   border-bottom: 1px solid;
   display: block;
@@ -58,18 +58,18 @@ export default {
   transition: 0.3s ease;
 }
 
-.error-link:hover {
+.error__link:hover {
   color: #121212;
   opacity: 0.8;
 }
 
 @media screen and (max-width: 425px) {
-  .error-number {
+  .error__number {
     font-size: 72px;
     line-height: 87px;
     padding-bottom: 4px;
   }
-  .error-description {
+  .error__description {
     font-size: 13px;
     line-height: 16px;
   }

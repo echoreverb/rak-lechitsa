@@ -1,7 +1,7 @@
 <template>
   <div :to="`/stories/${source.id}`" class="fullStory">
     <p class="fullStory_text">{{ source.fullStory }}</p>
-    <a href="#" class="fullStory_link"
+    <a href="#" class="fullStory_link" @click.prevent="togglePopUp"
       >Поделитесь этой статьей в своих социальных сетях &#8599;</a
     >
   </div>
@@ -11,6 +11,11 @@
 export default {
   props: {
     source: Object,
+  },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/toggleSocial');
+    },
   },
 };
 </script>

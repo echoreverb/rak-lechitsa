@@ -85,11 +85,13 @@ export default {
     'nxt-input': Input,
     'nxt-button': Button,
   },
-  data: {
-    name: '',
-    email: '',
-    phone: '',
-    contactWay: '',
+  data() {
+    return {
+      name: '',
+      email: '',
+      phone: '',
+      contactWay: '',
+    };
   },
   methods: {
     sendData() {

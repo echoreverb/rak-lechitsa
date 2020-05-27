@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <nav class="menu">
-      <slot></slot>
-    </nav>
-  </div>
+  <nav class="menu">
+    <slot></slot>
+  </nav>
 </template>
 
 <script>
@@ -16,7 +14,7 @@ export default {};
   justify-content: space-between;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .menu {
     font-size: 16px;
     line-height: 24px;

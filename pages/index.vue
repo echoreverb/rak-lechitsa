@@ -3,7 +3,11 @@
     <div class="root">
       <section class="cover">
         <h1 class="cover__title">#раклечится</h1>
-        <img class="cover__arrow" src="../static/images/arrow_down.svg" />
+        <img
+          class="cover__arrow"
+          src="../static/images/arrow_down.svg"
+          @click="niceScroll"
+        />
       </section>
 
       <section class="video">
@@ -219,6 +223,13 @@ export default {
       }
     },
   },
+  methods: {
+    niceScroll() {
+      document.querySelector('.video').scrollIntoView({
+        behavior: 'smooth',
+      });
+    },
+  },
   data() {
     return {
       storiesOnPage: 8,
@@ -256,6 +267,7 @@ export default {
   position: absolute;
   left: calc(50% - (36px / 2));
   bottom: 40px;
+  cursor: pointer;
 }
 
 .video__container {
@@ -467,7 +479,7 @@ export default {
   margin-left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  min-height: 626px;
+  min-height: 650px;
 }
 
 .info__text {
@@ -553,6 +565,10 @@ export default {
 
   .statistics__grid {
     margin: 60px 0 90px 0;
+  }
+
+  .info {
+    min-height: 626px;
   }
 
   .info__title {
@@ -727,6 +743,10 @@ export default {
     grid-column-gap: 20px;
   }
 
+  .info {
+    min-height: 660px;
+  }
+
   .info__title {
     display: none;
   }
@@ -815,6 +835,10 @@ export default {
 
   .info__options {
     margin-top: 40px;
+  }
+
+  .info {
+    min-height: 660px;
   }
 }
 </style>

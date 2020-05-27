@@ -5,28 +5,36 @@
         <h2 class="header__project-name">
           Проект Благотворительного Фонда Константина Хабенского
         </h2>
-        <nav-menu class="header__menu">
-          <nuxt-link
-            to="/"
-            v-bind:class="
-              $route.path === '/'
-                ? 'header__link header__link_active'
-                : 'header__link'
-            "
-            >Главная</nuxt-link
-          >
-          <nuxt-link
-            to="/stories"
-            v-bind:class="
-              $route.path === '/stories'
-                ? 'header__link header__link_active'
-                : 'header__link'
-            "
-            >Истории</nuxt-link
-          >
-          <a to="" class="header__link" @click="togglePopUp"
-            >Рассказать историю</a
-          >
+        <nav-menu>
+          <ul class="header__menu">
+            <li class="item">
+              <nuxt-link
+                to="/"
+                v-bind:class="
+                  $route.path === '/'
+                    ? 'header__link header__link_active'
+                    : 'header__link'
+                "
+                >Главная</nuxt-link
+              >
+            </li>
+            <li class="item">
+              <nuxt-link
+                to="/stories"
+                v-bind:class="
+                  $route.path === '/stories'
+                    ? 'header__link header__link_active'
+                    : 'header__link'
+                "
+                >Истории</nuxt-link
+              >
+            </li>
+            <li class="item">
+              <a to="" class="header__link" @click="togglePopUp"
+                >Рассказать историю</a
+              >
+            </li>
+          </ul>
         </nav-menu>
         <mobile-icon class="header__mobile-icon" />
       </header>
@@ -78,12 +86,23 @@ export default {
   min-width: 410px;
   font-size: 18px;
   line-height: 22px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.item {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.item:last-of-type {
+  margin-right: 0;
 }
 
 .header__link {
   text-decoration: none;
-  color: #000000;
-  margin-right: 40px;
+  color: #000;
+  /* margin-right: 40px; */
   transition: 0.3s ease;
 }
 
@@ -105,15 +124,6 @@ export default {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .header__menu {
-    display: none;
-  }
-
-  .header__mobile-icon {
-    display: flex;
-  }
-}
 @media screen and (max-width: 1280px) {
   .header {
     min-height: 72px;
@@ -130,12 +140,26 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
-  .header__link {
+  /* .header__link {
+    margin-right: 30px;
+  } */
+
+  .item {
     margin-right: 30px;
   }
 
   .header__menu {
     min-width: 354px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .header__menu {
+    display: none;
+  }
+
+  .header__mobile-icon {
+    display: flex;
   }
 }
 

@@ -12,7 +12,7 @@ export default {};
 
 <style scoped>
 .section-subtitle {
-  color: #666666;
+  color: #666;
 }
 .section-subtitle__text {
   font-weight: normal;

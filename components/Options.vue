@@ -3,7 +3,7 @@
     <ul class="options__links">
       <li v-for="option in options" :key="option.id" class="options__item">
         <a
-          @click="changeOption(option.id, $event)"
+          @click.prevent="changeOption(option.id, $event)"
           href="#"
           :class="
             option.id == localCurrent

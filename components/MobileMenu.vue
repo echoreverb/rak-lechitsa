@@ -127,7 +127,7 @@ export default {
 
   .item:last-of-type {
     margin-bottom: 18px;
-/*
+    /*
 @media screen and (max-width: 425px) {
   .header__link {
     margin-bottom: 18px;

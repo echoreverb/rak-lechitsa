@@ -2,10 +2,8 @@
   <div class="header-container">
     <container>
       <header class="header">
-        <nuxt-link to="/" class="header__link">
-          <h2 class="header__project-name">
-            Проект Благотворительного Фонда Константина Хабенского
-          </h2>
+        <nuxt-link to="/" class="header__logo">
+          Проект Благотворительного Фонда Константина Хабенского
         </nuxt-link>
         <nav-menu>
           <ul class="header__menu">
@@ -77,11 +75,13 @@ export default {
   /* background: white; */
 }
 
-.header__project-name {
+.header__logo {
   max-width: 340px;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
+  text-decoration: none;
+  color: #000;
 }
 
 .header__menu {

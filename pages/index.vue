@@ -1,166 +1,153 @@
 <template>
-  <div>
-    <div class="root">
-      <section class="cover">
-        <h1 class="cover__title">#раклечится</h1>
-        <img
-          class="cover__arrow"
-          src="../static/images/arrow_down.svg"
-          @click="niceScroll"
-        />
-      </section>
+  <div class="root">
+    <section class="cover">
+      <h1 class="cover__title">{{ coverBlock.hashtag }}</h1>
+      <img
+        class="cover__arrow"
+        src="../static/images/arrow_down.svg"
+        @click="niceScroll"
+      />
+    </section>
 
-      <section class="video">
-        <container>
-          <div class="two-column-content video__container">
-            <div class="video__text">
-              <section-title>
-                Истории людей, победивших рак, но не свои привычки
-              </section-title>
-              <section-subtitle>
-                Есть вещи, которые не лечатся. Вещи ставшие частью нашего «я»,
-                фобии, страхи. Но это точно не рак. Рак лечится. Лучшее
-                доказательство&nbsp;— люди с их историями.
-              </section-subtitle>
-              <div class="slider-button-container">
-                <button
-                  aria-label="Previous video"
-                  type="button"
-                  class="slider-button slider-button_previous"
-                ></button>
-                <button
-                  aria-label="Next video"
-                  type="button"
-                  class="slider-button slider-button_next"
-                ></button>
-              </div>
+    <section class="video" ref="video">
+      <container>
+        <div class="two-column-content video__container">
+          <div class="video__text">
+            <section-title>
+              {{ videosBlock.title }}
+            </section-title>
+            <section-subtitle>
+              {{ videosBlock.text }}
+            </section-subtitle>
+            <div class="slider-button-container">
+              <button
+                aria-label="Previous video"
+                type="button"
+                class="slider-button slider-button_previous"
+              ></button>
+              <button
+                aria-label="Next video"
+                type="button"
+                class="slider-button slider-button_next"
+              ></button>
             </div>
-            <div class="video__content">
-              <rak-slider :videos="videos" />
-            </div>
-            <p class="video__description">
-              Все видео вы можете найте на нашем
+          </div>
+          <div class="video__content">
+            <rak-slider :videos="videos" />
+          </div>
+          <p class="video__description">
+            Все видео вы можете найте на нашем
+            <a
+              class="video__link"
+              href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
+              >YouTube канале</a
+            >.
+          </p>
+        </div>
+        <banner theme="dark">
+          <h2 class="banner__text">
+            {{ noteOneBlock.title }}
+            <span class="important-text">{{ noteOneBlock.hashtag }}</span>
+          </h2>
+        </banner>
+      </container>
+    </section>
+
+    <section class="stories">
+      <container>
+        <section-title>{{ storiesBlock.title }}</section-title>
+        <div class="stories__cards-container">
+          <card v-for="obj in getPieceOfStories" :key="obj.id" :source="obj" />
+        </div>
+        <nuxt-link to="/stories" class="link_underline_false">
+          <banner theme="light"><span>Больше статей</span></banner>
+        </nuxt-link>
+      </container>
+    </section>
+
+    <section class="instagram">
+      <container>
+        <banner theme="dark">
+          <h2 class="banner__text banner__text_wide">
+            {{ noteTwoBlock.title }} <br />
+            <span class="important-text">{{ noteTwoBlock.hashtag }}</span>
+          </h2>
+        </banner>
+        <div class="two-column-content">
+          <div class="instagram__text">
+            <section-title>
               <a
-                class="video__link"
-                href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
-                >YouTube канале</a
-              >.
-            </p>
+                class="title-link"
+                href="https://www.instagram.com/raklechitsa/"
+                target="_blank"
+                >{{ instagramBlock.title }}
+              </a>
+            </section-title>
+            <section-subtitle>
+              {{ instagramBlock.text }}
+            </section-subtitle>
           </div>
-          <banner theme="dark">
-            <h2 class="banner__text">
-              и в отличие от рака,
-              <span class="important-text">#этонелечится</span>
-            </h2>
-          </banner>
-        </container>
-      </section>
-
-      <section class="stories">
-        <container>
-          <section-title>Истории неизлечимых привычек</section-title>
-          <div class="stories__cards-container">
-            <card
-              v-for="obj in getPieceOfStories"
+          <div class="instagram__grid-container">
+            <a
+              class="instagram__image-link"
+              v-for="obj in getPieceOfInstagram"
               :key="obj.id"
-              :source="obj"
-            />
-          </div>
-          <nuxt-link to="/stories" class="link_underline_false">
-            <banner theme="light"><span>Больше статей</span></banner>
-          </nuxt-link>
-        </container>
-      </section>
-
-      <section class="instagram">
-        <container>
-          <banner theme="dark">
-            <h2 class="banner__text banner__text_wide">
-              рассказывайте ваши истории в инстаграм <br />
-              <span class="important-text">#этонелечится</span>
-            </h2>
-          </banner>
-          <div class="two-column-content">
-            <div class="instagram__text">
-              <section-title>
-                <a
-                  class="title-link"
-                  href="https://www.instagram.com/raklechitsa/"
-                  target="_blank"
-                  >Инстаграм
-                </a>
-              </section-title>
-              <section-subtitle>
-                Два раза в неделю мы просматриваем все посты по хештегу
-                #этонелечится. Все истории, где нет нецензурных выражений и
-                запрещенного контента попадают сюда. Следите за правильным
-                написанием хештега, чтобы мы не пропустили вашу историю.
-              </section-subtitle>
-            </div>
-            <div class="instagram__grid-container">
+              :href="obj.url"
+              target="_blank"
+            >
               <img
-                v-for="obj in getPieceOfInstagram"
-                :key="obj.id"
-                :src="obj.img"
-                alt="картинка из инстаграма"
                 class="instagram__image"
-              />
-            </div>
+                :src="obj.display_url"
+                alt="картинка из инстаграма"
+            /></a>
           </div>
-        </container>
-      </section>
+        </div>
+      </container>
+    </section>
 
-      <section class="your-story">
-        <container>
-          <div class="two-column-content">
-            <div class="your-story__text">
-              <section-title>Расскажите свою историю</section-title>
-              <section-subtitle>
-                Мы публикуем новые истории на сайте раз в неделю. Есть 2
-                варианта поделиться своей историей неизлечимых привычек,
-                навязчивых идей и болезненных привязанностей.
-              </section-subtitle>
-            </div>
-            <nxt-options
-              class="your-story__options"
-              theme="light"
-              type="form"
-            />
+    <section class="your-story">
+      <container>
+        <div class="two-column-content">
+          <div class="your-story__text">
+            <section-title>{{ storyBlock.title }}</section-title>
+            <section-subtitle>
+              {{ storyBlock.text }}
+            </section-subtitle>
           </div>
-        </container>
-      </section>
+          <nxt-options class="your-story__options" theme="light" type="form" />
+        </div>
+      </container>
+    </section>
 
-      <section class="statistics">
-        <container>
-          <section-title>Статистика по онкозаболеваниям</section-title>
-          <div class="statistics__grid">
-            <statistics-card
-              v-for="obj in statistics"
-              :key="obj.id"
-              :data="obj"
-            />
-          </div>
-        </container>
-      </section>
+    <section class="statistics">
+      <container>
+        <section-title>{{ statisticsBlock.title }}</section-title>
+        <div class="statistics__grid">
+          <statistics-card
+            v-for="obj in statistics"
+            :key="obj.id"
+            :data="obj"
+          />
+        </div>
+      </container>
+    </section>
 
-      <section class="info">
-        <container>
-          <h2 class="info__title">#раклечится</h2>
-          <div class="two-column-content">
-            <div class="info__text">
-              <section-title class="section-title_white"
-                >О проекте</section-title
-              >
-              <section-subtitle class="section-subtitle_light">
-                Этот проект был создан благотворительным фондом Константина
-                Хабенского.
-              </section-subtitle>
-            </div>
-            <nxt-options class="info__options" theme="dark" type="about" />
+    <section class="about">
+      <container>
+        <h2 class="about__title">{{ aboutBlock.hashtag }}</h2>
+        <div class="two-column-content">
+          <div class="about__text">
+            <section-title class="section-title_white">{{
+              aboutBlock.title
+            }}</section-title>
+            <section-subtitle class="section-subtitle_light">
+              {{ aboutBlock.text }}
+            </section-subtitle>
           </div>
-        </container>
-      </section>
-    </div>
+          <nxt-options class="about__options" theme="dark" type="about" />
+        </div>
+      </container>
+    </section>
   </div>
 </template>
 
@@ -189,6 +176,9 @@ export default {
     'nxt-options': Options,
   },
   computed: {
+    blocks() {
+      return this.$store.getters['blocks/getBlocks'];
+    },
     videos() {
       return this.$store.getters['videos/getVideos'];
     },
@@ -198,6 +188,39 @@ export default {
     stories() {
       return this.$store.getters['stories/getStories'];
     },
+    instagram() {
+      return this.$store.getters['instagram/getInstagram'];
+    },
+
+    //blocks
+    coverBlock() {
+      return this.blocks.find(elem => elem.block === 'cover');
+    },
+    videosBlock() {
+      return this.blocks.find(elem => elem.block === 'videos');
+    },
+    storiesBlock() {
+      return this.blocks.find(elem => elem.block === 'stories');
+    },
+    instagramBlock() {
+      return this.blocks.find(elem => elem.block === 'instagram');
+    },
+    storyBlock() {
+      return this.blocks.find(elem => elem.block === 'story');
+    },
+    statisticsBlock() {
+      return this.blocks.find(elem => elem.block === 'statistics');
+    },
+    aboutBlock() {
+      return this.blocks.find(elem => elem.block === 'about');
+    },
+    noteOneBlock() {
+      return this.blocks.find(elem => elem.block === 'note-1');
+    },
+    noteTwoBlock() {
+      return this.blocks.find(elem => elem.block === 'note-2');
+    },
+
     getPieceOfStories() {
       if (process.browser) {
         let copy = this.stories.slice(0);
@@ -215,7 +238,7 @@ export default {
     },
     getPieceOfInstagram() {
       if (process.browser) {
-        let copy = this.stories.slice(0);
+        let copy = this.instagram.slice(0);
         // console.log(window.innerWidth)
         let partOfInstagram = [];
         partOfInstagram = copy.splice(0, this.instagramOnPage);
@@ -225,7 +248,7 @@ export default {
   },
   methods: {
     niceScroll() {
-      document.querySelector('.video').scrollIntoView({
+      this.$refs['video'].scrollIntoView({
         behavior: 'smooth',
       });
     },
@@ -236,6 +259,13 @@ export default {
       instagramOnPage: 8,
     };
   },
+  // async created() {
+  //   await this.$store.dispatch('stories/fetchStories');
+  //   await this.$store.dispatch('videos/fetchVideos');
+  //   console.log('loading...');
+  //   this.loading = false;
+  //   console.log('finished loading');
+  // },
 };
 </script>
 
@@ -402,8 +432,27 @@ export default {
   margin: 100px 0;
 }
 
+.instagram__image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-bottom: calc(100%);
+  margin: 0;
+}
+
 .instagram__image {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.instagram__image:hover {
+  opacity: 0.8;
 }
 
 .your-story {
@@ -472,7 +521,7 @@ export default {
   column-gap: 40px;
 }
 
-.info {
+.about {
   background: #613a93;
   position: relative;
   display: block;
@@ -482,12 +531,12 @@ export default {
   min-height: 650px;
 }
 
-.info__text {
+.about__text {
   position: relative;
   bottom: 100px;
 }
 
-.info__title {
+.about__title {
   font-weight: 800;
   font-size: 64px;
   line-height: 77px;
@@ -497,7 +546,7 @@ export default {
   padding-top: 90px;
   margin-bottom: 70px;
 }
-.info__options {
+.about__options {
   margin-top: 68px;
 }
 
@@ -567,11 +616,11 @@ export default {
     margin: 60px 0 90px 0;
   }
 
-  .info {
+  .about {
     min-height: 626px;
   }
 
-  .info__title {
+  .about__title {
     font-weight: 800;
     font-size: 58px;
     line-height: 70px;
@@ -579,7 +628,7 @@ export default {
     margin-bottom: 60px;
   }
 
-  .info__text {
+  .about__text {
     bottom: 90px;
   }
 }
@@ -640,22 +689,22 @@ export default {
     grid-column-gap: 30px;
   }
 
-  .info {
+  .about {
     min-height: 570px;
   }
 
-  .info__title {
+  .about__title {
     font-weight: 800;
     font-size: 52px;
     line-height: 63px;
     margin-bottom: 46px;
   }
 
-  .info__text {
+  .about__text {
     bottom: 80px;
   }
 
-  .info__options {
+  .about__options {
     margin-top: 46px;
   }
 }
@@ -672,7 +721,7 @@ export default {
 
   .two-column-content {
     margin: 0 auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-row-gap: 0;
     grid-template-rows: auto auto;
     position: relative;
@@ -743,15 +792,15 @@ export default {
     grid-column-gap: 20px;
   }
 
-  .info {
+  .about {
     min-height: 660px;
   }
 
-  .info__title {
+  .about__title {
     display: none;
   }
 
-  .info__text {
+  .about__text {
     position: static;
     margin-bottom: 30px;
   }
@@ -827,17 +876,17 @@ export default {
     grid-column-gap: 10px;
   }
 
-  .info__text {
+  .about__text {
     position: static;
     margin-bottom: 0;
     letter-spacing: -0.5px;
   }
 
-  .info__options {
+  .about__options {
     margin-top: 40px;
   }
 
-  .info {
+  .about {
     min-height: 660px;
   }
 }

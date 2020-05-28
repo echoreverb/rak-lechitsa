@@ -1,6 +1,6 @@
 <template>
   <div :to="`/stories/${source.id}`" class="full-story">
-    <p class="full-story__text">{{ source.fullStory }}</p>
+    <p class="full-story__text">{{ source.text }}</p>
     <a href="#" class="full-story__link"
       >Поделитесь этой статьей в своих социальных сетях &#8599;</a
     >
@@ -64,6 +64,7 @@ export default {
     max-width: 720px;
     margin-bottom: 150px;
   }
+
   .full-story__text {
     font-size: 20px;
     line-height: 28px;
@@ -75,11 +76,13 @@ export default {
     max-width: 640px;
     margin-bottom: 120px;
   }
+
   .full-story__text {
     font-size: 18px;
     line-height: 27px;
     margin-bottom: 46px;
   }
+
   .full-story__link {
     font-size: 16px;
     line-height: 22px;
@@ -96,11 +99,13 @@ export default {
     max-width: 290px;
     margin-bottom: 100px;
   }
+
   .full-story__text {
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 40px;
   }
+
   .full-story__link {
     font-size: 13px;
     line-height: 16px;

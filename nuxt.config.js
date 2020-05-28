@@ -44,7 +44,15 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    // baseURL: 'https://strapi.kruzhok.io/'
+  },
+  env: {
+    baseUrl: 'https://strapi.kruzhok.io',
+  },
+  router: {
+    middleware: 'fetchApi',
+  },
   /*
    ** Build configuration
    */

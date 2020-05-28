@@ -1,8 +1,10 @@
 <template>
   <nuxt-link :to="`/stories/${source.id}`" class="card">
-    <img class="card__image" :src="source.img" />
-    <h4 class="card__name">{{ source.name }}</h4>
-    <p class="card__text">{{ source.story }}</p>
+    <div class="image-container">
+      <img class="card__image" :src="`${baseUrl}${source.ImageUrl[0].url}`" />\
+    </div>
+    <h4 class="card__name">{{ source.author }}</h4>
+    <p class="card__text">{{ source.title }}</p>
   </nuxt-link>
 </template>
 
@@ -10,6 +12,16 @@
 export default {
   props: {
     source: Object,
+  },
+  computed: {
+    stories() {
+      return this.$store.getters['stories/getStory'];
+    },
+  },
+  data() {
+    return {
+      baseUrl: process.env.baseUrl,
+    };
   },
 };
 </script>
@@ -28,8 +40,21 @@ export default {
   opacity: 0.8;
 }
 
+.image-container {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: calc(100%);
+  margin: 0;
+}
+
 .card__image {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
   max-width: 300px;
   max-height: 300px;
 }

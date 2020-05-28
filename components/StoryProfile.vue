@@ -1,50 +1,50 @@
 <template>
-  <container>
-    <div :to="`/stories/${source.id}`" class="story-profile">
+  <div class="story-profile">
+    <img
+      class="story-profile__image story-profile__image_grid"
+      :src="`${baseUrl}${source.ImageUrl[0].url}`"
+    />
+    <div class="second-column">
+      <h4 class="story-profile__name">
+        {{ source.author }}:
+        <p class="story-profile__text">&laquo;{{ source.title }}&raquo;</p>
+      </h4>
       <img
-        class="story-profile__image story-profile__image_grid"
-        :src="source.img"
+        class="story-profile__image story-profile__image_flex"
+        :src="`${baseUrl}${source.ImageUrl[0].url}`"
       />
-      <div class="second-column">
-        <h4 class="story-profile__name">
-          {{ source.name }}:
-          <p class="story-profile__text">&laquo;{{ source.story }}&raquo;</p>
-        </h4>
-        <img
-          class="story-profile__image story-profile__image_flex"
-          :src="source.img"
-        />
-        <div class="second-column__footer">
-          <a href="#" class="share-link" @click.prevent="togglePopUp"
-            >Поделитесь &#8599;</a
-          >
-          <p class="date">{{ source.date }}</p>
-        </div>
+      <div class="second-column_footer">
+        <a href="#" class="share-link" @click.prevent="togglePopUp"
+          >Поделитесь &#8599;</a
+        >
+        <p class="date">{{ source.date }}</p>
       </div>
     </div>
-  </container>
+  </div>
 </template>
 
 <script>
-import WidthAdjustContainer from '@/components/WidthAdjustContainer';
 export default {
-  components: {
-    container: WidthAdjustContainer,
-  },
   props: {
     source: Object,
+    key: Number,
   },
   methods: {
     togglePopUp() {
       this.$store.commit('popup/toggleSocial');
     },
   },
+  data() {
+    return {
+      baseUrl: process.env.baseUrl,
+    };
+  },
 };
 </script>
 
 <style scoped>
 .story-profile {
-  /* max-width: 1320px; */
+  max-width: 1320px;
   position: relative;
   text-decoration: none;
   color: inherit;
@@ -66,13 +66,14 @@ export default {
   padding-bottom: 30px;
 }
 
-.second-column__footer {
+.second-column_footer {
   display: flex;
   flex-direction: row;
   align-content: space-between;
 }
 
 .story-profile__image {
+  object-fit: cover;
   width: 580px;
   height: 580px;
 }
@@ -90,7 +91,7 @@ export default {
   font-size: 38px;
   line-height: 48px;
   margin-bottom: auto;
-  color: #000;
+  color: #000000;
 }
 
 .story-profile__text {
@@ -99,7 +100,7 @@ export default {
   font-weight: normal;
   font-size: 38px;
   line-height: 48px;
-  color: #000;
+  color: #000000;
 }
 
 .share-link {
@@ -127,7 +128,7 @@ export default {
 
 @media screen and (max-width: 1280px) {
   .story-profile {
-    /* max-width: 1180px; */
+    max-width: 1180px;
     margin-bottom: 120px;
   }
   .story-profile__image {
@@ -146,7 +147,7 @@ export default {
 
 @media screen and (max-width: 1024px) {
   .story-profile {
-    /* max-width: 924px; */
+    max-width: 924px;
     grid-column-gap: 40px;
     margin-bottom: 90px;
   }
@@ -172,7 +173,7 @@ export default {
 @media screen and (max-width: 768px) {
   .story-profile {
     display: flex;
-    /* max-width: 640px; */
+    max-width: 640px;
     margin-top: 80px;
     margin-bottom: 100px;
   }
@@ -194,7 +195,7 @@ export default {
 }
 @media screen and (max-width: 320px) {
   .story-profile {
-    /* max-width: 290px; */
+    max-width: 290px;
     margin-top: 50px;
     margin-bottom: 40px;
   }

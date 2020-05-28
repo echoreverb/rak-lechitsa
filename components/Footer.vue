@@ -7,9 +7,17 @@
             Спасибо всем, кто помог состояться этому проекту
           </p>
           <div class="footer__links">
-            <nav-menu class="footer__menu">
-              <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
-              <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
+            <nav-menu>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
+                </li>
+                <li class="footer__menu-item">
+                  <nuxt-link to="/stories" class="footer__link"
+                    >Истории</nuxt-link
+                  >
+                </li>
+              </ul>
             </nav-menu>
             <div class="footer__social">
               <span class="footer__link-description"
@@ -108,6 +116,7 @@ export default {
   display: flex;
   width: 66%;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .footer__social {
@@ -148,6 +157,15 @@ export default {
 
 .footer__menu {
   min-width: 190px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.footer__menu-item {
+  display: inline-block;
+  padding: 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -226,11 +244,14 @@ export default {
   }
 
   .footer__menu {
-    display: flex;
     flex-direction: column;
   }
 
   .footer__link {
+    margin-bottom: 14px;
+  }
+
+  .footer__menu-item {
     margin-bottom: 14px;
   }
 
@@ -303,6 +324,9 @@ export default {
   .footer__link {
     font-size: 13px;
     line-height: 18px;
+    margin-bottom: 18px;
+  }
+  .footer__menu-item {
     margin-bottom: 18px;
   }
 }

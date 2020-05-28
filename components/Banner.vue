@@ -7,7 +7,10 @@
 <script>
 export default {
   props: {
-    theme: String,
+    theme: {
+      type: String,
+      default: 'dark',
+    },
   },
 };
 </script>

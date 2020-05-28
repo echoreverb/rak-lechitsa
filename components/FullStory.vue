@@ -1,7 +1,7 @@
 <template>
-  <div :to="`/stories/${source.id}`" class="fullStory">
-    <p class="fullStory_text">{{ source.fullStory }}</p>
-    <a href="#" class="fullStory_link" @click.prevent="togglePopUp"
+  <div :to="`/stories/${source.id}`" class="full-story">
+    <p class="full-story__text">{{ source.fullStory }}</p>
+    <a href="#" class="full-story__link"
       >Поделитесь этой статьей в своих социальных сетях &#8599;</a
     >
   </div>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-.fullStory {
+.full-story {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ export default {
   margin: 0px auto 160px;
 }
 
-.fullStory_text {
+.full-story__text {
   width: 100%;
   font-style: normal;
   font-weight: normal;
@@ -40,7 +40,7 @@ export default {
   color: #000;
 }
 
-.fullStory_link {
+.full-story__link {
   width: 100%;
   text-decoration: none;
   border-top: 1px solid #efefef;
@@ -56,52 +56,52 @@ export default {
   color: #121212;
 }
 
-.fullStory_link:hover {
+.full-story__link:hover {
   opacity: 0.8;
 }
 @media screen and (max-width: 1280px) {
-  .fullStory {
+  .full-story {
     max-width: 720px;
     margin-bottom: 150px;
   }
-  .fullStory_text {
+  .full-story__text {
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 60px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .fullStory {
+  .full-story {
     max-width: 640px;
     margin-bottom: 120px;
   }
-  .fullStory_text {
+  .full-story__text {
     font-size: 18px;
     line-height: 27px;
     margin-bottom: 46px;
   }
-  .fullStory_link {
+  .full-story__link {
     font-size: 16px;
     line-height: 22px;
     padding: 24px 0px;
   }
 }
 @media screen and (max-width: 768px) {
-  .fullStory_text {
+  .full-story__text {
     margin-bottom: 80px;
   }
 }
 @media screen and (max-width: 320px) {
-  .fullStory {
+  .full-story {
     max-width: 290px;
     margin-bottom: 100px;
   }
-  .fullStory_text {
+  .full-story__text {
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 40px;
   }
-  .fullStory_link {
+  .full-story__link {
     font-size: 13px;
     line-height: 16px;
     padding: 20px 0px;

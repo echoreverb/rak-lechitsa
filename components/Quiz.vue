@@ -1,7 +1,13 @@
 <template>
   <div class="quiz">
-    <h2 class="quiz__heading">{{ questions[currentQuestion].heading }}</h2>
-    <p class="quiz__text">
+    <h2 class="quiz__heading">
+      {{
+        isSended
+          ? 'Спасибо что приняли участие!'
+          : questions[currentQuestion].heading
+      }}
+    </h2>
+    <p class="quiz__text" v-if="!isSended">
       <span class="quiz__question quiz__question_bold">{{
         questions[currentQuestion].question[0]
       }}</span>
@@ -10,6 +16,7 @@
       }}</span>
     </p>
     <form
+      v-if="!isSended"
       action=""
       class="quiz__form"
       @submit.prevent="nextQuestion"
@@ -48,6 +55,14 @@
         </p>
       </div>
     </form>
+    <nxt-button
+      v-if="isSended"
+      class="quiz__button quiz__button_close"
+      text="Закрыть"
+      size="md"
+      type="submit"
+      @click="togglePopUp"
+    />
   </div>
 </template>
 
@@ -63,7 +78,8 @@ export default {
     return {
       inputValue: '',
       currentQuestion: 0,
-      answers: [],
+      answers: {},
+      isSended: false,
     };
   },
   computed: {
@@ -82,17 +98,21 @@ export default {
       }
     },
     nextQuestion() {
-      if (this.currentQuestion < 11) {
+      if (this.currentQuestion < this.questions.length - 1) {
         if (this.inputValue) {
-          this.answers[this.currentQuestion] = this.inputValue;
+          this.answers[
+            this.questions[this.currentQuestion].key
+          ] = this.inputValue;
           this.inputValue = '';
           this.currentQuestion += 1;
         }
       } else {
         if (this.inputValue) {
-          this.answers[this.currentQuestion] = this.inputValue;
+          this.answers[
+            this.questions[this.currentQuestion].key
+          ] = this.inputValue;
           console.log(this.answers); //отправка данных на сервер
-          this.togglePopUp();
+          this.isSended = true;
         }
       }
     },
@@ -107,6 +127,9 @@ export default {
 .quiz {
   width: 840px;
   min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .quiz__heading {
   font-weight: 600;
@@ -140,6 +163,11 @@ export default {
 }
 .quiz__buttons {
   display: flex;
+}
+.quiz__button_close {
+  display: block;
+  max-width: 230px;
+  margin: 0 auto;
 }
 .quiz__link {
   font-weight: normal;

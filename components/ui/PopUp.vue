@@ -3,7 +3,7 @@
     <overlay @overlayClick="togglePopUp" />
     <div class="popup">
       <div class="popup__close" @click="togglePopUp"></div>
-      <slot>Содержимое окна</slot>
+      <div class="popup__inner"><slot>Содержимое окна</slot></div>
     </div>
   </div>
 </template>
@@ -53,6 +53,19 @@ export default {
   padding: 40px;
   background-color: #fff;
   z-index: 10;
+}
+.popup__inner {
+  overflow-y: scroll;
+  max-height: 90vh;
+}
+.popup__inner::-webkit-scrollbar {
+  width: 0;
+}
+.popup__inner {
+  -ms-overflow-style: none;
+}
+.popup__inner {
+  overflow: -moz-scrollbars-none;
 }
 
 .popup__close {

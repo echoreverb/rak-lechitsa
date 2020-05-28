@@ -340,7 +340,7 @@ export default {
   height: 40px;
   padding: 0;
   margin: 0;
-  color: #000000;
+  color: #000;
   background: #fbfbfb;
   background-repeat: no-repeat;
   background-size: auto;
@@ -375,11 +375,11 @@ export default {
   grid-column: 2;
   font-size: 12px;
   line-height: 16px;
-  color: #666666;
+  color: #666;
 }
 
 .video__link {
-  color: #666666;
+  color: #666;
 }
 
 .banner__text {
@@ -387,7 +387,7 @@ export default {
   font-size: 30px;
   line-height: 46px;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   text-align: center;
   margin: 20px 0 13px;
@@ -492,7 +492,7 @@ export default {
 .two-column-text__main {
   font-size: 18px;
   line-height: 22px;
-  color: #666666;
+  color: #666;
 }
 
 .two-column-text__main_light {
@@ -541,7 +541,7 @@ export default {
   font-size: 64px;
   line-height: 77px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   padding-top: 90px;
   margin-bottom: 70px;

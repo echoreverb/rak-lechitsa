@@ -9,7 +9,7 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'banner_theme_dark',
+      default: 'dark',
     },
   },
 };

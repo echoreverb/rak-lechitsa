@@ -79,7 +79,7 @@ export default {
   font-size: 12px;
   line-height: 16px;
   text-align: right;
-  color: #666666;
+  color: #666;
   margin-top: 20px;
 }
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="full-story">
-    <p class="full-story_text">{{ source.text }}</p>
-    <a href="#" class="full-story_link"
+  <div :to="`/stories/${source.id}`" class="full-story">
+    <p class="full-story__text">{{ source.text }}</p>
+    <a href="#" class="full-story__link"
       >Поделитесь этой статьей в своих социальных сетях &#8599;</a
     >
   </div>
@@ -12,7 +12,11 @@ export default {
   props: {
     source: Object,
   },
-  data() {},
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/toggleSocial');
+    },
+  },
 };
 </script>
 
@@ -25,7 +29,7 @@ export default {
   margin: 0px auto 160px;
 }
 
-.full-story_text {
+.full-story__text {
   width: 100%;
   font-style: normal;
   font-weight: normal;
@@ -33,10 +37,10 @@ export default {
   line-height: 30px;
   margin-bottom: 70px;
 
-  color: #000000;
+  color: #000;
 }
 
-.full-story_link {
+.full-story__link {
   width: 100%;
   text-decoration: none;
   border-top: 1px solid #efefef;
@@ -52,7 +56,7 @@ export default {
   color: #121212;
 }
 
-.full-story_link:hover {
+.full-story__link:hover {
   opacity: 0.8;
 }
 @media screen and (max-width: 1280px) {
@@ -60,7 +64,8 @@ export default {
     max-width: 720px;
     margin-bottom: 150px;
   }
-  .full-story_text {
+
+  .full-story__text {
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 60px;
@@ -71,19 +76,21 @@ export default {
     max-width: 640px;
     margin-bottom: 120px;
   }
-  .full-story_text {
+
+  .full-story__text {
     font-size: 18px;
     line-height: 27px;
     margin-bottom: 46px;
   }
-  .full-story_link {
+
+  .full-story__link {
     font-size: 16px;
     line-height: 22px;
     padding: 24px 0px;
   }
 }
 @media screen and (max-width: 768px) {
-  .full-story_text {
+  .full-story__text {
     margin-bottom: 80px;
   }
 }
@@ -92,12 +99,14 @@ export default {
     max-width: 290px;
     margin-bottom: 100px;
   }
-  .full-story_text {
+
+  .full-story__text {
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 40px;
   }
-  .full-story_link {
+
+  .full-story__link {
     font-size: 13px;
     line-height: 16px;
     padding: 20px 0px;

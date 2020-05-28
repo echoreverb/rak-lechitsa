@@ -5,7 +5,7 @@
       Мы свяжемся с вами в течение недели, чтобы задать вопросы о вашей истории
       и разместить ее на сайте.
     </p>
-    <form action="" class="contact__form" novalidate>
+    <form action="" class="contact__form" novalidate @submit.prevent="sendData">
       <div class="contact__form-group">
         <label for="name" class="contact__label">Как Вас зовут?</label>
         <nxt-input
@@ -14,6 +14,7 @@
           placeholder="Напишите тут"
           name="name"
           id="name"
+          v-model="name"
           required="required"
         />
       </div>
@@ -26,6 +27,7 @@
             placeholder="pochta@example.com"
             name="email"
             id="email"
+            v-model="email"
             required="required"
           />
         </div>
@@ -37,6 +39,7 @@
             placeholder="+7 000 000 00 00"
             name="phone"
             id="phone"
+            v-model="phone"
             required="required"
           />
         </div>
@@ -52,6 +55,7 @@
           placeholder="Телефон / почта и удобное время"
           name="contactWay"
           id="contactWay"
+          v-model="contactWay"
           required="required"
         />
       </div>
@@ -80,6 +84,28 @@ export default {
   components: {
     'nxt-input': Input,
     'nxt-button': Button,
+  },
+  data() {
+    return {
+      name: '',
+      email: '',
+      phone: '',
+      contactWay: '',
+    };
+  },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/togglePopUp');
+    },
+    sendData() {
+      console.log({
+        fullName: this.name,
+        email: this.email,
+        phone: this.phone,
+        preferred: this.contactWay,
+      });
+      this.togglePopUp();
+    },
   },
 };
 </script>

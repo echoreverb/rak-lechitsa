@@ -1,6 +1,6 @@
 <template>
   <container class="container">
-    <section class="search container__search">
+    <section class="search container__search" ref="start">
       <h1 class="search__title">Истории неизлечимых привычек</h1>
       <form class="search__form">
         <stories-input class="search__input" />
@@ -41,6 +41,9 @@ export default {
   methods: {
     changeStartCard(index) {
       this.sectionStartFrom = (index - 1) * this.itemsOnPage;
+      this.$refs['start'].scrollIntoView({
+        behavior: 'smooth',
+      });
     },
   },
   computed: {

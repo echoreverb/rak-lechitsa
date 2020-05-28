@@ -12,6 +12,11 @@ export default {
   props: {
     source: Object,
   },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/toggleSocial');
+    },
+  },
 };
 </script>
 

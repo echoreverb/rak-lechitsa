@@ -12,7 +12,7 @@ export default {};
 
 <style scoped>
 .section-title {
-  color: #000000;
+  color: #000;
 }
 .section-title__text {
   max-width: 413px;

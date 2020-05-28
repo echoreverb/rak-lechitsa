@@ -106,6 +106,7 @@ export default {
   border-bottom: black 1px solid;
 }
 
+/* adaptive-popups */
 @media screen and (max-width: 500px) {
   .header {
     min-height: 120px;
@@ -126,6 +127,15 @@ export default {
 
   .item:last-of-type {
     margin-bottom: 18px;
+    /*
+@media screen and (max-width: 425px) {
+  .header__link {
+    margin-bottom: 18px;
+    max-width: max-content;
+  }
+  .header__link:first-of-type {
+    margin-top: 18px;
+*/
   }
 }
 </style>

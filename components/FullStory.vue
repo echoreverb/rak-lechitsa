@@ -1,9 +1,9 @@
 <template>
   <div :to="`/stories/${source.id}`" class="full-story">
     <p class="full-story__text">{{ source.text }}</p>
-    <a href="#" class="full-story__link"
-      >Поделитесь этой статьей в своих социальных сетях &#8599;</a
-    >
+    <p @click="togglePopUp" class="full-story__link">
+      Поделитесь этой статьей в своих социальных сетях &#8599;
+    </p>
   </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
   font-size: 18px;
   line-height: 24px;
   padding: 30px 0px;
-
+  cursor: pointer;
   text-align: center;
 
   color: #121212;

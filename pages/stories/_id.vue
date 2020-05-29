@@ -1,7 +1,7 @@
 <template>
   <container>
-    <profile v-for="obj in getProfileOfStories" :key="obj.id" :source="obj" />
-    <fullStory v-for="obj in getProfileOfStories" :key="obj.id" :source="obj" />
+    <profile :source="getProfile" />
+    <fullStory :source="getProfile" />
     <div class="cards-container">
       <card v-for="obj in getPieceOfStories" :key="obj.id" :source="obj" />
     </div>
@@ -33,11 +33,13 @@ export default {
     stories() {
       return this.$store.getters['stories/getStories'];
     },
-    getProfileOfStories() {
-      let copy = this.profile.slice(0);
-      let profile = [];
-      profile = copy.splice(0, 1);
-      return profile;
+    getId() {
+      const indx = this.$route.path.search(/\/\d{1,}/);
+      return this.$route.path.slice(indx + 1);
+    },
+    getProfile() {
+      let ind = this.getId;
+      return this.stories.find(item => item.id == ind);
     },
     getPieceOfStories() {
       if (process.browser) {

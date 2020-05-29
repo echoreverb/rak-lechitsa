@@ -17,7 +17,7 @@
         <a href="#" class="share-link" @click.prevent="togglePopUp"
           >Поделитесь &#8599;</a
         >
-        <p class="date">{{ source.date }}</p>
+        <p class="date">{{ date }}</p>
       </div>
     </div>
   </div>
@@ -28,6 +28,31 @@ export default {
   props: {
     source: Object,
     key: Number,
+  },
+  computed: {
+    date() {
+      const date = this.source.date;
+      const myDate = date.slice(0, 10);
+      const day = myDate.substr(8, 2);
+      const month = myDate.substr(5, 2);
+      const year = myDate.substr(0, 4);
+      const months = [
+        ' ',
+        'января',
+        'февраля',
+        'марта',
+        'апреля',
+        'мая',
+        'июня',
+        'июля',
+        'августа',
+        'сентября',
+        'октябрь',
+        'ноября',
+        'декабря',
+      ];
+      return Number(day) + ' ' + months[Number(month)] + ' ' + year;
+    },
   },
   methods: {
     togglePopUp() {

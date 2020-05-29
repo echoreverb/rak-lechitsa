@@ -10,11 +10,15 @@ export const mutations = {
 
 export const actions = {
   async fetchVideos(state) {
-    const videos = await this.$axios.$get(`${process.env.baseUrl}/videos`);
-    state.commit('setState', {
-      name: 'videos',
-      value: videos,
-    });
+    try {
+      const videos = await this.$axios.$get(`${process.env.baseUrl}/videos`);
+      state.commit('setState', {
+        name: 'videos',
+        value: videos,
+      });
+    } catch {
+      console.log('Что-то пошло не так, но Вы не отчаивайтесь!');
+    }
   },
 };
 

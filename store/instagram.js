@@ -23,13 +23,17 @@ export const mutations = {
 
 export const actions = {
   async fetchInstagram(state) {
-    const data = await this.$axios.$get(
-      'https://www.instagram.com/raklechitsa/?__a=1'
-    );
-    state.commit('setState', {
-      name: 'instagram',
-      value: getPosts(data),
-    });
+    try {
+      const data = await this.$axios.$get(
+        'https://www.instagram.com/raklechitsa/?__a=1'
+      );
+      state.commit('setState', {
+        name: 'instagram',
+        value: getPosts(data),
+      });
+    } catch {
+      console.log('Что-то пошло не так, но Вы не отчаивайтесь!');
+    }
   },
 };
 

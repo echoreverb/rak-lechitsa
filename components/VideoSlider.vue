@@ -1,7 +1,7 @@
 <template>
   <swiper ref="videoySwiper" class="swiper swiper-mix" :options="swiperOption">
-    <swiper-slide v-for="video in videos" :key="video.id">
-      <nxt-iframe :src="video.url" />
+    <swiper-slide v-for="video in videosWithCovers" :key="video.id">
+      <nxt-iframe :src="video.url" :cover="video.cover" />
     </swiper-slide>
   </swiper>
 </template>
@@ -21,8 +21,19 @@ export default {
   },
   props: {
     videos: Array,
+    covers: Array,
   },
-  // props: ['videos', 'prev', 'next'],
+  computed: {
+    videosWithCovers() {
+      const videoArr = this.videos;
+      const coversArr = this.covers;
+      return videoArr.map(function(item, ind) {
+        let itemNew = item;
+        itemNew.cover = coversArr[ind].url;
+        return itemNew;
+      });
+    },
+  },
   data() {
     return {
       swiperOption: {

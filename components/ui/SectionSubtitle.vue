@@ -48,7 +48,7 @@ export default {};
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .section-subtitle__text {
     max-width: 290px;
     margin: 16px 0 0;

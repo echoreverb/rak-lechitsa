@@ -82,7 +82,7 @@ export default {
 
 <style scoped>
 .footer {
-  width: 100vw;
+  width: 100%;
   background-color: #fbfbfb;
 }
 

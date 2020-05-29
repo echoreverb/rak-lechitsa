@@ -87,7 +87,7 @@ export default {
     grid-column-gap: 20px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .cards-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;

@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="video__content">
-            <rak-slider :videos="videos" />
+            <rak-slider :videos="videos" :covers="covers" />
           </div>
           <p class="video__description">
             Все видео вы можете найте на нашем
@@ -191,6 +191,9 @@ export default {
     instagram() {
       return this.$store.getters['instagram/getInstagram'];
     },
+    covers() {
+      return this.$store.getters['video-covers/getCovers'];
+    },
 
     //blocks
     coverBlock() {
@@ -248,6 +251,7 @@ export default {
   },
   methods: {
     niceScroll() {
+      console.log(this.covers);
       this.$refs['video'].scrollIntoView({
         behavior: 'smooth',
       });
@@ -271,11 +275,11 @@ export default {
 
 <style scoped>
 .root {
-  width: 100vw;
+  width: 100%;
 }
 
 .cover {
-  width: 100vw;
+  width: 100%;
   min-height: 689px;
   background: #613a93;
   display: flex;
@@ -462,7 +466,7 @@ export default {
   margin-left: 50%;
   transform: translateX(-50%);
   min-height: 520px;
-  width: 100vw;
+  width: 100%;
   /* padding-top: 100px; */
 }
 
@@ -527,7 +531,7 @@ export default {
   display: block;
   margin-left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 100%;
   min-height: 650px;
 }
 
@@ -742,6 +746,7 @@ export default {
   }
   .slider-button-container {
     position: absolute;
+    z-index: 10;
     left: 0;
     top: 65.5%;
     width: 100%;
@@ -806,7 +811,14 @@ export default {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 560px) {
+  .cover__title {
+    font-size: 44px;
+    line-height: 56px;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .cover {
     min-height: 480px;
   }

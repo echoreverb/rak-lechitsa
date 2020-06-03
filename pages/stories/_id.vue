@@ -43,7 +43,8 @@ export default {
     },
     getPieceOfStories() {
       if (process.browser) {
-        let copy = this.stories.slice(0);
+        const length = this.stories.length;
+        let copy = this.stories.slice(Math.floor(Math.random() * (length - 4)));
         let stories = [];
         if (window.innerWidth <= 768) {
           this.storiesOnPage = 3;

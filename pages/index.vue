@@ -17,7 +17,7 @@
               {{ videosBlock.title }}
             </section-title>
             <section-subtitle>
-              {{ videosBlock.text }}
+              {{ videosBlock.text.replace(regEx, '') }}
             </section-subtitle>
             <div class="slider-button-container">
               <button
@@ -84,7 +84,7 @@
               </a>
             </section-title>
             <section-subtitle>
-              {{ instagramBlock.text }}
+              {{ instagramBlock.text.replace(regEx, '') }}
             </section-subtitle>
           </div>
           <div class="instagram__grid-container">
@@ -111,7 +111,7 @@
           <div class="your-story__text">
             <section-title>{{ storyBlock.title }}</section-title>
             <section-subtitle>
-              {{ storyBlock.text }}
+              {{ storyBlock.text.replace(regEx, '') }}
             </section-subtitle>
           </div>
           <nxt-options class="your-story__options" theme="light" type="form" />
@@ -141,7 +141,7 @@
               aboutBlock.title
             }}</section-title>
             <section-subtitle class="section-subtitle_light">
-              {{ aboutBlock.text }}
+              {{ aboutBlock.text.replace(regEx, '') }}
             </section-subtitle>
           </div>
           <nxt-options class="about__options" theme="dark" type="about" />
@@ -261,6 +261,7 @@ export default {
     return {
       storiesOnPage: 8,
       instagramOnPage: 8,
+      regEx: /<\/?\w+>/g,
     };
   },
   // async created() {

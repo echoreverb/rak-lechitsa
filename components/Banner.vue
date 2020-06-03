@@ -71,7 +71,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 770px) {
   .banner {
     margin-top: 44px;
   }
@@ -85,7 +85,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .banner {
     margin-top: 50px;
   }
@@ -98,5 +98,5 @@ export default {
     margin-top: 40px;
     margin-bottom: 50px;
   }
-}
+} */
 </style>

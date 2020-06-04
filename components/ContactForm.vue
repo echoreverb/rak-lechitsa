@@ -1,11 +1,21 @@
 <template>
   <div class="contact">
-    <h2 class="contact__heading">Оставьте контакт для связи</h2>
-    <p class="contact__text">
+    <h2 class="contact__heading">
+      {{
+        isSended ? 'Спасибо что приняли участие!' : 'Оставьте контакт для связи'
+      }}
+    </h2>
+    <p class="contact__text" v-if="!isSended">
       Мы свяжемся с вами в течение недели, чтобы задать вопросы о вашей истории
       и разместить ее на сайте.
     </p>
-    <form action="" class="contact__form" novalidate @submit.prevent="sendData">
+    <form
+      action=""
+      class="contact__form"
+      novalidate
+      @submit.prevent="sendData"
+      v-if="!isSended"
+    >
       <div class="contact__form-group">
         <label for="name" class="contact__label">Как Вас зовут?</label>
         <nxt-input
@@ -74,6 +84,14 @@
         </p>
       </div>
     </form>
+    <nxt-button
+      v-if="isSended"
+      class="quiz__button quiz__button_close"
+      text="Закрыть"
+      size="md"
+      type="submit"
+      @click="togglePopUp"
+    />
   </div>
 </template>
 
@@ -91,6 +109,7 @@ export default {
       email: '',
       phone: '',
       contactWay: '',
+      isSended: false,
     };
   },
   methods: {
@@ -104,7 +123,7 @@ export default {
         phone: this.phone,
         preferred: this.contactWay,
       });
-      this.togglePopUp();
+      this.isSended = true;
     },
   },
 };
@@ -113,6 +132,10 @@ export default {
 <style scoped>
 .contact {
   min-width: 840px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .contact__heading {
   font-weight: 600;

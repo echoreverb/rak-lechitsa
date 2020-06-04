@@ -23,13 +23,17 @@
       novalidate
     >
       <nxt-input
-        class="quiz__input"
-        type="text"
+        :class="
+          errorMessage === '' ? 'quiz__input' : 'quiz__input quiz__input_error'
+        "
+        :type="questions[currentQuestion]['type']"
         placeholder="Напишите тут"
         name="quizInput"
         required="required"
         v-model="inputValue"
+        @input="validate"
       />
+      <span class="quiz__error" v-html="errorMessage"></span>
       <div class="quiz__controls">
         <div class="quiz__buttons">
           <nxt-button
@@ -44,7 +48,6 @@
             :text="!isLastQuestion ? 'Далее' : 'Отправить'"
             size="md"
             type="submit"
-            @click="nextQuestion"
           />
         </div>
         <p v-if="isLastQuestion" class="quiz__link">
@@ -80,6 +83,7 @@ export default {
       currentQuestion: 0,
       answers: {},
       isSended: false,
+      errorMessage: '',
     };
   },
   computed: {
@@ -99,15 +103,19 @@ export default {
     },
     nextQuestion() {
       if (this.currentQuestion < this.questions.length - 1) {
-        if (this.inputValue) {
+        if (this.validate()) {
+          this.errorMessage = '';
           this.answers[
             this.questions[this.currentQuestion].key
           ] = this.inputValue;
           this.inputValue = '';
           this.currentQuestion += 1;
+        } else {
+          debugger;
+          this.errorMessage = 'Введите ответ на вопрос.';
         }
       } else {
-        if (this.inputValue) {
+        if (this.validate()) {
           this.answers[
             this.questions[this.currentQuestion].key
           ] = this.inputValue;
@@ -118,6 +126,39 @@ export default {
     },
     togglePopUp() {
       this.$store.commit('popup/togglePopUp');
+    },
+
+    validateEmailInput(email) {
+      return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
+        email
+      );
+    },
+    validatePhoneInput(phone) {
+      return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(phone);
+    },
+    validate() {
+      if (this.inputValue) {
+        if (
+          this.questions[this.currentQuestion].type === 'email' &&
+          !this.validateEmailInput(this.inputValue)
+        ) {
+          this.errorMessage = 'Введённый email некоректен';
+          return false;
+        }
+        if (
+          this.questions[this.currentQuestion].type === 'tel' &&
+          !this.validatePhoneInput(this.inputValue)
+        ) {
+          this.errorMessage = 'Введённый номер телефона некоректен';
+          return false;
+        }
+      } else {
+        this.errorMessage = 'Введите ответ на вопрос.';
+        return false;
+      }
+      this.errorMessage = '';
+
+      return true;
     },
   },
 };
@@ -145,11 +186,21 @@ export default {
   max-width: 840px;
   margin-bottom: 86px;
 }
+.quiz__error {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(158, 50, 50);
+  margin-bottom: 200px;
+}
 .quiz__question_bold {
   font-weight: 500;
 }
 .quiz__input {
-  margin-bottom: 200px;
+  margin-bottom: 15px;
+}
+.quiz__input_error {
+  border-bottom: 1px solid rgb(158, 50, 50);
 }
 .quiz__form {
   display: flex;

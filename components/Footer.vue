@@ -82,7 +82,7 @@ export default {
 
 <style scoped>
 .footer {
-  width: 100vw;
+  width: 100%;
   background-color: #fbfbfb;
 }
 
@@ -228,7 +228,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 778px) {
   .footer__content {
     padding: 50px 10px 0;
   }

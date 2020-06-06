@@ -51,7 +51,7 @@ export default {};
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .section-title__text {
     max-width: 290px;
     font-size: 18px;

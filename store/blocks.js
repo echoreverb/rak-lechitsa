@@ -10,11 +10,15 @@ export const mutations = {
 
 export const actions = {
   async fetchBlocks(state) {
-    const blocks = await this.$axios.$get(`${process.env.baseUrl}/blocks`);
-    state.commit('setState', {
-      name: 'blocks',
-      value: blocks,
-    });
+    try {
+      const blocks = await this.$axios.$get(`${process.env.baseUrl}/blocks`);
+      state.commit('setState', {
+        name: 'blocks',
+        value: blocks,
+      });
+    } catch {
+      console.log('Что-то пошло не так, но Вы не отчаивайтесь!');
+    }
   },
 };
 

@@ -55,7 +55,7 @@ export default {
   z-index: 10;
 }
 .popup__inner {
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 90vh;
 }
 .popup__inner::-webkit-scrollbar {

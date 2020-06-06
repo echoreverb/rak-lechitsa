@@ -43,7 +43,8 @@ export default {
     },
     getPieceOfStories() {
       if (process.browser) {
-        let copy = this.stories.slice(0);
+        const length = this.stories.length;
+        let copy = this.stories.slice(Math.floor(Math.random() * (length - 4)));
         let stories = [];
         if (window.innerWidth <= 768) {
           this.storiesOnPage = 3;
@@ -87,7 +88,7 @@ export default {
     grid-column-gap: 20px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .cards-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;

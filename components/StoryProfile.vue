@@ -218,7 +218,7 @@ export default {
     display: block;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .story-profile {
     max-width: 290px;
     margin-top: 50px;

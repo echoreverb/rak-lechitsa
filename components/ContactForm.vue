@@ -15,7 +15,7 @@
           name="name"
           id="name"
           v-model="name"
-          required="required"
+          required
         />
       </div>
       <div class="contact__form-row">
@@ -28,7 +28,7 @@
             name="email"
             id="email"
             v-model="email"
-            required="required"
+            required
           />
         </div>
         <div class="contact__form-group">
@@ -40,7 +40,7 @@
             name="phone"
             id="phone"
             v-model="phone"
-            required="required"
+            required
           />
         </div>
       </div>
@@ -56,7 +56,7 @@
           name="contactWay"
           id="contactWay"
           v-model="contactWay"
-          required="required"
+          required
         />
       </div>
       <div class="contact__controls">

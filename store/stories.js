@@ -11,11 +11,15 @@ export const mutations = {
 
 export const actions = {
   async fetchStories(state) {
-    const stories = await this.$axios.$get(`${process.env.baseUrl}/stories`);
-    state.commit('setState', {
-      name: 'stories',
-      value: stories,
-    });
+    try {
+      const stories = await this.$axios.$get(`${process.env.baseUrl}/stories`);
+      state.commit('setState', {
+        name: 'stories',
+        value: stories,
+      });
+    } catch {
+      console.log('Что-то пошло не так, но Вы не отчаивайтесь!');
+    }
   },
 };
 

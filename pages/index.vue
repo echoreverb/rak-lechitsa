@@ -17,7 +17,7 @@
               {{ videosBlock.title }}
             </section-title>
             <section-subtitle>
-              {{ videosBlock.text }}
+              {{ videosBlock.text.replace(regEx, '') }}
             </section-subtitle>
             <div class="slider-button-container">
               <button
@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="video__content">
-            <rak-slider :videos="videos" />
+            <rak-slider :videos="videos" :covers="covers" />
           </div>
           <p class="video__description">
             Все видео вы можете найте на нашем
@@ -84,7 +84,7 @@
               </a>
             </section-title>
             <section-subtitle>
-              {{ instagramBlock.text }}
+              {{ instagramBlock.text.replace(regEx, '') }}
             </section-subtitle>
           </div>
           <div class="instagram__grid-container">
@@ -111,7 +111,7 @@
           <div class="your-story__text">
             <section-title>{{ storyBlock.title }}</section-title>
             <section-subtitle>
-              {{ storyBlock.text }}
+              {{ storyBlock.text.replace(regEx, '') }}
             </section-subtitle>
           </div>
           <nxt-options class="your-story__options" theme="light" type="form" />
@@ -141,7 +141,7 @@
               aboutBlock.title
             }}</section-title>
             <section-subtitle class="section-subtitle_light">
-              {{ aboutBlock.text }}
+              {{ aboutBlock.text.replace(regEx, '') }}
             </section-subtitle>
           </div>
           <nxt-options class="about__options" theme="dark" type="about" />
@@ -190,6 +190,9 @@ export default {
     },
     instagram() {
       return this.$store.getters['instagram/getInstagram'];
+    },
+    covers() {
+      return this.$store.getters['video-covers/getCovers'];
     },
 
     //blocks
@@ -248,6 +251,7 @@ export default {
   },
   methods: {
     niceScroll() {
+      console.log(this.covers);
       this.$refs['video'].scrollIntoView({
         behavior: 'smooth',
       });
@@ -257,6 +261,7 @@ export default {
     return {
       storiesOnPage: 8,
       instagramOnPage: 8,
+      regEx: /<\/?\w+>/g,
     };
   },
   // async created() {
@@ -271,11 +276,11 @@ export default {
 
 <style scoped>
 .root {
-  width: 100vw;
+  width: 100%;
 }
 
 .cover {
-  width: 100vw;
+  width: 100%;
   min-height: 689px;
   background: #613a93;
   display: flex;
@@ -462,7 +467,7 @@ export default {
   margin-left: 50%;
   transform: translateX(-50%);
   min-height: 520px;
-  width: 100vw;
+  width: 100%;
   /* padding-top: 100px; */
 }
 
@@ -527,7 +532,7 @@ export default {
   display: block;
   margin-left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 100%;
   min-height: 650px;
 }
 
@@ -742,6 +747,7 @@ export default {
   }
   .slider-button-container {
     position: absolute;
+    z-index: 10;
     left: 0;
     top: 65.5%;
     width: 100%;
@@ -806,7 +812,14 @@ export default {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 560px) {
+  .cover__title {
+    font-size: 44px;
+    line-height: 56px;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .cover {
     min-height: 480px;
   }

@@ -1,6 +1,7 @@
 <template>
   <div :to="`/stories/${source.id}`" class="full-story">
-    <p class="full-story__text">{{ source.text }}</p>
+    <!-- <p class="full-story__text">{{ source.text.replace(regEx,"") }}</p> -->
+    <div class="full-story__text" v-html="source.text"></div>
     <p @click="togglePopUp" class="full-story__link">
       Поделитесь этой статьей в своих социальных сетях &#8599;
     </p>
@@ -9,6 +10,11 @@
 
 <script>
 export default {
+  // data() {
+  //   return {
+  //     regEx: /[(<\/?\w+>)(&\w+;)]/g
+  //   }
+  // },
   props: {
     source: Object,
   },
@@ -59,6 +65,7 @@ export default {
 .full-story__link:hover {
   opacity: 0.8;
 }
+
 @media screen and (max-width: 1280px) {
   .full-story {
     max-width: 720px;

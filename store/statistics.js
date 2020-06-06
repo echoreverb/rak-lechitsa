@@ -10,13 +10,17 @@ export const mutations = {
 
 export const actions = {
   async fetchStatistics(state) {
-    const statistics = await this.$axios.$get(
-      `${process.env.baseUrl}/statistics`
-    );
-    state.commit('setState', {
-      name: 'statistics',
-      value: statistics,
-    });
+    try {
+      const statistics = await this.$axios.$get(
+        `${process.env.baseUrl}/statistics`
+      );
+      state.commit('setState', {
+        name: 'statistics',
+        value: statistics,
+      });
+    } catch {
+      console.log('Что-то пошло не так, но Вы не отчаивайтесь!');
+    }
   },
 };
 

@@ -27,7 +27,6 @@
 export default {
   props: {
     source: Object,
-    key: Number,
   },
   computed: {
     date() {

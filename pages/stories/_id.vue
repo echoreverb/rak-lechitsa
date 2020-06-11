@@ -62,6 +62,44 @@ export default {
       storiesOnPage: 4,
     };
   },
+  head() {
+    if (this.getProfile) {
+      return {
+        title: `${this.getProfile.author} - РАКЛЕЧИТСЯ.РФ`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content:
+              `${this.getProfile.author}. РАКЛЕЧИТСЯ.РФ — проект Фонда Хабенского. Истории людей, победивших рак, но не свои привычки.` ||
+              '',
+          },
+          {
+            hid: 'keywords',
+            name: 'keywords',
+            content: 'РАКЛЕЧИТСЯ.РФ, раклечится, этонелечится',
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: `${this.getProfile.author} - РАКЛЕЧИТСЯ.РФ` || '',
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content:
+              `${this.getProfile.author}. РАКЛЕЧИТСЯ.РФ — проект Фонда Хабенского. Истории людей, победивших рак, но не свои привычки.` ||
+              '',
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: `${this.getProfile.ImageUrl[0].url}` || '',
+          },
+        ],
+      };
+    }
+  },
 };
 </script>
 

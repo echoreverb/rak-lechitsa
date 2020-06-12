@@ -259,10 +259,53 @@ export default {
   },
   data() {
     return {
+      metas: {
+        meta_title:
+          'РАКЛЕЧИТСЯ.РФ — истории людей, победивших рак, но не свои привычки',
+        meta_description:
+          'Информационный проект Фонда Хабенского. Есть вещи, которые не лечатся. В отличие от рака. #раклечится Вместе мы изменим отношение людей!  Какая привычка или фобия не лечится у вас? #этонелечится',
+        meta_keywords: 'РАКЛЕЧИТСЯ.РФ, раклечится, этонелечится',
+        og_image: '@/static/images/pozner_1920_1080.jpg',
+      },
       storiesOnPage: 8,
       instagramOnPage: 8,
       regEx: /<\/?\w+>/g,
     };
+  },
+  head() {
+    if (this.metas) {
+      return {
+        title: this.metas.meta_title,
+        meta: [
+          // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.metas.meta_description || '',
+          },
+          {
+            hid: 'keywords',
+            name: 'keywords',
+            content: this.metas.meta_keywords || '',
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: this.metas.meta_title || '',
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: this.metas.meta_description || '',
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: this.metas.og_image || '',
+          },
+        ],
+      };
+    }
   },
   // async created() {
   //   await this.$store.dispatch('stories/fetchStories');

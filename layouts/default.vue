@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'error-page': $route.path === '/error' }">
+  <div :class="{ 'error-page': isErrorPage }">
     <mobile-menu v-if="isMobileMenuOpened" />
     <rak-header />
     <nuxt />
@@ -45,6 +45,11 @@ export default {
     },
     isMobileMenuOpened() {
       return this.$store.getters['mobile-menu/getMobileMenuState'];
+    },
+  },
+  methods: {
+    isErrorPage() {
+      return document.querySelector('.error');
     },
   },
 };

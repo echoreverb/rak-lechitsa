@@ -1,6 +1,5 @@
 export const state = () => ({
-  stories: [],
-  currentStory: {},
+  blocks: [],
 });
 
 export const mutations = {
@@ -10,12 +9,12 @@ export const mutations = {
 };
 
 export const actions = {
-  async fetchStories(state) {
+  async fetchBlocks(state) {
     try {
-      const stories = await this.$axios.$get(`${process.env.baseUrl}/stories`);
+      const blocks = await this.$axios.$get(`${process.env.baseUrl}/blocks`);
       state.commit('setState', {
-        name: 'stories',
-        value: stories,
+        name: 'blocks',
+        value: blocks,
       });
     } catch {
       console.log('Что-то пошло не так, но Вы не отчаивайтесь!');
@@ -24,7 +23,7 @@ export const actions = {
 };
 
 export const getters = {
-  getStories(state) {
-    return state.stories;
+  getBlocks(state) {
+    return state.blocks;
   },
 };

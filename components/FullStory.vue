@@ -1,22 +1,33 @@
 <template>
-  <div :to="`/stories/${source.id}`" class="fullStory">
-    <p class="fullStory_text">{{ source.fullStory }}</p>
-    <a href="#" class="fullStory_link"
-      >Поделитесь этой статьей в своих социальных сетях &#8599;</a
-    >
+  <div :to="`/stories/${source.id}`" class="full-story">
+    <!-- <p class="full-story__text">{{ source.text.replace(regEx,"") }}</p> -->
+    <div class="full-story__text" v-html="source.text"></div>
+    <p @click="togglePopUp" class="full-story__link">
+      Поделитесь этой статьей в своих социальных сетях &#8599;
+    </p>
   </div>
 </template>
 
 <script>
 export default {
+  // data() {
+  //   return {
+  //     regEx: /[(<\/?\w+>)(&\w+;)]/g
+  //   }
+  // },
   props: {
     source: Object,
+  },
+  methods: {
+    togglePopUp() {
+      this.$store.commit('popup/toggleSocial');
+    },
   },
 };
 </script>
 
 <style scoped>
-.fullStory {
+.full-story {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +35,7 @@ export default {
   margin: 0px auto 160px;
 }
 
-.fullStory_text {
+.full-story__text {
   width: 100%;
   font-style: normal;
   font-weight: normal;
@@ -32,10 +43,10 @@ export default {
   line-height: 30px;
   margin-bottom: 70px;
 
-  color: #000000;
+  color: #000;
 }
 
-.fullStory_link {
+.full-story__link {
   width: 100%;
   text-decoration: none;
   border-top: 1px solid #efefef;
@@ -45,58 +56,64 @@ export default {
   font-size: 18px;
   line-height: 24px;
   padding: 30px 0px;
-
+  cursor: pointer;
   text-align: center;
 
   color: #121212;
 }
 
-.fullStory_link:hover {
+.full-story__link:hover {
   opacity: 0.8;
 }
+
 @media screen and (max-width: 1280px) {
-  .fullStory {
+  .full-story {
     max-width: 720px;
     margin-bottom: 150px;
   }
-  .fullStory_text {
+
+  .full-story__text {
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 60px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .fullStory {
+  .full-story {
     max-width: 640px;
     margin-bottom: 120px;
   }
-  .fullStory_text {
+
+  .full-story__text {
     font-size: 18px;
     line-height: 27px;
     margin-bottom: 46px;
   }
-  .fullStory_link {
+
+  .full-story__link {
     font-size: 16px;
     line-height: 22px;
     padding: 24px 0px;
   }
 }
 @media screen and (max-width: 768px) {
-  .fullStory_text {
+  .full-story__text {
     margin-bottom: 80px;
   }
 }
 @media screen and (max-width: 320px) {
-  .fullStory {
+  .full-story {
     max-width: 290px;
     margin-bottom: 100px;
   }
-  .fullStory_text {
+
+  .full-story__text {
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 40px;
   }
-  .fullStory_link {
+
+  .full-story__link {
     font-size: 13px;
     line-height: 16px;
     padding: 20px 0px;

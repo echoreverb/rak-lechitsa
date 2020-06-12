@@ -1,23 +1,23 @@
 <template>
-  <div :to="`/stories/${source.id}`" class="storyProfile">
+  <div class="story-profile">
     <img
-      class="storyProfile__image storyProfile__image_grid"
-      :src="source.img"
+      class="story-profile__image story-profile__image_grid"
+      :src="`${baseUrl}${source.ImageUrl[0].url}`"
     />
     <div class="second-column">
-      <h4 class="storyProfile__name">
-        {{ source.name }}:
-        <p class="storyProfile__text">&laquo;{{ source.story }}&raquo;</p>
+      <h4 class="story-profile__name">
+        {{ source.author }}:
+        <p class="story-profile__text">&laquo;{{ source.title }}&raquo;</p>
       </h4>
       <img
-        class="storyProfile__image storyProfile__image_flex"
-        :src="source.img"
+        class="story-profile__image story-profile__image_flex"
+        :src="`${baseUrl}${source.ImageUrl[0].url}`"
       />
       <div class="second-column_footer">
         <a href="#" class="share-link" @click.prevent="togglePopUp"
           >Поделитесь &#8599;</a
         >
-        <p class="date">{{ source.date }}</p>
+        <p class="date">{{ date }}</p>
       </div>
     </div>
   </div>
@@ -28,16 +28,46 @@ export default {
   props: {
     source: Object,
   },
+  computed: {
+    date() {
+      const date = this.source.date;
+      const myDate = date.slice(0, 10);
+      const day = myDate.substr(8, 2);
+      const month = myDate.substr(5, 2);
+      const year = myDate.substr(0, 4);
+      const months = [
+        ' ',
+        'января',
+        'февраля',
+        'марта',
+        'апреля',
+        'мая',
+        'июня',
+        'июля',
+        'августа',
+        'сентября',
+        'октябрь',
+        'ноября',
+        'декабря',
+      ];
+      return Number(day) + ' ' + months[Number(month)] + ' ' + year;
+    },
+  },
   methods: {
     togglePopUp() {
       this.$store.commit('popup/toggleSocial');
     },
   },
+  data() {
+    return {
+      baseUrl: process.env.baseUrl,
+    };
+  },
 };
 </script>
 
 <style scoped>
-.storyProfile {
+.story-profile {
   max-width: 1320px;
   position: relative;
   text-decoration: none;
@@ -66,18 +96,19 @@ export default {
   align-content: space-between;
 }
 
-.storyProfile__image {
+.story-profile__image {
+  object-fit: cover;
   width: 580px;
   height: 580px;
 }
 
-.storyProfile__image_grid {
+.story-profile__image_grid {
   display: block;
 }
-.storyProfile__image_flex {
+.story-profile__image_flex {
   display: none;
 }
-.storyProfile__name {
+.story-profile__name {
   align-self: start;
   font-style: normal;
   font-weight: 500;
@@ -87,7 +118,7 @@ export default {
   color: #000000;
 }
 
-.storyProfile__text {
+.story-profile__text {
   display: inline;
   font-style: normal;
   font-weight: normal;
@@ -120,39 +151,39 @@ export default {
 }
 
 @media screen and (max-width: 1280px) {
-  .storyProfile {
+  .story-profile {
     max-width: 1180px;
     margin-bottom: 120px;
   }
-  .storyProfile__image {
+  .story-profile__image {
     width: 518px;
     height: 518px;
   }
-  .storyProfile__name {
+  .story-profile__name {
     font-size: 34px;
     line-height: 44px;
   }
-  .storyProfile__text {
+  .story-profile__text {
     font-size: 34px;
     line-height: 44px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .storyProfile {
+  .story-profile {
     max-width: 924px;
     grid-column-gap: 40px;
     margin-bottom: 90px;
   }
-  .storyProfile__image {
+  .story-profile__image {
     width: 407px;
     height: 407px;
   }
-  .storyProfile__name {
+  .story-profile__name {
     font-size: 30px;
     line-height: 38px;
   }
-  .storyProfile__text {
+  .story-profile__text {
     font-size: 30px;
     line-height: 38px;
   }
@@ -164,7 +195,7 @@ export default {
   }
 }
 @media screen and (max-width: 768px) {
-  .storyProfile {
+  .story-profile {
     display: flex;
     max-width: 640px;
     margin-top: 80px;
@@ -174,34 +205,34 @@ export default {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .storyProfile__image {
+  .story-profile__image {
     width: 420px;
     height: 420px;
     margin: 60px auto;
   }
-  .storyProfile__image_grid {
+  .story-profile__image_grid {
     display: none;
   }
-  .storyProfile__image_flex {
+  .story-profile__image_flex {
     display: block;
   }
 }
-@media screen and (max-width: 320px) {
-  .storyProfile {
+@media screen and (max-width: 400px) {
+  .story-profile {
     max-width: 290px;
     margin-top: 50px;
     margin-bottom: 40px;
   }
-  .storyProfile__image {
+  .story-profile__image {
     width: 290px;
     height: 290px;
     margin: 30px auto;
   }
-  .storyProfile__name {
+  .story-profile__name {
     font-size: 18px;
     line-height: 21px;
   }
-  .storyProfile__text {
+  .story-profile__text {
     font-size: 18px;
     line-height: 21px;
   }

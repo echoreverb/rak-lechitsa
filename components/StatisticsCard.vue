@@ -1,15 +1,15 @@
 <template>
   <div class="statistics-card">
-    <p class="statistics-card__text">{{ data.text }}</p>
+    <p class="statistics-card__text">{{ data.description }}</p>
     <div class="statistics-card__bar-container">
       <progress-bar
-        :value="data.value"
+        :value="currentValue"
         :max-value="data.maxValue"
-        :previous-value="data.previousValue"
-        :bar-type="data.barType"
+        :previous-value="previousValue"
+        :bar-type="barType"
       />
     </div>
-    <p class="statistics-card__digits">{{ data.digits }}</p>
+    <p class="statistics-card__digits">{{ data.summary }}</p>
     <p class="statistics-card__source">{{ data.source }}</p>
   </div>
 </template>
@@ -22,6 +22,22 @@ export default {
   },
   components: {
     'progress-bar': ProgressBar,
+  },
+  computed: {
+    barType() {
+      let barType = 'single';
+      if (this.data.oldValue === null) barType = 'double';
+      return barType;
+    },
+    previousValue() {
+      if (this.data.id === 3) return 74;
+      if (this.data.id === 4) return 100;
+    },
+    currentValue() {
+      if (this.data.id === 3) return 100;
+      if (this.data.id === 4) return 75;
+      else return this.data.currentValue;
+    },
   },
 };
 </script>
@@ -63,7 +79,7 @@ export default {
   font-size: 12px;
   line-height: 16px;
   text-align: right;
-  color: #666666;
+  color: #666;
   margin-top: 20px;
 }
 

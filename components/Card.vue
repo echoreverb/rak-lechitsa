@@ -1,17 +1,27 @@
 <template>
-  <div>
-    <nuxt-link :to="`/stories/${source.id}`" class="card">
-      <img class="card__image" :src="source.img" />
-      <h4 class="card__name">{{ source.name }}</h4>
-      <p class="card__text">{{ source.story }}</p>
-    </nuxt-link>
-  </div>
+  <nuxt-link :to="`/stories/${source.id}`" class="card">
+    <div class="image-container">
+      <img class="card__image" :src="`${baseUrl}${source.ImageUrl[0].url}`" />\
+    </div>
+    <h4 class="card__name">{{ source.author }}</h4>
+    <p class="card__text">{{ source.title }}</p>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   props: {
     source: Object,
+  },
+  computed: {
+    stories() {
+      return this.$store.getters['stories/getStory'];
+    },
+  },
+  data() {
+    return {
+      baseUrl: process.env.baseUrl,
+    };
   },
 };
 </script>
@@ -30,8 +40,21 @@ export default {
   opacity: 0.8;
 }
 
+.image-container {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: calc(100%);
+  margin: 0;
+}
+
 .card__image {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
   max-width: 300px;
   max-height: 300px;
 }
@@ -49,7 +72,7 @@ export default {
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
-  color: #666666;
+  color: #666;
   margin-top: 14px;
 }
 @media screen and (max-width: 1280px) {

@@ -3,7 +3,7 @@
     <ul class="options__links">
       <li v-for="option in options" :key="option.id" class="options__item">
         <a
-          @click="changeOption(option.id, $event)"
+          @click.prevent="changeOption(option.id, $event)"
           href="#"
           :class="
             option.id == localCurrent
@@ -168,13 +168,18 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 772px) {
   .options {
     grid-template-columns: minmax(100px, 380px);
     grid-row-gap: 20px;
     margin-left: auto;
     margin-right: auto;
   }
+
+  .options__text {
+    min-height: 95px;
+  }
+
   .options__links {
     display: flex;
   }
@@ -201,7 +206,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .options__item {
     margin-right: 20px;
   }

@@ -1,11 +1,13 @@
 <template>
   <container>
-    <profile v-for="obj in getProfileOfStories" :key="obj.id" :source="obj" />
-    <fullStory v-for="obj in getProfileOfStories" :key="obj.id" :source="obj" />
+    <profile :source="getProfile" />
+    <fullStory :source="getProfile" />
     <div class="cards-container">
       <card v-for="obj in getPieceOfStories" :key="obj.id" :source="obj" />
     </div>
-    <banner class="banner_theme_light">Больше статей</banner>
+    <nuxt-link to="/stories" class="link_underline_false">
+      <banner theme="light"><span>Больше статей</span></banner>
+    </nuxt-link>
   </container>
 </template>
 
@@ -31,15 +33,18 @@ export default {
     stories() {
       return this.$store.getters['stories/getStories'];
     },
-    getProfileOfStories() {
-      let copy = this.profile.slice(0);
-      let profile = [];
-      profile = copy.splice(0, 1);
-      return profile;
+    getId() {
+      const indx = this.$route.path.search(/\/\d{1,}/);
+      return this.$route.path.slice(indx + 1);
+    },
+    getProfile() {
+      let ind = this.getId;
+      return this.stories.find(item => item.id == ind);
     },
     getPieceOfStories() {
       if (process.browser) {
-        let copy = this.stories.slice(0);
+        const length = this.stories.length;
+        let copy = this.stories.slice(Math.floor(Math.random() * (length - 4)));
         let stories = [];
         if (window.innerWidth <= 768) {
           this.storiesOnPage = 3;
@@ -57,6 +62,44 @@ export default {
       storiesOnPage: 4,
     };
   },
+  head() {
+    if (this.getProfile) {
+      return {
+        title: `${this.getProfile.author} - РАКЛЕЧИТСЯ.РФ`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content:
+              `${this.getProfile.author}. РАКЛЕЧИТСЯ.РФ — проект Фонда Хабенского. Истории людей, победивших рак, но не свои привычки.` ||
+              '',
+          },
+          {
+            hid: 'keywords',
+            name: 'keywords',
+            content: 'РАКЛЕЧИТСЯ.РФ, раклечится, этонелечится',
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: `${this.getProfile.author} - РАКЛЕЧИТСЯ.РФ` || '',
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content:
+              `${this.getProfile.author}. РАКЛЕЧИТСЯ.РФ — проект Фонда Хабенского. Истории людей, победивших рак, но не свои привычки.` ||
+              '',
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: `${this.getProfile.ImageUrl[0].url}` || '',
+          },
+        ],
+      };
+    }
+  },
 };
 </script>
 
@@ -66,6 +109,12 @@ export default {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 40px;
 }
+
+.link_underline_false {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media screen and (max-width: 1024px) {
   .cards-container {
     grid-column-gap: 30px;
@@ -77,7 +126,7 @@ export default {
     grid-column-gap: 20px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .cards-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;

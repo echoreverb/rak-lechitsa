@@ -7,9 +7,17 @@
             Спасибо всем, кто помог состояться этому проекту
           </p>
           <div class="footer__links">
-            <nav-menu class="footer__menu">
-              <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
-              <nuxt-link to="/stories" class="footer__link">Истории</nuxt-link>
+            <nav-menu>
+              <ul class="footer__menu">
+                <li class="footer__menu-item">
+                  <nuxt-link to="/" class="footer__link">Главная</nuxt-link>
+                </li>
+                <li class="footer__menu-item">
+                  <nuxt-link to="/stories" class="footer__link"
+                    >Истории</nuxt-link
+                  >
+                </li>
+              </ul>
             </nav-menu>
             <div class="footer__social">
               <span class="footer__link-description"
@@ -74,10 +82,8 @@ export default {
 
 <style scoped>
 .footer {
-  width: 100vw;
+  width: 100%;
   background-color: #fbfbfb;
-  margin: 0 auto;
-  position: relative;
 }
 
 .footer__main {
@@ -110,6 +116,7 @@ export default {
   display: flex;
   width: 66%;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .footer__social {
@@ -150,6 +157,15 @@ export default {
 
 .footer__menu {
   min-width: 190px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.footer__menu-item {
+  display: inline-block;
+  padding: 0;
 }
 
 @media screen and (max-width: 1280px) {
@@ -212,7 +228,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 778px) {
   .footer__content {
     padding: 50px 10px 0;
   }
@@ -227,7 +243,15 @@ export default {
     width: 55%;
   }
 
+  .footer__menu {
+    flex-direction: column;
+  }
+
   .footer__link {
+    margin-bottom: 14px;
+  }
+
+  .footer__menu-item {
     margin-bottom: 14px;
   }
 
@@ -241,7 +265,19 @@ export default {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 740px) {
+  .footer__info {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .footer__links {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
   .footer__main {
     min-height: 402px;
     padding-bottom: 50px;
@@ -288,6 +324,9 @@ export default {
   .footer__link {
     font-size: 13px;
     line-height: 18px;
+    margin-bottom: 18px;
+  }
+  .footer__menu-item {
     margin-bottom: 18px;
   }
 }

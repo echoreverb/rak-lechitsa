@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <section class="error">
-      <h2 class="error__number">404 {{ errorStatus }}</h2>
-      <p class="error__description">Страница не найдена {{ errorText }}</p>
+      <h2 class="error__number">404</h2>
+      <p class="error__description">Страница не найдена</p>
       <nuxt-link to="/" class="error__description error__link"
         >Перейти на главную</nuxt-link
       >
@@ -11,17 +11,11 @@
 </template>
 
 <script>
-export default {
-  props: {
-    errorStatus: String,
-    errorText: String,
-  },
-};
+export default {};
 </script>
 
 <style scoped>
 .container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

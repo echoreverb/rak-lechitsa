@@ -12,7 +12,7 @@ export default {};
 
 <style scoped>
 .section-subtitle {
-  color: #666666;
+  color: #666;
 }
 .section-subtitle__text {
   font-weight: normal;
@@ -48,7 +48,7 @@ export default {};
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .section-subtitle__text {
     max-width: 290px;
     margin: 16px 0 0;

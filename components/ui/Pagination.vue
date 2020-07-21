@@ -118,7 +118,7 @@ export default {
 }
 
 .pagination__arrow_next {
-  background: url(/images/arrow_left.svg) no-repeat center;
+  background: url(/images/arrow_right.svg) no-repeat center;
 }
 
 .pagination__text {

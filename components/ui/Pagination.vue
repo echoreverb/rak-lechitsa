@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
     <p
-      v-bind:class="
+      :class="
         active === 1
           ? 'pagination__text pagination__text_active'
           : 'pagination__text'
@@ -30,7 +30,7 @@
       @click="nextPage"
     ></div>
     <p
-      v-bind:class="
+      :class="
         active === pagesCount
           ? 'pagination__text pagination__text_active'
           : 'pagination__text'

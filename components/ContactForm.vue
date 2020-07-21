@@ -2,10 +2,10 @@
   <div class="contact">
     <h2 class="contact__heading">
       {{
-        isSended ? 'Спасибо что приняли участие!' : 'Оставьте контакт для связи'
+        wasSent ? 'Спасибо что приняли участие!' : 'Оставьте контакт для связи'
       }}
     </h2>
-    <p class="contact__text" v-if="!isSended">
+    <p class="contact__text" v-if="!wasSent">
       Мы свяжемся с вами в течение недели, чтобы задать вопросы о вашей истории
       и разместить ее на сайте.
     </p>
@@ -14,7 +14,7 @@
       class="contact__form"
       novalidate
       @submit.prevent="sendData"
-      v-if="!isSended"
+      v-if="!wasSent"
     >
       <div class="contact__form-group">
         <label for="name" class="contact__label">Как Вас зовут?</label>
@@ -85,7 +85,7 @@
       </div>
     </form>
     <nxt-button
-      v-if="isSended"
+      v-if="wasSent"
       class="quiz__button quiz__button_close"
       text="Закрыть"
       size="md"
@@ -109,7 +109,7 @@ export default {
       email: '',
       phone: '',
       contactWay: '',
-      isSended: false,
+      wasSent: false,
     };
   },
   methods: {
@@ -123,7 +123,7 @@ export default {
         phone: this.phone,
         preferred: this.contactWay,
       });
-      this.isSended = true;
+      this.wasSent = true;
     },
   },
 };

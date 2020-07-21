@@ -5,36 +5,42 @@
       <li class="social-buttons__item"></li>
       <li>
         <a
-          href="#"
+          :href="instagramUrl"
           class="social-buttons__link social-buttons__link_facebook"
         ></a>
       </li>
       <li class="social-buttons__item"></li>
       <li>
         <a
-          href="#"
+          :href="twitterUrl"
           class="social-buttons__link social-buttons__link_twitter"
         ></a>
       </li>
       <li class="social-buttons__item"></li>
       <li>
-        <a href="#" class="social-buttons__link social-buttons__link_vk"></a>
-      </li>
-      <li class="social-buttons__item"></li>
-      <li>
-        <a href="#" class="social-buttons__link social-buttons__link_ok"></a>
+        <a
+          :href="vkUrl"
+          class="social-buttons__link social-buttons__link_vk"
+        ></a>
       </li>
       <li class="social-buttons__item"></li>
       <li>
         <a
-          href="#"
+          :href="odnoklassnikiUrl"
+          class="social-buttons__link social-buttons__link_ok"
+        ></a>
+      </li>
+      <li class="social-buttons__item"></li>
+      <li>
+        <a
+          :href="instagramUrl"
           class="social-buttons__link social-buttons__link_instagram"
         ></a>
       </li>
       <li class="social-buttons__item"></li>
       <li>
         <a
-          href="#"
+          :href="youtubeUrl"
           class="social-buttons__link social-buttons__link_youtube"
         ></a>
       </li>
@@ -43,7 +49,27 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      instagramUrl: process.env.instagramUrl,
+      youtubeUrl:
+        'https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F',
+      facebookUrl: `https://www.facebook.com/sharer.php?src=sp&u=${encodeURI(
+        window.location.href
+      )}&title=${document.querySelector('title').innerText}`,
+      vkUrl: `https://vk.com/share.php?url=${encodeURI(
+        window.location.href
+      )}&title=${document.querySelector('title').innerText}`,
+      odnoklassnikiUrl: `https://connect.ok.ru/offer?url=${encodeURI(
+        window.location.href
+      )}&amp;title=${document.querySelector('title').innerText}`,
+      twitterUrl: `https://twitter.com/intent/tweet?text=${
+        document.querySelector('title').innerText
+      }&url=${encodeURI(window.location.href)}`,
+    };
+  },
+};
 </script>
 
 <style scoped>

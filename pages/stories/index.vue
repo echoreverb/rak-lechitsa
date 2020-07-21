@@ -10,9 +10,9 @@
     <section class="stories">
       <div class="stories__grid-container">
         <card
-          v-for="storie in getPieceOfStories"
-          :key="storie.id"
-          :source="storie"
+          v-for="story in getPieceOfStories"
+          :key="story.id"
+          :source="story"
         ></card>
       </div>
       <pagination

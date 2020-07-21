@@ -76,10 +76,7 @@
         <div class="two-column-content">
           <div class="instagram__text">
             <section-title>
-              <a
-                class="title-link"
-                href="https://www.instagram.com/raklechitsa/"
-                target="_blank"
+              <a class="title-link" :href="instagramUrl" target="_blank"
                 >{{ instagramBlock.title }}
               </a>
             </section-title>
@@ -270,6 +267,7 @@ export default {
       storiesOnPage: 8,
       instagramOnPage: 8,
       regEx: /<\/?\w+>/g,
+      instagramUrl: process.env.instagramUrl,
     };
   },
   head() {
@@ -307,13 +305,12 @@ export default {
       };
     }
   },
-  // async created() {
-  //   await this.$store.dispatch('stories/fetchStories');
-  //   await this.$store.dispatch('videos/fetchVideos');
-  //   console.log('loading...');
-  //   this.loading = false;
-  //   console.log('finished loading');
-  // },
+  async created() {
+    await this.$store.dispatch('instagram/fetchInstagram');
+    // console.log('loading instagram');
+    // this.loading = false;
+    // console.log('finished loading instagram');
+  },
 };
 </script>
 

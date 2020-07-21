@@ -5,7 +5,7 @@
     <div class="cards-container">
       <card v-for="obj in getPieceOfStories" :key="obj.id" :source="obj" />
     </div>
-    <nuxt-link to="/stories" class="link_underline_false">
+    <nuxt-link to="/stories" class="link">
       <banner theme="light"><span>Больше статей</span></banner>
     </nuxt-link>
   </container>
@@ -110,7 +110,7 @@ export default {
   grid-column-gap: 40px;
 }
 
-.link_underline_false {
+.link {
   text-decoration: none;
   color: inherit;
 }

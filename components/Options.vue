@@ -5,11 +5,10 @@
         <a
           @click.prevent="changeOption(option.id, $event)"
           href="#"
-          :class="
-            option.id == localCurrent
-              ? 'options__link options__link_active'
-              : 'options__link'
-          "
+          :class="[
+            'options__link',
+            { options__link_active: option.id == localCurrent },
+          ]"
           >{{ option.link }}</a
         >
       </li>

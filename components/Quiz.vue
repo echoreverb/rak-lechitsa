@@ -2,12 +2,12 @@
   <div class="quiz">
     <h2 class="quiz__heading">
       {{
-        isSended
+        wasSent
           ? 'Спасибо что приняли участие!'
           : questions[currentQuestion].heading
       }}
     </h2>
-    <p class="quiz__text" v-if="!isSended">
+    <p class="quiz__text" v-if="!wasSent">
       <span class="quiz__question quiz__question_bold">{{
         questions[currentQuestion].question[0]
       }}</span>
@@ -16,7 +16,7 @@
       }}</span>
     </p>
     <form
-      v-if="!isSended"
+      v-if="!wasSent"
       action=""
       class="quiz__form"
       @submit.prevent="nextQuestion"
@@ -59,7 +59,7 @@
       </div>
     </form>
     <nxt-button
-      v-if="isSended"
+      v-if="wasSent"
       class="quiz__button quiz__button_close"
       text="Закрыть"
       size="md"
@@ -82,7 +82,7 @@ export default {
       inputValue: '',
       currentQuestion: 0,
       answers: {},
-      isSended: false,
+      wasSent: false,
       errorMessage: '',
     };
   },
@@ -120,7 +120,7 @@ export default {
             this.questions[this.currentQuestion].key
           ] = this.inputValue;
           console.log(this.answers); //отправка данных на сервер
-          this.isSended = true;
+          this.wasSent = true;
         }
       }
     },

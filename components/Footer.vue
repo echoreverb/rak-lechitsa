@@ -23,7 +23,7 @@
               <span class="footer__link-description"
                 >Мы в
                 <a
-                  href="https://www.instagram.com/raklechitsa/"
+                  :href="instagramUrl"
                   target="_blank"
                   class="footer__link footer__link_underlined"
                   >Инстаграме</a
@@ -75,6 +75,7 @@ export default {
   data() {
     return {
       year: new Date().getFullYear(),
+      instagramUrl: process.env.instagramUrl,
     };
   },
 };

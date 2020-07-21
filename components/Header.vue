@@ -10,7 +10,7 @@
             <li class="item">
               <nuxt-link
                 to="/"
-                v-bind:class="
+                :class="
                   $route.path === '/'
                     ? 'header__link header__link_active'
                     : 'header__link'
@@ -21,7 +21,7 @@
             <li class="item">
               <nuxt-link
                 to="/stories"
-                v-bind:class="
+                :class="
                   $route.path === '/stories'
                     ? 'header__link header__link_active'
                     : 'header__link'

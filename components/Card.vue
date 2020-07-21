@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="`/stories/${source.id}`" class="card">
     <div class="image-container">
-      <img class="card__image" :src="`${baseUrl}${source.ImageUrl[0].url}`" />\
+      <img class="card__image" :src="`${baseUrl}${source.ImageUrl[0].url}`" />
     </div>
     <h4 class="card__name">{{ source.author }}</h4>
     <p class="card__text">{{ source.title }}</p>

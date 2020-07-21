@@ -1,11 +1,11 @@
 <template>
-  <div :to="`/stories/${source.id}`" class="full-story">
+  <a :to="`/stories/${source.id}`" class="full-story">
     <!-- <p class="full-story__text">{{ source.text.replace(regEx,"") }}</p> -->
     <div class="full-story__text" v-html="source.text"></div>
     <p @click="togglePopUp" class="full-story__link">
       Поделитесь этой статьей в своих социальных сетях &#8599;
     </p>
-  </div>
+  </a>
 </template>
 
 <script>

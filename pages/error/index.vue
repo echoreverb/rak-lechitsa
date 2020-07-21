@@ -3,9 +3,7 @@
     <section class="error">
       <h2 class="error__number">404 {{ errorStatus }}</h2>
       <p class="error__description">Страница не найдена {{ errorText }}</p>
-      <nuxt-link to="/" class="error__description error__link"
-        >Перейти на главную</nuxt-link
-      >
+      <nuxt-link to="/" class="error__link">Перейти на главную</nuxt-link>
     </section>
   </div>
 </template>
@@ -50,6 +48,13 @@ export default {
 }
 
 .error__link {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000;
   text-decoration: none;
   border-bottom: 1px solid;
   display: block;

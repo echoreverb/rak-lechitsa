@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
     <p
-      v-bind:class="
+      :class="
         active === 1
           ? 'pagination__text pagination__text_active'
           : 'pagination__text'
@@ -30,7 +30,7 @@
       @click="nextPage"
     ></div>
     <p
-      v-bind:class="
+      :class="
         active === pagesCount
           ? 'pagination__text pagination__text_active'
           : 'pagination__text'
@@ -114,11 +114,11 @@ export default {
 }
 
 .pagination__arrow_prev {
-  background: url(../../static/images/arrow_left.svg) no-repeat center;
+  background: url(/images/arrow_left.svg) no-repeat center;
 }
 
 .pagination__arrow_next {
-  background: url(../../static/images/arrow_right.svg) no-repeat center;
+  background: url(/images/arrow_left.svg) no-repeat center;
 }
 
 .pagination__text {

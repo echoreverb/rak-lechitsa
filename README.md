@@ -1,22 +1,33 @@
-# rak-lechitsa
+# РАКЛЕЧИТСЯ
 
-> project for rak lechitsa
+Здесь представлен исходный код фронтенд-части сайта проекта РАКЛЕЧИТСЯ, созданный нашей командой. 
+[РАКЛЕЧИТСЯ](https://raklechitsa.ru) - это проект Благотворительного Фонда Константина Хабенского и Leo Burnett Moscow.
 
-## Build Setup
+## Что использовалось
+Проект разработан на стеке (Nuxt, Vue, Vuex), свёрстан на HTML/CSS по БЭМ.
+Для выполнения запросов к серверу использован Axios. Для стилизации переключения видео использован vue-awesome-swiper. Husky запускает Prettier перед каждым коммитом. 
+
+## Установка
 
 ```bash
-# install dependencies
+# установка зависимостей
 $ npm install
 
-# serve with hot reload at localhost:3000
+# запуск сервера с хот-релоудом на localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# создание продакшн-сборки и запуск сервера
 $ npm run build
 $ npm run start
 
-# generate static project
+# генерация веб-приложения
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Наша команда
+- Алексей Дикарев (https://github.com/echoreverb),
+- Александра Лагодина (https://github.com/lagodinka),
+- Олег Симоненков (https://github.com/sCoruja),
+- Александр Моисеев (https://github.com/AIMoiseyev),
+- Андрей Мишин (https://github.com/Kigrar).
+

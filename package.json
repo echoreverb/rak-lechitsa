@@ -2,7 +2,7 @@
   "name": "rak-lechitsa",
   "version": "1.0.0",
   "description": "project for rak lechitsa",
-  "author": "praktikum",
+  "author": "Alexey Dikarev, Alexandra Lagodina, Oleg Simonenkov, Alexander Moiseev, Andrey Mishin",
   "private": true,
   "scripts": {
     "dev": "nuxt",

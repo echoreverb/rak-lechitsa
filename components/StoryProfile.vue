@@ -13,7 +13,7 @@
         class="story-profile__image story-profile__image_flex"
         :src="`${baseUrl}${source.ImageUrl[0].url}`"
       />
-      <div class="second-column_footer">
+      <div class="second-column-footer">
         <a href="#" class="share-link" @click.prevent="togglePopUp"
           >Поделитесь &#8599;</a
         >
@@ -50,7 +50,7 @@ export default {
         'ноября',
         'декабря',
       ];
-      return Number(day) + ' ' + months[Number(month)] + ' ' + year;
+      return `${Number(day)} ${months[Number(month)]} ${year}`;
     },
   },
   methods: {
@@ -90,7 +90,7 @@ export default {
   padding-bottom: 30px;
 }
 
-.second-column_footer {
+.second-column-footer {
   display: flex;
   flex-direction: row;
   align-content: space-between;

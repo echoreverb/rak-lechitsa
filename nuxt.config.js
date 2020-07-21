@@ -49,6 +49,7 @@ export default {
   },
   env: {
     baseUrl: 'https://strapi.kruzhok.io',
+    instagramUrl: 'https://www.instagram.com/raklechitsa',
   },
   router: {
     middleware: 'fetchApi',

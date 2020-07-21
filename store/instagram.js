@@ -24,9 +24,7 @@ export const mutations = {
 export const actions = {
   async fetchInstagram(state) {
     try {
-      const data = await this.$axios.$get(
-        'https://www.instagram.com/raklechitsa/?__a=1'
-      );
+      const data = await this.$axios.$get(`${process.env.instagramUrl}/?__a=1`);
       state.commit('setState', {
         name: 'instagram',
         value: getPosts(data),
